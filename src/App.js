@@ -13,6 +13,8 @@ import DjControl from "./components/DjControl";
 import PlayButtons from "./components/PlayButtons";
 import ProcButtons from "./components/ProcButtons";
 import PreprocessTextarea from "./components/PreprocessTextarea";
+import NavigationBar from "./Shared/SharedNavigationBar";
+
 
 let globalEditor = null;
 
@@ -112,6 +114,7 @@ useEffect(() => {
 
 return (
     <div>
+        <NavigationBar/>
         <h2>Strudel Demo</h2>
         <main>
 
