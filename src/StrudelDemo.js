@@ -13,7 +13,7 @@ import DjControl from "./components/DjControl";
 import PlayButtons from "./components/PlayButtons";
 import ProcButtons from "./components/ProcButtons";
 import PreprocessTextarea from "./components/PreprocessTextarea";
-
+import VolumeRange from "./components/VolumeRange";
 import PauseAndResumeButton from "./components/PauseAndResumeButtons";
 let globalEditor = null;
 
@@ -145,6 +145,8 @@ export default function StrudelDemo() {
                                 <PlayButtons />
                                 <br />
                                 <PauseAndResumeButton pause={Paused} setPause={SetPaused} pauseAudio={pauseAudio} />
+                                <br />
+                                <VolumeRange/>
                             </nav>
                         </div>
                     </div>

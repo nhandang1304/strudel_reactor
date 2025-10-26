@@ -1,11 +1,13 @@
 .nav-link:hover {
     background: gold !important;
     font-weight: bold;
+    
 }
 .nav-link.active {
     background-color: gold !important;
     color: black !important;
     font-weight: bold;
+    
 }
 .nav-text{
     font-weight: bold;

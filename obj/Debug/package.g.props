@@ -19,6 +19,7 @@
     <PackageJsonDependenciesBootstrap Condition="$(PackageJsonDependenciesBootstrap) == ''">^5.3.8</PackageJsonDependenciesBootstrap>
     <PackageJsonDependenciesReact Condition="$(PackageJsonDependenciesReact) == ''">^19.1.1</PackageJsonDependenciesReact>
     <PackageJsonDependenciesReactDom Condition="$(PackageJsonDependenciesReactDom) == ''">^19.1.1</PackageJsonDependenciesReactDom>
+    <PackageJsonDependenciesReactIcons Condition="$(PackageJsonDependenciesReactIcons) == ''">^5.5.0</PackageJsonDependenciesReactIcons>
     <PackageJsonDependenciesReactRouterDom Condition="$(PackageJsonDependenciesReactRouterDom) == ''">^7.9.4</PackageJsonDependenciesReactRouterDom>
     <PackageJsonDependenciesReactScripts Condition="$(PackageJsonDependenciesReactScripts) == ''">5.0.1</PackageJsonDependenciesReactScripts>
     <PackageJsonDependenciesWebVitals Condition="$(PackageJsonDependenciesWebVitals) == ''">^2.1.4</PackageJsonDependenciesWebVitals>

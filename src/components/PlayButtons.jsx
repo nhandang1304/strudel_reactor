@@ -2,7 +2,7 @@ function PlayButtons() {
     return (
         <>
             <div className="btn-group" role="group" ara-label="Basic mixed styles example!">
-                <button id="play" className="btn btn-outline-primary">Play</button>
+                <button id="play" className="btn btn-outline-primary">Restart</button>
                 <button id="stop" className="btn btn-outline-primary">Stop</button>
             </div>
             
