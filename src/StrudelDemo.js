@@ -144,7 +144,7 @@ export default function StrudelDemo() {
                                 <br />
                                 <PlayButtons />
                                 <br />
-                                
+                                <PauseAndResumeButton pause={Paused} setPause={SetPaused} pauseAudio={pauseAudio} />
                             </nav>
                         </div>
                     </div>
