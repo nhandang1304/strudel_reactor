@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { StrudelMirror } from '@strudel/codemirror';
 import { evalScope } from '@strudel/core';
 import { drawPianoroll } from '@strudel/draw';
@@ -14,7 +14,7 @@ import PlayButtons from "./components/PlayButtons";
 import ProcButtons from "./components/ProcButtons";
 import PreprocessTextarea from "./components/PreprocessTextarea";
 
-
+import PauseAndResumeButton from "./components/PauseAndResumeButtons";
 let globalEditor = null;
 
 const handleD3Data = (event) => {
@@ -35,10 +35,10 @@ export function SetupButtons() {
             globalEditor.evaluate()
         }
     }
+    
     )
+   
 }
-
-
 
 export function ProcAndPlay() {
     if (globalEditor != null && globalEditor.repl.state.started == true) {
@@ -66,10 +66,14 @@ export function ProcessText(match, ...args) {
     return replace
 }
 
+
+
 export default function StrudelDemo() {
 
     const hasRun = useRef(false);
+    const [Paused, SetPaused] = useState(false);
 
+   
     useEffect(() => {
 
         if (!hasRun.current) {
@@ -129,6 +133,8 @@ export default function StrudelDemo() {
                                 <ProcButtons />
                                 <br />
                                 <PlayButtons />
+                                <br />
+                                <PauseAndResumeButton pause={Paused} setPause={SetPaused} pauseAudio={pauseAudio} />
                             </nav>
                         </div>
                     </div>

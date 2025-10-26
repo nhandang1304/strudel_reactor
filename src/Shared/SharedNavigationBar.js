@@ -1,6 +1,7 @@
-﻿import { Link, Routes, Route } from "react-router-dom";
+﻿import { NavLink, Routes, Route } from "react-router-dom";
 import Home from "../Home";
 import StrudelDemo from "../StrudelDemo";
+import "../css/NewDesign.css";
 function NavigationBar() {
     return (
         <>
@@ -9,19 +10,19 @@ function NavigationBar() {
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/home">
+                                <NavLink className="nav-link me-3" aria-current="page" to="/home">
                                     Home
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/about">
+                                <NavLink className="nav-link me-3" aria-current="page" to="/about">
                                     About
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/create">
+                                <NavLink className="nav-link me-3" aria-current="page" to="/create">
                                     New Project
-                                </Link>
+                                </NavLink>
                             </li>
                         </ul>
                     </div>
