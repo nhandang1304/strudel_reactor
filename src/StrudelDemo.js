@@ -73,7 +73,17 @@ export default function StrudelDemo() {
     const hasRun = useRef(false);
     const [Paused, SetPaused] = useState(false);
 
-   
+    async function pauseAudio() {
+
+        const context = getAudioContext();
+        if (context.state === "running") {
+            await context.suspend(); // Pause all audio processing
+            SetPaused(true);
+        } else if (context.state === "suspended") {
+            await context.resume(); // Resume playback from same point
+            SetPaused(false);
+        }
+    }
     useEffect(() => {
 
         if (!hasRun.current) {
@@ -134,7 +144,7 @@ export default function StrudelDemo() {
                                 <br />
                                 <PlayButtons />
                                 <br />
-                                <PauseAndResumeButton pause={Paused} setPause={SetPaused} pauseAudio={pauseAudio} />
+                                
                             </nav>
                         </div>
                     </div>
