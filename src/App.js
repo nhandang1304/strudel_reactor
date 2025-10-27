@@ -1,5 +1,5 @@
 
-import SharedNavigation from "./Shared/SharedNavigationBar";
+import SharedNavigation from "./components/SharedNavigationBar";
 function App() {
     return (
         <SharedNavigation/>

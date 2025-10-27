@@ -40,21 +40,6 @@ export function SetupButtons() {
    
 }
 
-export function ProcAndPlay() {
-    if (globalEditor != null && globalEditor.repl.state.started == true) {
-        console.log(globalEditor)
-        Proc()
-        globalEditor.evaluate();
-    }
-}
-
-export function Proc() {
-
-    let proc_text = document.getElementById('proc').value
-    let proc_text_replaced = proc_text.replaceAll('<p1_Radio>', ProcessText);
-    ProcessText(proc_text);
-    globalEditor.setCode(proc_text_replaced)
-}
 
 export function ProcessText(match, ...args) {
 
@@ -140,7 +125,7 @@ export default function StrudelDemo() {
 
                             <nav>
 
-                                <ProcButtons />
+                                <ProcButtons  />
                                 <br />
                                 <PlayButtons />
                                 <br />
