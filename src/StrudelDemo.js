@@ -15,51 +15,23 @@ import ProcButtons from "./components/ProcButtons";
 import PreprocessTextarea from "./components/PreprocessTextarea";
 import VolumeRange from "./components/VolumeRange";
 import PauseAndResumeButton from "./components/PauseAndResumeButtons";
+import Proc from "../src/utils/ProcAudioLogic";
+import SetupButtons from "../src/utils/ProcAudioLogic";
+import pauseAudio from "../src/utils/PauseAndResumeLogic";
+
+
 let globalEditor = null;
 
 const handleD3Data = (event) => {
     console.log(event.detail);
 };
 
-export function SetupButtons() {
-
-    document.getElementById('play').addEventListener('click', () => globalEditor.evaluate());
-    document.getElementById('stop').addEventListener('click', () => globalEditor.stop());
-    document.getElementById('process').addEventListener('click', () => {
-        Proc()
-    }
-    )
-    document.getElementById('process_play').addEventListener('click', () => {
-        if (globalEditor != null) {
-            Proc()
-            globalEditor.evaluate()
-        }
-    }
-    
-    )
-   
-}
-
-
-
-
-
 export default function StrudelDemo() {
 
     const hasRun = useRef(false);
     const [Paused, SetPaused] = useState(false);
 
-    async function pauseAudio() {
-
-        const context = getAudioContext();
-        if (context.state === "running") {
-            await context.suspend(); // Pause all audio processing
-            SetPaused(true);
-        } else if (context.state === "suspended") {
-            await context.resume(); // Resume playback from same point
-            SetPaused(false);
-        }
-    }
+    
     useEffect(() => {
 
         if (!hasRun.current) {
@@ -99,7 +71,6 @@ export default function StrudelDemo() {
         }
 
     }, []);
-
 
     return (
         <div>
