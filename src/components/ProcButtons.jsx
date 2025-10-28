@@ -32,4 +32,4 @@ function ProcButtons() {
        
     )
 }
-export default ProcButtons
+export default ProcButtons;

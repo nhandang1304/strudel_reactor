@@ -15,8 +15,8 @@ import ProcButtons from "./components/ProcButtons";
 import PreprocessTextarea from "./components/PreprocessTextarea";
 import VolumeRange from "./components/VolumeRange";
 import PauseAndResumeButton from "./components/PauseAndResumeButtons";
-import Proc from "../src/utils/ProcAudioLogic";
-import SetupButtons from "../src/utils/ProcAudioLogic";
+import { Proc } from "../src/utils/ProcAudioLogic";
+import SetupButtons from "../src/utils/SetupButtons";
 import pauseAudio from "../src/utils/PauseAndResumeLogic";
 
 
@@ -66,8 +66,8 @@ export default function StrudelDemo() {
             });
 
             document.getElementById('proc').value = stranger_tune
-            SetupButtons()
-            Proc()
+            SetupButtons(globalEditor)
+            Proc(globalEditor)
         }
 
     }, []);

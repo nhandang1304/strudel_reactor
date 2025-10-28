@@ -1,4 +1,4 @@
-export function ProcessText(match, ...args) {
+function ProcessText(match, ...args) {
 
     let replace = ""
     if (document.getElementById('flexRadioDefault2').checked) {
@@ -7,3 +7,4 @@ export function ProcessText(match, ...args) {
 
     return replace
 }
+export default ProcessText;

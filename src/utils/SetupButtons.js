@@ -1,16 +1,16 @@
-import Proc from "./ProcAudioLogic";
+import { Proc } from "./ProcAudioLogic";
 
-export function SetupButtons({ globalEditor }) {
+function SetupButtons( globalEditor ) {
 
     document.getElementById('play').addEventListener('click', () => globalEditor.evaluate());
     document.getElementById('stop').addEventListener('click', () => globalEditor.stop());
     document.getElementById('process').addEventListener('click', () => {
-        Proc()
+        Proc(globalEditor)
     }
     )
     document.getElementById('process_play').addEventListener('click', () => {
         if (globalEditor != null) {
-            Proc()
+            Proc(globalEditor)
             globalEditor.evaluate()
         }
     }
@@ -18,3 +18,4 @@ export function SetupButtons({ globalEditor }) {
     )
 
 }
+export default SetupButtons;

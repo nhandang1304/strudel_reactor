@@ -1,6 +1,6 @@
 import { getAudioContext } from '@strudel/webaudio';
 
-async function pauseAudio({SetPaused }) {
+async function pauseAudio(SetPaused ) {
 
     const context = getAudioContext();
     if (context.state === "running") {
