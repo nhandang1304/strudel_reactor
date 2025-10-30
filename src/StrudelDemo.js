@@ -1,4 +1,4 @@
-import './App.css';
+﻿import './App.css';
 import { useEffect, useRef, useState } from "react";
 import { StrudelMirror } from '@strudel/codemirror';
 import { evalScope } from '@strudel/core';
@@ -30,7 +30,7 @@ export default function StrudelDemo() {
 
     const hasRun = useRef(false);
     const [Paused, SetPaused] = useState(false);
-
+    
     
     useEffect(() => {
 
@@ -64,7 +64,7 @@ export default function StrudelDemo() {
                     await Promise.all([loadModules, registerSynthSounds(), registerSoundfonts()]);
                 },
             });
-
+           
             document.getElementById('proc').value = stranger_tune
             SetupButtons(globalEditor, SetPaused, pauseAudio)
             Proc(globalEditor)
@@ -93,7 +93,8 @@ export default function StrudelDemo() {
                                 <br />
                                 <PauseAndResumeButton pause={Paused} setPause={SetPaused} pauseAudio={pauseAudio} />
                                 <br />
-                                <VolumeRange/>
+                                
+                                {<VolumeRange />}
                             </nav>
                         </div>
                     </div>
@@ -103,7 +104,7 @@ export default function StrudelDemo() {
                             <div id="output" />
                         </div>
                         <div className="col-md-4">
-                            <DjControl />
+                            <DjControl globalEditor={globalEditor} />
                         </div>
                     </div>
                 </div>

@@ -23,6 +23,7 @@
     <PackageJsonDependenciesReactIcons Condition="$(PackageJsonDependenciesReactIcons) == ''">^5.5.0</PackageJsonDependenciesReactIcons>
     <PackageJsonDependenciesReactRouterDom Condition="$(PackageJsonDependenciesReactRouterDom) == ''">^7.9.4</PackageJsonDependenciesReactRouterDom>
     <PackageJsonDependenciesReactScripts Condition="$(PackageJsonDependenciesReactScripts) == ''">5.0.1</PackageJsonDependenciesReactScripts>
+    <PackageJsonDependenciesTone Condition="$(PackageJsonDependenciesTone) == ''">^14.7.77</PackageJsonDependenciesTone>
     <PackageJsonDependenciesWebVitals Condition="$(PackageJsonDependenciesWebVitals) == ''">^2.1.4</PackageJsonDependenciesWebVitals>
     <PackageJsonScriptsStart Condition="$(PackageJsonScriptsStart) == ''">react-scripts start</PackageJsonScriptsStart>
     <PackageJsonScriptsBuild Condition="$(PackageJsonScriptsBuild) == ''">react-scripts build</PackageJsonScriptsBuild>
