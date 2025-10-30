@@ -1,6 +1,4 @@
 ﻿import { NavLink, Routes, Route } from "react-router-dom";
-import Home from "../Home";
-import StrudelDemo from "../StrudelDemo";
 import "../css/NewDesign.css";
 import { IoHomeOutline } from "react-icons/io5";
 import { IoIosInformationCircleOutline } from "react-icons/io";
@@ -39,10 +37,7 @@ function NavigationBar() {
                 </div>
             </nav>
 
-            <Routes>
-                <Route path="/home" element={<Home />} />
-                <Route path="/create" element={<StrudelDemo />} />
-            </Routes>
+           
         </>
     );
 }

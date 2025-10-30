@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
 import "../src/css/NewDesign.css";
-import { NavLink } from "react";
+import { NavLink} from "react-router-dom";
+
 function Home() {
     const videoRef = useRef(null);
     useEffect(() => {
@@ -19,11 +20,16 @@ function Home() {
                     <div className="w-100 text-white">
                         <h1 className="display-3 fw-bold">Live Music Coding</h1>
                         <p className="lead mb-0">React-powered live music coding platform integrating Strudel.cc REPL. Features interactive controls, real-time preprocessing, JSON handling, and D3 visualizations.</p>
+                        <div className="text-center mt-5">
+                            <NavLink id="createButton" to="/create" className="fw-bold btn btn-warning btn-rounded display-2, fs-4" data-mdb-ripple-init>
+                                Create your own song
+                            </NavLink>
+                            
+                        </div>
                     </div>
-                    <div className="col-3">
-                    <button className=""
-                    </div>
+                    
                 </div>
+
             </div>
         </header>
     );

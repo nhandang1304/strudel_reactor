@@ -5,12 +5,21 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from "./Home";
+import StrudelDemo from "./StrudelDemo";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <BrowserRouter>
             <App />
+            <Routes>
+                <Route path="/" element={<Home />}/>
+                <Route path="/home" element={<Home />} />
+                <Route path="/create" element={<StrudelDemo />} />
+            </Routes>
+            
         </BrowserRouter>
    
   </React.StrictMode>
