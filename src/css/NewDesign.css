@@ -70,9 +70,7 @@ header .overlay {
     z-index: 1;
 }
 
-/* Media Query for devices withi coarse pointers and no hover functionality */
 
-/* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
 
 @media (pointer: coarse) and (hover: none) {
 header {
@@ -110,5 +108,71 @@ header {
     transition: all 0.4s ease;
     transform: translateY(-8px) scale(1.05);
 }
+.card {
+    background: rgba(255,255,255,0.1) !important;
+    color: aliceblue !important;
+    
+}
+.cardCustom {
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    transition: transform 0.1s, box-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5) ;
+}
+.cardCustom:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+}
+body {
+    background: linear-gradient( 160deg, 
+    #000000 0%, 
+    #000000 40%,
+    #1C2173 60%,
+    #151A52 70%,
+    #5F0B9C 80%, 
+    #1C2173 90%, 
+    #510296 100% 
+    );
+    color: white;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #4DEFF7, #B6F8FA, #FAB6F4, #4DEFF7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.cardDescription {
+    background: linear-gradient(90deg, #FCEBF9, #FA82C1, #F7BAE9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.gradient-btn {
+    background: linear-gradient(90deg, #ff6ec4, #7873f5, #4ade80);
+    background-size: 300% 300%;
+    color: white;
+    border-radius: 50px;
+    transition: all 0.5s linear;
+    animation: gradientMove 1s linear infinite;
+}
+
+    .gradient-btn:hover {
+        box-shadow: 0 0 20px gold, 0 0 20px orange, 0 0 20px yellow;
+        transition: all 0.9s ease;
+        transform: translateY(-8px) scale(1.05);
+    }
 
 
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

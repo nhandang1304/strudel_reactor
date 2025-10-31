@@ -65,7 +65,7 @@ export default function StrudelDemo() {
             });
            
             document.getElementById('proc').value = stranger_tune
-            SetupB  uttons(globalEditor, SetPaused, pauseAudio)
+            SetupButtons(globalEditor, SetPaused, pauseAudio)
             Proc(globalEditor)
            
         }

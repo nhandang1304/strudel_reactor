@@ -8,6 +8,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from "./Home";
 import StrudelDemo from "./StrudelDemo";
+import FavouriteSong from "./FavouriteSong";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
                 <Route path="/" element={<Home />}/>
                 <Route path="/home" element={<Home />} />
                 <Route path="/create" element={<StrudelDemo />} />
+                <Route path="/Fabourite" element={<FavouriteSong/>}/>
             </Routes>
             
         </BrowserRouter>
