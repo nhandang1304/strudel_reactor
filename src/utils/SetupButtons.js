@@ -1,6 +1,7 @@
 import { Proc } from "./ProcAudioLogic";
 import pauseAudio from "../utils/PauseAndResumeLogic";
 import { getAudioContext } from '@strudel/webaudio';
+import Export from "../utils/ExportLogic";
 function SetupButtons(globalEditor, setPause) {
     
     async function checkContextStatus() {
@@ -33,8 +34,13 @@ function SetupButtons(globalEditor, setPause) {
             globalEditor.evaluate()
         }
     }
-
+    
     )
-
+    document.getElementById('export').addEventListener('click', async () => {
+        if (globalEditor != null) {
+            Export(globalEditor)
+        }
+    }
+    )
 }
 export default SetupButtons;

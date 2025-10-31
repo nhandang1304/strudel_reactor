@@ -18,8 +18,7 @@ import PauseAndResumeButton from "./components/PauseAndResumeButtons";
 import { Proc } from "../src/utils/ProcAudioLogic";
 import SetupButtons from "../src/utils/SetupButtons";
 import pauseAudio from "../src/utils/PauseAndResumeLogic";
-
-
+import ExportButton from "./components/ExportButton";
 let globalEditor = null;
 
 const handleD3Data = (event) => {
@@ -66,8 +65,9 @@ export default function StrudelDemo() {
             });
            
             document.getElementById('proc').value = stranger_tune
-            SetupButtons(globalEditor, SetPaused, pauseAudio)
+            SetupB  uttons(globalEditor, SetPaused, pauseAudio)
             Proc(globalEditor)
+           
         }
 
     }, []);
@@ -82,6 +82,7 @@ export default function StrudelDemo() {
                     <div className="row">
                         <div className="col-md-8" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
                             <PreprocessTextarea />
+                            <ExportButton/>
                         </div>
                         <div className="col-md-4">
 

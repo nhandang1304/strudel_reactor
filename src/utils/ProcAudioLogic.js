@@ -13,4 +13,5 @@ export function Proc( globalEditor ) {
     let proc_text_replaced = proc_text.replaceAll('<p1_Radio>', ProcessText);
     ProcessText(proc_text);
     globalEditor.setCode(proc_text_replaced)
+    return proc_text_replaced;
 }

@@ -10,28 +10,41 @@ function Home() {
         }
     }, []);
     return (
-        <header>            
-            <div className="overlay"></div>
-            <video ref={videoRef} className="video-background" playsInline autoPlay muted loop>
-                <source src="/videoHeader.mp4" type="video/mp4" />
-            </video>       
-            <div className="container h-100">
-                <div className="d-flex h-100 text-center align-items-center">
-                    <div className="w-100 text-white">
-                        <h1 className="display-3 fw-bold">Live Music Coding</h1>
-                        <p className="lead mb-0">React-powered live music coding platform integrating Strudel.cc REPL. Features interactive controls, real-time preprocessing, JSON handling, and D3 visualizations.</p>
-                        <div className="text-center mt-5">
-                            <NavLink id="createButton" to="/create" className="fw-bold btn btn-warning btn-rounded display-2, fs-4" data-mdb-ripple-init>
-                                Create your own song
-                            </NavLink>
-                            
-                        </div>
-                    </div>
-                    
-                </div>
+        <>
+            <header>
+                <div className="overlay"></div>
+                <video ref={videoRef} className="video-background" playsInline autoPlay muted loop>
+                    <source src="/videoHeader.mp4" type="video/mp4" />
+                </video>
+                <div className="container h-100">
+                    <div className="d-flex h-100 text-center align-items-center">
+                        <div className="w-100 text-white">
+                            <h1 className="display-3 fw-bold">Live Music Coding</h1>
+                            <p className="lead mb-0">React-powered live music coding platform integrating Strudel.cc REPL. Features interactive controls, real-time preprocessing, JSON handling, and D3 visualizations.</p>
+                            <div className="text-center mt-5">
+                                <NavLink id="createButton" to="/create" className="fw-bold btn btn-warning btn-rounded display-2, fs-4" data-mdb-ripple-init>
+                                    Create your own song
+                                </NavLink>
 
-            </div>
-        </header>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </header>
+            <body>
+                <div className="card" style={{ width 18rem; }} >
+                    <img src="..." class="card-img-top" alt="..."/>
+                        <div className="card-body">
+                            <h5 className="card-title">Card title</h5>
+                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                            <NavLink to="/"
+                        </div>
+                </div>
+            </body>
+        </>
+        
     );
 }
 
