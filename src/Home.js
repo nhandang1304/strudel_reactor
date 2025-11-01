@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom"
 import { GiMusicalScore } from "react-icons/gi";
 import { MdFavorite } from "react-icons/md";
 import { GrCloudUpload } from "react-icons/gr";
+import Footer from "./HomeComponents/footer";
 function Home() {
     const videoRef = useRef(null);
     useEffect(() => {
@@ -66,6 +67,7 @@ function Home() {
                     
                 </div>
             </body>
+            <Footer />
         </>
         
     );

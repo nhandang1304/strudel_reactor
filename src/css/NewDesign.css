@@ -127,9 +127,9 @@ header {
 body {
     background: linear-gradient(to bottom, 
   #000000 0%, 
-  #000000 60%, 
-  #1C2173 80%, 
-  #3b2a8d 90%, 
+  #000000 40%, 
+  #1C2173 50%, 
+  #3b2a8d 60%, 
   #5F0B9C 95%, 
   #7a2ecb 100%
 );
