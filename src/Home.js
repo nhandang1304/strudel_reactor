@@ -1,9 +1,10 @@
 import { useRef, useEffect } from "react";
 import "../src/css/NewDesign.css";
-import { GrCloudUpload } from "react-icons/gr";
-import { NavLink} from "react-router-dom";
+import CardNav from "./HomeComponents/cardNav"
+import { NavLink } from "react-router-dom"
 import { GiMusicalScore } from "react-icons/gi";
 import { MdFavorite } from "react-icons/md";
+import { GrCloudUpload } from "react-icons/gr";
 function Home() {
     const videoRef = useRef(null);
     useEffect(() => {
@@ -22,7 +23,7 @@ function Home() {
                     <div className="d-flex h-100 text-center align-items-center">
                         <div className="w-100 text-white">
                             <h1 className="display-3 fw-bold gradient-text">Live Music Coding</h1>
-                            <p className="lead fw-bold gradient-text ">React-powered live music coding platform integrating Strudel.cc REPL. Features interactive controls, real-time preprocessing, JSON handling, and D3 visualizations.</p>
+                            <p className="lead fw-bold gradient-text ">Who needs a guitar when your code can jam? Turn your keyboard into a DJ deck.</p>
                             <div className="text-center mt-5">
                                 <NavLink id="createButton" to="/create" className="fw-bold btn btn-warning btn-rounded display-2 fs-4" data-mdb-ripple-init>
                                     Create your own song
@@ -36,53 +37,33 @@ function Home() {
                 </div>
             </header>
             <body>
-               
+                <h1 className="text-center mt-5 mb-3 gradient-text">What is your next move?</h1>
+
+                <p className="text-center mb-5 gradient-text fw-bold custom-text">You can jam out to your all-time favorite song,
+                    or you can upload your own masterpiece and see if it hits as hard as you think it does.</p>
+
                 <div className="row justify-content-center">
+
+                    <CardNav
+                        titleCard="Your favorite song"
+                        desCard="Explore your personal collection, replay the tracks you love."
+                        buttonCard="Your Favourite Song"
+                        icons={[
+                            <GiMusicalScore color="#4DEFF7" size="130" />,
+                            <MdFavorite color="#f268a9" size="30" />
+                        ]}
+                    />
+
+
+                    <CardNav
+                        titleCard="Upload your song"
+                        desCard="Got a beat? Drop your song here and make the world vibe to your tune!"
+                        buttonCard="Import your song here"
+                        icons={[
+                            <GrCloudUpload color="#4DEFF7" size="120" />
+                        ]}
+                    />
                     
-                    <h1 className="text-center mt-5 mb-5 gradient-text">What is your next move?</h1>
-                    
-                    <div className="col-5">
-                        <div className="card cardCustom" style={{ width: "35rem" }} >
-
-                            <div className="card-body ">
-
-                                <div className="d-flex">
-                                    <GiMusicalScore color="#4DEFF7" size="130" />
-                                    <MdFavorite color="#4DEFF7" size="30"/>
-                                    <div className="col-7 ms-5">
-                                        <div className="card" >
-                                            <h2 className="card-title gradient-text text-center">Your favorite song</h2>
-                                        </div>
-                                        <h5 className="text-center cardDescription mt-3">Explore your personal collection, replay the tracks you love</h5>
-
-                                        <NavLink to="/Favourite"className="fw-bold btn btn-warning btn-rounded display-2 fs-4 gradient-btn">Your Favourite Song</NavLink>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div className="col-5">
-                        <div className="card cardCustom" style={{ width: "35rem" }} >
-                            
-                            <div className="card-body ">
-                                
-                                <div className="d-flex">
-                                    <GrCloudUpload color="#4DEFF7" size="120" />
-                                    <div className="col-7 ms-5">
-                                        <div className="card" >
-                                        <h2 className="card-title gradient-text text-center">Upload your song</h2>
-                                        </div>
-                                        <h5 className="text-center cardDescription mt-3 mb-3">Got a beat? Drop your song here and make the world vibe to your tune!</h5>
-                                        
-                                        <NavLink to="/Favourite" className="fw-bold btn btn-warning btn-rounded display-2 fs-4 gradient-btn">Import your song here</NavLink>
-                                    </div>
-                                   
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </body>
         </>

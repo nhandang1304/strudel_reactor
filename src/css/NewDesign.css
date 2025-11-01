@@ -125,15 +125,15 @@ header {
     box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
 }
 body {
-    background: linear-gradient( 160deg, 
-    #000000 0%, 
-    #000000 40%,
-    #1C2173 60%,
-    #151A52 70%,
-    #5F0B9C 80%, 
-    #1C2173 90%, 
-    #510296 100% 
-    );
+    background: linear-gradient(to bottom, 
+  #000000 0%, 
+  #000000 60%, 
+  #1C2173 80%, 
+  #3b2a8d 90%, 
+  #5F0B9C 95%, 
+  #7a2ecb 100%
+);
+
     color: white;
 }
 
@@ -158,7 +158,7 @@ body {
 
     .gradient-btn:hover {
         box-shadow: 0 0 20px gold, 0 0 20px orange, 0 0 20px yellow;
-        transition: all 0.9s ease;
+        transition: all 0.3s ease;
         transform: translateY(-8px) scale(1.05);
     }
 
@@ -176,3 +176,10 @@ body {
         background-position: 0% 50%;
     }
 }
+.custom-text {
+    max-width: 550px !important; 
+    margin: 0 auto;
+    line-height: 1.6; 
+    text-align: center; 
+}
+
