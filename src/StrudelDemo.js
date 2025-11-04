@@ -32,7 +32,7 @@ export default function StrudelDemo() {
 
     const hasRun = useRef(false);
     const [Paused, SetPaused] = useState(false);
-    
+    const [showCanva, SetOpenCanvas]= useState(false)
     
     useEffect(() => {
 
@@ -86,28 +86,38 @@ export default function StrudelDemo() {
                     <div className="row">
                         <div className="col-md-6" style={{ maxHeight: '50vh', /*overflowY: 'auto' */}}>
                             <PreprocessTextarea />
+
                             <div className="d-flex justify-content-between align-items-center mb-5 mt-3">
                                 <h5>Process the text: </h5>
                                 <ProcButtons globalEditor={globalEditor} />
                             </div>
-                            <div className="d-flex justify-content-between align-items-center mb-5 mt-3">
-                                <h5>Managing the melody:</h5>
-                                <div className="btn-group">
-                                    <PlayButtons globalEditor={globalEditor} setPause={SetPaused} />
-                                    <PauseAndResumeButton pause={Paused} setPause={SetPaused} pauseAudio={pauseAudio} />
-                                </div>
-                            </div>
-                            <div className="d-flex justify-content-between align-items-center mb-5 mt-3">
-                                <h5>Change volume:</h5>
-                                <VolumeRange />
+                            <div className="card-group">
+                                <ExpandedBar text="Managing the melody"
+                                    object={<div className="btn-group">
+                                        <PlayButtons globalEditor={globalEditor} setPause={SetPaused} />
+                                        <PauseAndResumeButton pause={Paused} setPause={SetPaused} pauseAudio={pauseAudio} />
+                                    </div>} />
+                                <ExpandedBar text="Change volume"
+                                    object={<VolumeRange />} />
 
+
+                            </div>
+                           
+                            
+                          
+                            <div className="d-flex justify-content-between align-items-center mb-5 mt-3">
+                                <h5>Canvas:</h5>
+                                <button className="btn btn-outline-warning" onClick={() => (
+                                    SetOpenCanvas(!showCanva))}>
+                                    {showCanva ? "Hide canvas" : "Show canvas"}
+                                </button>
                             </div>
                             <div className="d-flex justify-content-between align-items-center mb-2 mt-3">
                                 <CardMangingFiles text="File Managing" image="https://i.pinimg.com/1200x/6a/88/f6/6a88f6269a89d6185efd1be85e10e668.jpg" objects={< ExportButton />} />
                                 <CardMangingFiles text="Favourite" image="https://i.pinimg.com/1200x/fe/70/c9/fe70c9ee677092178e4de3d93dde4c79.jpg" objects={< FavouriteSong />} />
 
                             </div>
-                           
+                          
                         </div>
                         
                         
@@ -123,12 +133,17 @@ export default function StrudelDemo() {
                     </div>
 
                    
-                    <div className="mt-4 d-flex justify-content-end">
-                    
+                    <div className="mt-4 d-flex justify-content-end align-items-center">
+                        
+                            
+                        
+                        
                         <canvas
                             id="roll"
-                            className="canvasDes preprocess-textarea"
+                            className={`canvasDes preprocess-textarea ms-3 ${showCanva ? "show" : "hide"}`}
                         ></canvas>
+                         
+                        
                     </div>
                 </div>
                     

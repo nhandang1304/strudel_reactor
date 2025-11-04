@@ -198,3 +198,13 @@ header {
     background-color: black;
 }
 
+    .canvasDes.hide {
+        opacity: 0;
+        transform: translateX(50px);
+        pointer-events: none;
+    }
+
+    .canvasDes.show {
+        opacity: 1;
+        transform: translateX(0);
+    }

@@ -44,12 +44,14 @@ function VolumeRange() {
                         size={24}
                         style={{ cursor: "pointer" }}
                         onClick={toggleMute}
+                        color="black"
                     />
                 ) : (
                     <FaVolumeUp
                         size={24}
                         style={{ cursor: "pointer" }}
-                        onClick={toggleMute}
+                            onClick={toggleMute}
+                            color="black"
                     />
                 )}
             </div>
