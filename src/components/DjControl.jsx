@@ -1,16 +1,30 @@
+
 function DjControl() {
     return (
         <>
-            <div className="form-check">
-                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"  defaultChecked />
-                <label className="form-check-label" htmlFor="flexRadioDefault1">
-                    p1: ON
+            
+            <div className="form-check form-switch">
+                <input className="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault1"  defaultChecked />
+                <label className="fw-bold text-light" htmlFor="flexRadioDefault1">
+                    
+                    Drum  
+                    
+                </label> 
+            </div>
+            <div className="form-check form-switch">
+                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  />
+                <label className="fw-bold text-light" htmlFor="flexRadioDefault2">
+                    
+                    Guitar  
+                    
                 </label>
             </div>
-            <div className="form-check">
-                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  />
-                <label className="form-check-label" htmlFor="flexRadioDefault2">
-                    p1: HUSH
+            <div className="form-check form-switch">
+                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                <label className="fw-bold text-light" htmlFor="flexRadioDefault2">
+                   
+                    Piano  
+                    
                 </label>
             </div>
         </>

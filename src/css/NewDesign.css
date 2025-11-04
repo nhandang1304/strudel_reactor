@@ -161,6 +161,14 @@ header {
         transition: all 0.3s ease;
         transform: translateY(-8px) scale(1.05);
     }
+.gradientTitleStrud {
+    background: linear-gradient(90deg, #b4ebfa, #f4affa, #6678fa,#f59ffc, #f59ffc );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+   
+}
 
 
 @keyframes gradientMove {
@@ -183,18 +191,25 @@ header {
     text-align: center; 
 }
 
-.preprocess-textarea {
-    border-radius: 30px;
-    border: 15px solid violet; 
+
+.preprocess {
+    border-radius: 10px;
+    border: 8px solid black;
     color: indigo;
-    padding: 5px;
+    padding: 2px;
     width: 100%;
     font-size: 1rem;
-   
+}
+.borderCode {
+    border-radius: 10px;
+    border: 2px solid white;
+    padding: 2px;
+    width: 100%;
+    font-size: 1rem;
 }
 .canvasDes {
     width: 50%;        
-   height: 350px;
+   height: 600px;
     background-color: black;
 }
 
@@ -208,3 +223,25 @@ header {
         opacity: 1;
         transform: translateX(0);
     }
+.modifyBar {
+    border-radius: 10px;
+    border: 2px solid black;
+    background-color: #e8f1ff;
+    padding: 5px;
+    width: 100%;
+    font-size: 1rem;
+}
+.bodyStrud {
+    background: linear-gradient(123deg, #0a0712 0%, #140254 60%, #3c258f 70%, #4ca1af 100%);
+}
+
+.borderFeatures {
+    border: 3px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); 
+    border-radius: 15px;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+ 

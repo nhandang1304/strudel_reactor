@@ -7,10 +7,10 @@ function ProcButtons({ globalEditor }) {
     return (
         <>
           
-            <div className="btn-group" role="group" ara-label="Basic mixed styles example!">
+            <div className="d-flex gap-2" role="group" ara-label="Basic mixed styles example!">
                 <Tooltips title="Save your current code" >
 
-                    <button id="process" onClick={() => Proc(globalEditor)} className="btn btn-outline-dark" data-bs-toggle="tooltip" data-bs-placement="bottom" >
+                    <button id="process" onClick={() => Proc(globalEditor)} className="btn btn-outline-light" data-bs-toggle="tooltip" data-bs-placement="bottom" >
                         <VscServerProcess size={20}/>
                         <br />
                         <b>Preprocess</b>
@@ -19,7 +19,7 @@ function ProcButtons({ globalEditor }) {
                 </Tooltips>
                 <Tooltips title="Save your current code and Play Audio" >
 
-                    <button id="process_play" onClick={() => ProcAndPlay(globalEditor)} className="btn btn-outline-dark" title="Save your current code and ">
+                    <button id="process_play" onClick={() => ProcAndPlay(globalEditor)} className="btn btn-outline-light" title="Save your current code and ">
                     <VscServerProcess size={20}/>
                     <TbAmpersand size={10}/>
                     <VscVmRunning size={20}/>

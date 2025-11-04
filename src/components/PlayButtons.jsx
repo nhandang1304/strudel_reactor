@@ -16,13 +16,12 @@ function PlayButtons({ globalEditor, setPause }) {
     return (
        
         <>
-            
-            
+
                 <Tooltips title="Restart Audio">
-                    <button onClick={()=>play } id="play" className="btn btn-outline-dark"><MdOutlineRestartAlt size={35} /></button>
+                <button onClick={() => play} id="play" className="btn btn-dark"><MdOutlineRestartAlt size={25} /></button>
                 </Tooltips>
                 <Tooltips title="Stop playing Audio">
-                    <button id="stop" onClick={() => stop } className="btn btn-outline-dark"><FaCircleStop size={35} /></button>
+                    <button id="stop" onClick={() => stop } className="btn btn-dark"><FaCircleStop size={25} /></button>
                 </Tooltips>
                 
             

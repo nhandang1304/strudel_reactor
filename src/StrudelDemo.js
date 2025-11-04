@@ -21,7 +21,10 @@ import pauseAudio from "../src/utils/PauseAndResumeLogic";
 import FavouriteSong from "../src/FavouriteSong";
 import ExportButton from "./components/ExportButton"
 import "./css/NewDesign.css"
-import ExpandedBar from "./components/ExpandedBar"
+import CardFeatures from "./components/CardFeatures"
+import SpeedAudio from "./components/SpeedAudio"
+import { FaChalkboard } from "react-icons/fa";
+import Tooltips from "./components/TooltipDes";
 let globalEditor = null;
 
 const handleD3Data = (event) => {
@@ -77,72 +80,90 @@ export default function StrudelDemo() {
     }, []);
 
     return (
-        <div>
-            <h1 className="fw-bold gradient-text">Strudel Demo</h1>
+        <div className="bodyStrud">
+            
 
             <main>
 
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-md-6" style={{ maxHeight: '50vh', /*overflowY: 'auto' */}}>
-                            <PreprocessTextarea />
-
-                            <div className="d-flex justify-content-between align-items-center mb-5 mt-3">
-                                <h5>Process the text: </h5>
-                                <ProcButtons globalEditor={globalEditor} />
-                            </div>
-                            <div className="card-group">
-                                <ExpandedBar text="Managing the melody"
-                                    object={<div className="btn-group">
-                                        <PlayButtons globalEditor={globalEditor} setPause={SetPaused} />
-                                        <PauseAndResumeButton pause={Paused} setPause={SetPaused} pauseAudio={pauseAudio} />
-                                    </div>} />
-                                <ExpandedBar text="Change volume"
-                                    object={<VolumeRange />} />
-
-
-                            </div>
+                        <h1 className="display-3 fw-bold gradientTitleStrud">Strudel Demo</h1>
+                        <div className="d-flex justify-content-end  align-items-center mb-5 gap-3">
                            
+                            <div className="btn-group ">
+                                <div className="modifyBar gap-2 d-flex ">
+                                    <PlayButtons globalEditor={globalEditor} setPause={SetPaused} />
+                                    <PauseAndResumeButton pause={Paused} setPause={SetPaused} pauseAudio={pauseAudio} />
+                                </div>
+                               
+                            </div>
+                            <div className=" modifyBar col-1" style={{backgroundColor: "black"} }>
+                                <VolumeRange />
+                            </div>
+                            <div className="modifyBar col-3">
+                                <SpeedAudio />
+                            </div>
+                            
+                        </div>
+                        <div className="col-md-6" style={{ maxHeight: '50vh', /*overflowY: 'auto' */}}>
+                            <div className="borderFeatures">
+                                <h5 className="gradientTitleStrud">Enter your melody or pattern below:</h5>
+                                <PreprocessTextarea />
+                            
+                                <div className="d-flex justify-content-between align-items-center mt-2 mb-2 gap-1">
+                                   
+                                     < FavouriteSong/>
+                                    <ProcButtons globalEditor={globalEditor} />
+                                </div>
+                            </div>
+                            <div className="row ">
+                                <div className="borderFeatures col-4 mt-5 d-flex flex-column">
+                                    <h3 className="gradientTitleStrud text-center" >Canvas</h3>
+                                    <Tooltips title="Show the canva" >
+                                        <button className="btn btn-outline-light fw-bold mt-2 " onClick={() => (
+                                        SetOpenCanvas(!showCanva))}>
+                                        <FaChalkboard />
+                                        <br />
+                                        {showCanva ? "Hide canvas" : "Show canvas"}
+                                        </button>
+                                    </Tooltips>
+                                </div>
+
+                                <div className="borderFeatures mx-5 col-6 mt-5 d-flex flex-column align-items-center">
+                                    <h3 className="gradientTitleStrud text-center" >DJ Control</h3>
+                                    <div className="mt-2">
+                                        <DjControl />
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            <CardFeatures text1="Your favorite List" text2="File Handling" obj1={< FavouriteSong />} obj2={< ExportButton />}/>
+                            
                             
                           
-                            <div className="d-flex justify-content-between align-items-center mb-5 mt-3">
-                                <h5>Canvas:</h5>
-                                <button className="btn btn-outline-warning" onClick={() => (
-                                    SetOpenCanvas(!showCanva))}>
-                                    {showCanva ? "Hide canvas" : "Show canvas"}
-                                </button>
-                            </div>
-                            <div className="d-flex justify-content-between align-items-center mb-2 mt-3">
-                                <CardMangingFiles text="File Managing" image="https://i.pinimg.com/1200x/6a/88/f6/6a88f6269a89d6185efd1be85e10e668.jpg" objects={< ExportButton />} />
-                                <CardMangingFiles text="Favourite" image="https://i.pinimg.com/1200x/fe/70/c9/fe70c9ee677092178e4de3d93dde4c79.jpg" objects={< FavouriteSong />} />
+                        </div>
+                        
+                        
+                        <div className="col-md-6 " style={{ maxHeight: '70vh', overflowY: 'auto' }}>
 
+                            <div className="borderCode">
+                                <div id="editor" />
+                                <div id="output" />
                             </div>
-                          
+
+                            <DjControl/>
                         </div>
-                        
-                        
-                        <div className="col-md-6" style={{ maxHeight: '60vh', overflowY: 'auto' }}>
-                            <div  id="editor" />
-                            <div id="output" />
-                            <nav className="mt-3 mb-3">
-                                <div className="col-md-4">
-                                    <DjControl globalEditor={globalEditor} />
-                                </div>
-                            </nav>
-                        </div>
+                       
                     </div>
 
                    
                     <div className="mt-4 d-flex justify-content-end align-items-center">
                         
-                            
-                        
-                        
                         <canvas
                             id="roll"
-                            className={`canvasDes preprocess-textarea ms-3 ${showCanva ? "show" : "hide"}`}
+                            className={`canvasDes preprocess-textarea  borderCode ms-3 ${showCanva ? "show" : "hide"}`}
                         ></canvas>
-                         
+                       
                         
                     </div>
                 </div>
