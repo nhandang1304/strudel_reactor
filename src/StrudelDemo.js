@@ -15,10 +15,13 @@ import ProcButtons from "./components/ProcButtons";
 import PreprocessTextarea from "./components/PreprocessTextarea";
 import VolumeRange from "./components/VolumeRange";
 import PauseAndResumeButton from "./components/PauseAndResumeButtons";
-import { Proc } from "../src/utils/ProcAudioLogic";
-import SetupButtons from "../src/utils/SetupButtons";
+import CardMangingFiles from "./components/CardManagingFiles";
+import { Proc } from "./utils/ProcAudioLogic";
 import pauseAudio from "../src/utils/PauseAndResumeLogic";
-import ExportButton from "./components/ExportButton";
+import FavouriteSong from "../src/FavouriteSong";
+import ExportButton from "./components/ExportButton"
+import "./css/NewDesign.css"
+import ExpandedBar from "./components/ExpandedBar"
 let globalEditor = null;
 
 const handleD3Data = (event) => {
@@ -65,8 +68,9 @@ export default function StrudelDemo() {
             });
            
             document.getElementById('proc').value = stranger_tune
-            SetupButtons(globalEditor, SetPaused, pauseAudio)
-            Proc(globalEditor)
+            /*SetupButtons(globalEditor, SetPaused, pauseAudio)*/
+            
+           Proc(globalEditor)
            
         }
 
@@ -74,42 +78,64 @@ export default function StrudelDemo() {
 
     return (
         <div>
-            <h2>Strudel Demo</h2>
+            <h1 className="fw-bold gradient-text">Strudel Demo</h1>
 
             <main>
 
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-md-8" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
+                        <div className="col-md-6" style={{ maxHeight: '50vh', /*overflowY: 'auto' */}}>
                             <PreprocessTextarea />
-                            <ExportButton/>
+                            <div className="d-flex justify-content-between align-items-center mb-5 mt-3">
+                                <h5>Process the text: </h5>
+                                <ProcButtons globalEditor={globalEditor} />
+                            </div>
+                            <div className="d-flex justify-content-between align-items-center mb-5 mt-3">
+                                <h5>Managing the melody:</h5>
+                                <div className="btn-group">
+                                    <PlayButtons globalEditor={globalEditor} setPause={SetPaused} />
+                                    <PauseAndResumeButton pause={Paused} setPause={SetPaused} pauseAudio={pauseAudio} />
+                                </div>
+                            </div>
+                            <div className="d-flex justify-content-between align-items-center mb-5 mt-3">
+                                <h5>Change volume:</h5>
+                                <VolumeRange />
+
+                            </div>
+                            <div className="d-flex justify-content-between align-items-center mb-2 mt-3">
+                                <CardMangingFiles text="File Managing" image="https://i.pinimg.com/1200x/6a/88/f6/6a88f6269a89d6185efd1be85e10e668.jpg" objects={< ExportButton />} />
+                                <CardMangingFiles text="Favourite" image="https://i.pinimg.com/1200x/fe/70/c9/fe70c9ee677092178e4de3d93dde4c79.jpg" objects={< FavouriteSong />} />
+
+                            </div>
+                           
                         </div>
-                        <div className="col-md-4">
-
-                            <nav>
-
-                                <ProcButtons  />
-                                <br />
-                                <PlayButtons />
-                                <br />
-                                <PauseAndResumeButton pause={Paused} setPause={SetPaused} pauseAudio={pauseAudio} />
-                                <br />
-                                
-                                {<VolumeRange />}
+                        
+                        
+                        <div className="col-md-6" style={{ maxHeight: '60vh', overflowY: 'auto' }}>
+                            <div  id="editor" />
+                            <div id="output" />
+                            <nav className="mt-3 mb-3">
+                                <div className="col-md-4">
+                                    <DjControl globalEditor={globalEditor} />
+                                </div>
                             </nav>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-md-8" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
-                            <div id="editor" />
-                            <div id="output" />
-                        </div>
-                        <div className="col-md-4">
-                            <DjControl globalEditor={globalEditor} />
-                        </div>
+
+                   
+                    <div className="mt-4 d-flex justify-content-end">
+                    
+                        <canvas
+                            id="roll"
+                            className="canvasDes preprocess-textarea"
+                        ></canvas>
                     </div>
                 </div>
-                <canvas id="roll"></canvas>
+                    
+                   
+                    
+                        
+             
             </main >
 
         </div >

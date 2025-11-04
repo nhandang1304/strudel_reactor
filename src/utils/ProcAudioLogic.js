@@ -1,6 +1,6 @@
 import ProcessText from "./ProcessTextLogic";
 export function ProcAndPlay( globalEditor ) {
-    if (globalEditor != null && globalEditor.repl.state.started == true) {
+    if (globalEditor != null && globalEditor.repl.state.started === true) {
         console.log(globalEditor)
         Proc(globalEditor)
         globalEditor.evaluate();

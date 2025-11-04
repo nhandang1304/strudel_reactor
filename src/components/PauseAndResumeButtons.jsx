@@ -6,7 +6,7 @@ function PauseAndResumeButtons({pause, setPause, pauseAudio}) {
             <Tooltips title={pause ? "Resume Audio" : "Pause Radio"}>
                 <button onClick={() => pauseAudio(setPause)} className="btn btn-outline-dark">
                 
-                    {pause ? <FaPlayCircle size={40} /> : <FaPauseCircle size={40} />}
+                    {pause ? <FaPlayCircle size={35} /> : <FaPauseCircle size={35} />}
                                       
             </button>
             </Tooltips>  

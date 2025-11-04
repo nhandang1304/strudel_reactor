@@ -2,7 +2,7 @@ import { Proc } from "./ProcAudioLogic";
 import pauseAudio from "../utils/PauseAndResumeLogic";
 import { getAudioContext } from '@strudel/webaudio';
 import Export from "../utils/ExportLogic";
-function SetupButtons(globalEditor, setPause) {
+function SetupButtons(globalEditor, setPause, pauseAudio) {
     
     async function checkContextStatus() {
         const context = getAudioContext();

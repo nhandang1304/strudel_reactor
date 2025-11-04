@@ -37,7 +37,7 @@ function Home() {
 
                 </div>
             </header>
-            <body>
+            <body id="body">
                 <h1 className="text-center mt-5 mb-3 gradient-text">What is your next move?</h1>
 
                 <p className="text-center mb-5 gradient-text fw-bold custom-text">You can jam out to your all-time favorite song,

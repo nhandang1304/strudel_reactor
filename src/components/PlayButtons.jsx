@@ -1,19 +1,31 @@
 import { MdOutlineRestartAlt } from "react-icons/md";
 import { FaCircleStop } from "react-icons/fa6";
 import Tooltips from "../components/TooltipDes";
-function PlayButtons() {
+import checkContextStatus from "../utils/checkContextStatusjs";
+function PlayButtons({ globalEditor, setPause }) {
+    function play() {
+
+        globalEditor.stop();
+        checkContextStatus();
+        globalEditor.evaluate();
+        setPause(false);
+    }
+    function stop() {
+        globalEditor.stop();
+    }
     return (
+       
         <>
             
-            <div className="btn-group" role="group" ara-label="Basic mixed styles example!">
+            
                 <Tooltips title="Restart Audio">
-                    <button id="play" className="btn btn-outline-dark"><MdOutlineRestartAlt size={40} /></button>
+                    <button onClick={()=>play } id="play" className="btn btn-outline-dark"><MdOutlineRestartAlt size={35} /></button>
                 </Tooltips>
                 <Tooltips title="Stop playing Audio">
-                    <button id="stop" className="btn btn-outline-dark"><FaCircleStop size={40} /></button>
+                    <button id="stop" onClick={() => stop } className="btn btn-outline-dark"><FaCircleStop size={35} /></button>
                 </Tooltips>
                 
-            </div>
+            
             
         </>
     
