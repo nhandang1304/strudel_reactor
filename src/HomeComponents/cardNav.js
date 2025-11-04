@@ -2,7 +2,7 @@
 import { NavLink } from "react-router-dom";
 
 
-export default function CardNav({ titleCard, desCard = none, buttonCard = none, icons = [] }) {
+export default function CardNav({ titleCard, desCard, buttonCard, icons = [] }) {
     return (
         <div className="col-5 mb-5">
             <div className="card cardCustom" style={{ width: "35rem" }}>

@@ -11,7 +11,7 @@ function HandlingFilesCard({globalEditor }) {
                         <div className="row">
                             <div className="col-6">
                                 <Tooltips title="Export into json file" >
-                                    <button id="export" className="btn btn-dark" onClick={() => ExportLogic(globalEditor)}>
+                                    <button id="export" className="btn btn-outline-light" onClick={() => ExportLogic(globalEditor)}>
                                         <FaFileExport size={20} />
                                         <br />
                                         <b>Export </b>
@@ -20,7 +20,7 @@ function HandlingFilesCard({globalEditor }) {
                             </div>
                             <div className="col-6">
                                 <Tooltips title="Import your file to edit or play audio">
-                                    <button id="import" className="btn btn-dark">
+                                    <button id="import" className="btn btn-outline-light">
                                         <TfiImport size={20} />
                                         <br />
                                         <b>Import </b>

@@ -25,6 +25,8 @@ import CardFeatures from "./components/CardFeatures"
 import SpeedAudio from "./components/SpeedAudio"
 import { FaChalkboard } from "react-icons/fa";
 import Tooltips from "./components/TooltipDes";
+import { NavLink } from "react-router-dom"
+import { GiLoveSong } from "react-icons/gi";
 let globalEditor = null;
 
 const handleD3Data = (event) => {
@@ -91,16 +93,16 @@ export default function StrudelDemo() {
                         <div className="d-flex justify-content-end  align-items-center mb-5 gap-3">
                            
                             <div className="btn-group ">
-                                <div className="modifyBar gap-2 d-flex ">
+                                <div className="borderFeatures  gap-2 d-flex ">
                                     <PlayButtons globalEditor={globalEditor} setPause={SetPaused} />
                                     <PauseAndResumeButton pause={Paused} setPause={SetPaused} pauseAudio={pauseAudio} />
                                 </div>
                                
                             </div>
-                            <div className=" modifyBar col-1" style={{backgroundColor: "black"} }>
+                            <div className=" borderFeatures  col-2" style={{backgroundColor: "black"} }>
                                 <VolumeRange />
                             </div>
-                            <div className="modifyBar col-3">
+                            <div className="borderFeatures  col-3">
                                 <SpeedAudio />
                             </div>
                             
@@ -137,14 +139,22 @@ export default function StrudelDemo() {
                                    
                                 </div>
                             </div>
-                            <CardFeatures text1="Your favorite List" text2="File Handling" obj1={< FavouriteSong />} obj2={< ExportButton />}/>
-                            
-                            
-                          
+                            <CardFeatures text1="Your favorite List" text2="File Handling"
+                                obj1={
+                                    
+                                   
+                                    <NavLink to="/create" className="fw-bold btn btn-outline-light mt-2">
+                                    <GiLoveSong size="25" color="red"/>
+                                    <br/>
+                                    See your favorite song
+                                </NavLink> 
+                                            
+                                
+                            } obj2={< ExportButton />} />
                         </div>
                         
                         
-                        <div className="col-md-6 " style={{ maxHeight: '70vh', overflowY: 'auto' }}>
+                        <div className="col-md-6 " style={{ maxHeight: '78vh', overflowY: 'auto' }}>
 
                             <div className="borderCode">
                                 <div id="editor" />
@@ -161,7 +171,7 @@ export default function StrudelDemo() {
                         
                         <canvas
                             id="roll"
-                            className={`canvasDes preprocess-textarea  borderCode ms-3 ${showCanva ? "show" : "hide"}`}
+                            className={`canvasDes borderFeatures  borderCode ms-3 ${showCanva ? "show" : "hide"}`}
                         ></canvas>
                        
                         
