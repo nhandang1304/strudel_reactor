@@ -5,13 +5,13 @@ import checkContextStatus from "../utils/checkContextStatusjs";
 function PlayButtons({ globalEditor, setPause }) {
     function play() {
 
-        globalEditor.stop();
+        globalEditor.current.stop();
         checkContextStatus();
-        globalEditor.evaluate();
+        globalEditor.current.evaluate();
         setPause(false);
     }
     function stop() {
-        globalEditor.stop();
+        globalEditor.current.stop();
     }
     return (
        

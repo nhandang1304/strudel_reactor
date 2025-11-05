@@ -27,14 +27,14 @@ import { FaChalkboard } from "react-icons/fa";
 import Tooltips from "./components/TooltipDes";
 import { NavLink } from "react-router-dom"
 import { GiLoveSong } from "react-icons/gi";
-let globalEditor = null;
+/*let globalEditor = null;*/
 
 const handleD3Data = (event) => {
     console.log(event.detail);
 };
 
 export default function StrudelDemo() {
-
+    const globalEditor = useRef(null);
     const hasRun = useRef(false);
     const [Paused, SetPaused] = useState(false);
     const [showCanva, SetOpenCanvas]= useState(false)
@@ -52,7 +52,7 @@ export default function StrudelDemo() {
             canvas.height = canvas.height * 2;
             const drawContext = canvas.getContext('2d');
             const drawTime = [-2, 2]; // time window of drawn haps
-            globalEditor = new StrudelMirror({
+            globalEditor.current = new StrudelMirror({
                 defaultOutput: webaudioOutput,
                 getTime: () => getAudioContext().currentTime,
                 transpiler,
@@ -70,12 +70,12 @@ export default function StrudelDemo() {
                     );
                     await Promise.all([loadModules, registerSynthSounds(), registerSoundfonts()]);
                 },
-            });
-           
+            }, []);
+            hasRun.current = true;
             document.getElementById('proc').value = stranger_tune
             /*SetupButtons(globalEditor, SetPaused, pauseAudio)*/
             
-           Proc(globalEditor)
+          Proc(globalEditor.current)
            
         }
 
