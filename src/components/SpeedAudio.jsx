@@ -11,6 +11,9 @@ function SpeedAudio() {
                 <Tooltips title="x4.0 Speed Audio">
                     <button className="btn btn-light fw-bold">X4 <RiSpeedFill size="20" /></button>
                 </Tooltips>
+                <Tooltips title="Normal Speed Audio">
+                    <button className="btn btn-light fw-bold">Normal (X1) </button>
+                </Tooltips>
                 <Tooltips title="x0.5 Speed Audio">
                     <button className="btn btn-light fw-bold">X0.5 <MdSlowMotionVideo size="20" /></button>
                 </Tooltips>
