@@ -1,9 +1,19 @@
 import ProcessText from "./ProcessTextLogic";
-export function ProcAndPlay( globalEditor ) {
+import checkContextStatus from "../utils/checkContextStatusjs";
+
+export /*async*/ function ProcAndPlay( globalEditor, setPause, pause, context ) {
     if (globalEditor != null /*&& globalEditor.repl.state.started === true*/) {
-        console.log(globalEditor )
+        console.log(globalEditor)
+        /*await checkContextStatus(setPause)*/
+        context.resume();
+        setPause(false)
         Proc(globalEditor)
+            
         globalEditor.evaluate();
+        
+            
+
+       
     }
 }
 

@@ -1,10 +1,10 @@
 import { FaPauseCircle, FaPlayCircle } from "react-icons/fa";
 import Tooltips from "./TooltipDes";
-function PauseAndResumeButtons({pause, setPause, pauseAudio}) {
+function PauseAndResumeButtons({context, pause, setPause, pauseAudio}) {
     return (
         <>
             <Tooltips title={pause ? "Resume Audio" : "Pause Radio"}>
-                <button onClick={() => pauseAudio(setPause)} className="btn btn-light">
+                <button onClick={() => pauseAudio(context, setPause)} className="btn btn-light">
                 
                     {pause ? <FaPlayCircle size={25} /> : <FaPauseCircle size={25} />}
                                       

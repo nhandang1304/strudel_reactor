@@ -1,14 +1,16 @@
 import { getAudioContext } from '@strudel/webaudio';
 
-async function pauseAudio(SetPaused ) {
+async function pauseAudio(context, setPause ) {
 
-    const context = getAudioContext();
+    /*const context = getAudioContext();*/
     if (context.state === "running") {
         await context.suspend(); 
-        SetPaused(true);
+        console.log(context.state)
+        setPause(true);
     } else if (context.state === "suspended") {
         await context.resume(); 
-        SetPaused(false);
+        console.log(context.state)
+        setPause(false);
     }
 }
 export default pauseAudio;

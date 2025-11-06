@@ -2,7 +2,7 @@ import { VscServerProcess, VscVmRunning } from "react-icons/vsc";
 import { TbAmpersand } from "react-icons/tb";
 import Tooltips from "./TooltipDes";
 import { Proc, ProcAndPlay } from "../utils/ProcAudioLogic";
-function ProcButtons({ globalEditor }) {
+function ProcButtons({ globalEditor, setPause, pause, context }) {
     
     return (
         <>
@@ -19,7 +19,7 @@ function ProcButtons({ globalEditor }) {
                 </Tooltips>
                 <Tooltips title="Save your current code and Play Audio" >
 
-                    <button id="process_play" onClick={() => ProcAndPlay(globalEditor.current)} className="btn btn-outline-light" title="Save your current code and ">
+                    <button id="process_play" onClick={async () => await ProcAndPlay(globalEditor.current, setPause, pause, context)} className="btn btn-outline-light" title="Save your current code and ">
                     <VscServerProcess size={20}/>
                     <TbAmpersand size={10}/>
                     <VscVmRunning size={20}/>

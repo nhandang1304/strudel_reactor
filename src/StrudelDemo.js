@@ -36,9 +36,9 @@ const handleD3Data = (event) => {
 export default function StrudelDemo() {
     const globalEditor = useRef(null);
     const hasRun = useRef(false);
-    const [Paused, SetPaused] = useState(false);
+    const [Paused, setPause] = useState(false);
     const [showCanva, SetOpenCanvas]= useState(false)
-    
+    const context = getAudioContext();
     useEffect(() => {
 
         if (!hasRun.current) {
@@ -94,8 +94,8 @@ export default function StrudelDemo() {
                            
                             <div className="btn-group ">
                                 <div className="borderFeatures  gap-2 d-flex ">
-                                    <PlayButtons globalEditor={globalEditor} setPause={SetPaused} />
-                                    <PauseAndResumeButton pause={Paused} setPause={SetPaused} pauseAudio={pauseAudio} />
+                                    <PlayButtons globalEditor={globalEditor} setPause={setPause} context={context } />
+                                    <PauseAndResumeButton pause={Paused} setPause={setPause} pauseAudio={pauseAudio} context={context} />
                                 </div>
                                
                             </div>
@@ -114,8 +114,8 @@ export default function StrudelDemo() {
                             
                                 <div className="d-flex justify-content-between align-items-center mt-2 mb-2 gap-1">
                                    
-                                     < FavouriteSong/>
-                                    <ProcButtons globalEditor={globalEditor} />
+                                    < FavouriteSong />
+                                    <ProcButtons globalEditor={globalEditor} setPause={setPause} pause={Paused} context={context} />
                                 </div>
                             </div>
                             <div className="row ">
