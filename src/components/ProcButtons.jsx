@@ -10,7 +10,7 @@ function ProcButtons({ globalEditor, setPause, pause, context }) {
             <div className="d-flex gap-2" role="group" ara-label="Basic mixed styles example!">
                 <Tooltips title="Save your current code" >
 
-                    <button id="process" onClick={() => Proc(globalEditor.current)} className="btn btn-outline-light" data-bs-toggle="tooltip" data-bs-placement="bottom" >
+                    <button id="process" onClick={() => Proc(globalEditor.current, setPause, context)} className="btn btn-outline-light" data-bs-toggle="tooltip" data-bs-placement="bottom" >
                         <VscServerProcess size={20}/>
                         <br />
                         <b>Preprocess</b>
