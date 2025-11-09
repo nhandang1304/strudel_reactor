@@ -1,15 +1,31 @@
-function SpeedLogic(globalEditor, speed) {
-    let proc_text = document.getElementById('proc').value;
-    let newCode;
-    if (proc_text.trim().startsWith("fast(")) {
-        
-        newCode = proc_text.replace(/^fast\(\d+,?/, '').slice(0, -1); 
-        newCode = `fast(${speed}, ${newCode})`;
-    } else {
-        newCode = `fast(${speed}, ${proc_text})`;
+﻿export default function SpeedLogic(speed, globalEditor, proc_text) {
+    if (!proc_text) return "";
+
+    let lines = proc_text.split('\n');
+
+    let hasSetcps = false;
+    for (let i = 0; i < lines.length; i++) {
+        if (lines[i].trim().startsWith('setcps(')) {
+            
+          lines[i] = `setcps(${speed === 1 ? '140/60/4' : `(140/60/4)*${speed}`})`;
+            hasSetcps = true;
+            break;
+        }
     }
 
-    globalEditor.setValue(newCode);
-};
+    if (!hasSetcps) {
+        lines.unshift('setcps((120/60/4))');
+    }
 
-export default SpeedLogic
+    const newCode = lines.join('\n');
+
+    const procEl = document.getElementById("proc");
+    if (procEl) procEl.value = newCode;
+
+    // Cập nhật Strudel editor
+    if (globalEditor && typeof globalEditor.setCode === "function") {
+        globalEditor.setCode(newCode);
+    }
+
+    return newCode;
+}

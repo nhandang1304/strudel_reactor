@@ -15,11 +15,11 @@ import ProcButtons from "./components/ProcButtons";
 import PreprocessTextarea from "./components/PreprocessTextarea";
 import VolumeRange from "./components/VolumeRange";
 import PauseAndResumeButton from "./components/PauseAndResumeButtons";
-import CardMangingFiles from "./components/CardManagingFiles";
+
 import { Proc } from "./utils/ProcAudioLogic";
 import pauseAudio from "../src/utils/PauseAndResumeLogic";
 import FavouriteSong from "../src/FavouriteSong";
-import ExportButton from "./components/ExportButton"
+import HandlingFilesCard from "./components/ExportButton"
 import "./css/NewDesign.css"
 import CardFeatures from "./components/CardFeatures"
 import SpeedAudio from "./components/SpeedAudio"
@@ -103,7 +103,7 @@ export default function StrudelDemo() {
                                 <VolumeRange />
                             </div>
                             <div className="borderFeatures  col-3">
-                                <SpeedAudio />
+                                <SpeedAudio globalEditor={globalEditor} setPause={setPause} context={context} />
                             </div>
                             
                         </div>
@@ -150,7 +150,7 @@ export default function StrudelDemo() {
                                 </NavLink> 
                                             
                                 
-                            } obj2={< ExportButton />} />
+                                } obj2={< HandlingFilesCard globalEditor={globalEditor} setPause={setPause} context={context} />} />
                         </div>
                         
                         
@@ -161,7 +161,7 @@ export default function StrudelDemo() {
                                 <div id="output" />
                             </div>
 
-                            <DjControl/>
+                           
                         </div>
                        
                     </div>

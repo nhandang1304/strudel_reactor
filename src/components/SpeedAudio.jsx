@@ -2,24 +2,35 @@ import { RiSpeedFill } from "react-icons/ri";
 import { MdSlowMotionVideo } from "react-icons/md";
 import Tooltips from "./TooltipDes"
 import SpeedLogic from "../utils/SpeedLogic"
-function SpeedAudio({globalEditor }) {
+import { Proc, ProcAndPlay } from "../utils/ProcAudioLogic"
+import { useState } from "react"
+import "../css/NewDesign.css"
+function SpeedAudio({ globalEditor, setPause, context }) {
+    const [activeSpeed, setActiveSpeed] = useState(1);
+    
+    function handleSpeedChange(speed) {
+        
+
+        setActiveSpeed(speed);
+        ProcAndPlay(globalEditor.current, setPause, context, speed);
+    };
     return (
         <>
             <div className="d-flex gap-2">
-                <Tooltips title="x2.0 Speed Audio">
-                    <button onClick={()=> SpeedLogic(2, globalEditor.current) } className="btn btn-light fw-bold">X2 <RiSpeedFill size="20"/> </button>
+                <Tooltips title="x1.5 Speed Audio">
+                    <button onClick={() => handleSpeedChange(1.5)} className={`btn btn-light fw-bold speed-btn ${activeSpeed === 1.5 ? "active" : ""}`}>X1.5 <RiSpeedFill size="20"/> </button>
                 </Tooltips>
-                <Tooltips title="x4.0 Speed Audio">
-                    <button onClick={() => SpeedLogic(4, globalEditor.current)} className="btn btn-light fw-bold">X4 <RiSpeedFill size="20" /></button>
+                <Tooltips title="x2 Speed Audio">
+                    <button onClick={() => handleSpeedChange(2)} className={`btn btn-light fw-bold speed-btn ${activeSpeed === 2 ? "active" : ""}`}>X2 <RiSpeedFill size="20" /></button>
                 </Tooltips>
                 <Tooltips title="Normal Speed Audio">
-                    <button onClick={() => SpeedLogic(2, globalEditor.current)} className="btn btn-light fw-bold">Normal (X1) </button>
+                    <button onClick={() => handleSpeedChange(1)} className={`btn btn-light fw-bold speed-btn ${activeSpeed === 1 ? "active" : ""}`}>Normal (X1) </button>
                 </Tooltips>
                 <Tooltips title="x0.5 Speed Audio">
-                    <button onClick={() => SpeedLogic(0.5, globalEditor.current)} className="btn btn-light fw-bold">X0.5 <MdSlowMotionVideo size="20" /></button>
+                    <button onClick={() => handleSpeedChange(0.5)} className={`btn btn-light fw-bold speed-btn ${activeSpeed === 0.5 ? "active" : ""}`}>X0.5 <MdSlowMotionVideo size="20" /></button>
                 </Tooltips>
                 <Tooltips title="x0.25 Speed Audio">
-                    <button onClick={() => SpeedLogic(0.5, globalEditor.current)} className="btn btn-light fw-bold">X0.25 <MdSlowMotionVideo size="20" /></button>
+                    <button onClick={() => handleSpeedChange(0.25)} className={`btn btn-light fw-bold speed-btn ${activeSpeed === 0.25 ? "active" : ""}`}>X0.25 <MdSlowMotionVideo size="20" /></button>
                 </Tooltips>
             </div>
           

@@ -243,5 +243,23 @@ header {
     padding: 20px;
     transition: 0.3s;
 }
+.speed-btn {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
 
+   
+    .speed-btn.active {
+        background-color: #ffc107 !important; 
+        border-color: #ff9800 !important;
+        color: black !important;
+        box-shadow: 0 0 12px rgba(255, 152, 0, 0.7);
+        transform: scale(1.05);
+    }
+
+
+    .speed-btn:hover {
+        background-color: #fff3cd !important;
+        border-color: #ffc107;
+    }
  

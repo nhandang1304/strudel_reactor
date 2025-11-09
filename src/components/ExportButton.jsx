@@ -1,9 +1,9 @@
 import { FaFileExport } from "react-icons/fa";
 import Tooltips from "./TooltipDes";
 import { TfiImport } from "react-icons/tfi";
-import  ExportLogic  from "../utils/ExportLogic";
+import  Export  from "../utils/ExportLogic";
 
-function HandlingFilesCard({globalEditor }) {
+function HandlingFilesCard({ globalEditor, setPause, context}) {
     
     return (
         <>
@@ -11,7 +11,7 @@ function HandlingFilesCard({globalEditor }) {
                         <div className="row">
                             <div className="col-6">
                                 <Tooltips title="Export into json file" >
-                                    <button id="export" className="btn btn-outline-light" onClick={() => ExportLogic(globalEditor)}>
+                        <button id="export" className="btn btn-outline-light" onClick={() => Export(globalEditor.current, setPause, context)}>
                                         <FaFileExport size={20} />
                                         <br />
                                         <b>Export </b>

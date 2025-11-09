@@ -4,7 +4,7 @@ function DjControl() {
         <>
             
             <div className="form-check form-switch">
-                <input className="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault1"  defaultChecked />
+                <input className="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault2"   />
                 <label className="fw-bold text-light" htmlFor="flexRadioDefault1">
                     
                     Drum  
@@ -12,7 +12,7 @@ function DjControl() {
                 </label> 
             </div>
             <div className="form-check form-switch">
-                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  />
+                <input className="form-check-input" type="radio" name="flexRadioDefault"  />
                 <label className="fw-bold text-light" htmlFor="flexRadioDefault2">
                     
                     Guitar  
