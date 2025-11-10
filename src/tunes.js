@@ -7,13 +7,13 @@ samples('https://raw.githubusercontent.com/Mittans/tidal-drum-machines/main/mach
 const gain_patterns = [
   "2",
   "{0.75 2.5}*4",
-  "{0.75 2.5!9 0.75 2.5!5 0.75 2.5 0.75 2.5!7 0.75 2.5!3 <2.5 0.75> 2.5}%16",
+    "{0.75 2.5!9 0.75 2.5!5 0.75 2.5 0.75 2.5!7 0.75 2.5!3 <2.5 0.75> 2.5}%16",
 ]
 
 const drum_structure = [
-  "~",
-  "x*4",
-  "{x ~!9 x ~!5 x ~ x ~!7 x ~!3 < ~ x > ~}%16",
+"~",
+"x*4",
+"{x ~!9 x ~!5 x ~ x ~!7 x ~!3 < ~ x > ~}%16",
 ]
 
 const basslines = [
@@ -22,23 +22,22 @@ const basslines = [
 ]
 
 const arpeggiator1 = [
-   "{e4 b3 g4 e5 b4 g5 e4 b4}%16",      
+ "{e4 b3 g4 e5 b4 g5 e4 b4}%16",      
   "{f4 c4 a4 f5 c5 a5 f4 c5}%16",      
   "{g4 d4 b4 g5 d5 b5 g4 d5}%16",      
-  "{a4 e4 c5 a5 e5 c6 a4 e5 c5 a4}%16" 
+  "{a4 e4 c5 a5 e5 c6 a4 e5 c5 a4}%16",
 ]
-
 
 const arpeggiator2 = [
-  "{d4 bb3 eb3 d3 bb2 eb2}%16",
-  "{c4 bb3 f3 c3 bb2 f2}%16",
-  "{d4 bb3 g3 d3 bb2 g2}%16",
-  "{d5 bb4 g4 d4 bb3 g3 d4 bb3 eb3 d3 bb2 eb2}%16",
+"{d4 bb3 eb3 d3 bb2 eb2}%16",
+"{c4 bb3 f3 c3 bb2 f2}%16",
+"{d4 bb3 g3 d3 bb2 g2}%16",
+"{d5 bb4 g4 d4 bb3 g3 d4 bb3 eb3 d3 bb2 eb2}%16",
 ]
+
 
 const pattern = 0
 const bass = 0
-
 
 bassline:
 note(pick(basslines, bass))
@@ -60,7 +59,7 @@ note(pick(arpeggiator1, "<0 1 2 3>/2"))
 .postgain(pick(gain_patterns, pattern))
 
 
-<drum>drums:
+<p1_Radio>drums:
 stack(
   s("tech:5")
   .postgain(6)
@@ -71,21 +70,16 @@ stack(
   s("sh").struct("[x!3 ~!2 x!10 ~]")
   .postgain(0.5).lpf(7000)
   .bank("RolandTR808")
-  .speed(0.8).jux(rev)
-  .room(sine.range(0.1,0.4))
-  .gain(0.6),
+  .speed(0.8).jux(rev).room(sine.range(0.1,0.4)).gain(0.6),
 
   s("{~ ~ rim ~ cp ~ rim cp ~!2 rim ~ cp ~ < rim ~ >!2}%8 *2")
-  .bank("[KorgDDM110, OberheimDmx]")
-  .speed(1.2)
+  .bank("[KorgDDM110, OberheimDmx]").speed(1.2)
   .postgain(.25),
 )
 
-
-<drum>drums2:
+<p1_Radio>drums2:
 stack(
   s("[~ hh]*4").bank("RolandTR808").room(0.3).speed(0.75).gain(1.2),
-
   s("hh").struct("x*16").bank("RolandTR808")
   .gain(0.6)
   .jux(rev)
@@ -99,22 +93,8 @@ stack(
   .speed(0.5)
   .rarely(jux(rev)),
 )
-
-
-<guitar>guitar:
-note("<eb4 f4 g4 bb4 eb5 g5 bb5 f5 eb5 g4>/8")
-.sound("guitar")
-.room(0.5)
-.lpf(1500)
-.adsr("0.02:0.2:0.6:0.2")
-.speed("<1 0.95 1.05>")
-.gain(1.3)
-.chop(16)
-.jux(rev)
-.postgain(pick(gain_patterns, pattern))
-// @version 1.2
-
-// Remixed and reproduced from Algorave Dave’s original patch:
-// https://www.youtube.com/watch?v=ZCcpWzhekEY
+//Remixed and reproduced from Algorave Dave's code found here: https://www.youtube.com/watch?v=ZCcpWzhekEY
 // all(x => x.gain(mouseX.range(0,1)))
-// all(x => x.log())`;
+// all(x => x.log())
+
+// @version 1.2`;
