@@ -103,7 +103,7 @@ export default function StrudelDemo() {
                                 <VolumeRange />
                             </div>
                             <div className="borderFeatures  col-3">
-                                <SpeedAudio globalEditor={globalEditor} setPause={setPause} context={context} />
+                                <SpeedAudio pause={Paused} globalEditor={globalEditor} setPause={setPause} context={context} />
                             </div>
                             
                         </div>
