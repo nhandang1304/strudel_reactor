@@ -52,7 +52,7 @@ note(pick(basslines, bass))
 
 main_arp:
 note(pick(arpeggiator1, "<0 1 2 3>/2"))
-.sound("supersaw")
+.sound("square")
 .lpf(300)
 .adsr("0:0:.5:.1")
 .room(0.6)
@@ -60,7 +60,7 @@ note(pick(arpeggiator1, "<0 1 2 3>/2"))
 .postgain(pick(gain_patterns, pattern))
 
 
-<p1_Radio>drums:
+<drum>drums:
 stack(
   s("tech:5")
   .postgain(6)
@@ -82,7 +82,7 @@ stack(
 )
 
 
-<p1_Radio>drums2:
+<drum>drums2:
 stack(
   s("[~ hh]*4").bank("RolandTR808").room(0.3).speed(0.75).gain(1.2),
 
@@ -101,7 +101,7 @@ stack(
 )
 
 
-guitar:
+<guitar>guitar:
 note("<eb4 f4 g4 bb4 eb5 g5 bb5 f5 eb5 g4>/8")
 .sound("guitar")
 .room(0.5)
