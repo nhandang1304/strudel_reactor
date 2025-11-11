@@ -10,10 +10,10 @@ function SpeedAudio({pause, globalEditor, setPause, context }) {
     
     function handleSpeedChange(speed) {
         
-
+        /*setSpeed(speed);*/
         setActiveSpeed(speed);
         if (context.state === "suspended") {
-            Proc(globalEditor.current, setPause, context, speed)
+            Proc(globalEditor.current, context, speed)
         }
         else {
             ProcAndPlay(globalEditor.current, setPause, context, speed);

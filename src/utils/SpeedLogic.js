@@ -22,7 +22,7 @@
     const procEl = document.getElementById("proc");
     if (procEl) procEl.value = newCode;
 
-    // Cập nhật Strudel editor
+  
     if (globalEditor && typeof globalEditor.setCode === "function") {
         globalEditor.setCode(newCode);
     }

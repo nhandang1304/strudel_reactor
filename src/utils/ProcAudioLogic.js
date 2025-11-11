@@ -30,7 +30,9 @@ export function Proc(globalEditor, setPause, context, speed = null ) {
     }
     let proc_text = document.getElementById('proc').value
     
-    /*let proc_text_replaced = proc_text.replaceAll('<p1_Radio>', ProcessText);*/
+    let proc_text_replaced = proc_text.replaceAll('<p1_Radio>', ProcessText);
+
+
     ProcessText(proc_text);
     if (speed !== null) {
 
