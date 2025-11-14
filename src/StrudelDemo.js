@@ -37,7 +37,7 @@ export default function StrudelDemo() {
     const globalEditor = useRef(null);
     const hasRun = useRef(false);
     const [Paused, setPause] = useState(false);
-    /*const [speed, setSpeed] = useState(1)*/
+   const [speed, setSpeed] = useState(1)
     const [showCanva, SetOpenCanvas]= useState(false)
     const context = getAudioContext();
     useEffect(() => {
@@ -76,7 +76,7 @@ export default function StrudelDemo() {
             document.getElementById('proc').value = stranger_tune
             /*SetupButtons(globalEditor, SetPaused, pauseAudio)*/
             
-          Proc(globalEditor.current, setPause, context)
+          Proc(globalEditor.current, setPause, context, speed)
            
         }
 
@@ -100,11 +100,11 @@ export default function StrudelDemo() {
                                 </div>
                                
                             </div>
-                            <div className=" borderFeatures  col-2" style={{backgroundColor: "black"} }>
-                                <VolumeRange />
+                            <div className=" borderFeatures  col-2" style={{ backgroundColor: "black" }}>
+                                <VolumeRange globalEditor={globalEditor} speed={speed} context={context} setPause={setPause} />
                             </div>
                             <div className="borderFeatures  col-3">
-                                <SpeedAudio  pause={Paused} globalEditor={globalEditor} setPause={setPause} context={context} />
+                                <SpeedAudio setSpeed={setSpeed }  pause={Paused} globalEditor={globalEditor} setPause={setPause} context={context} />
                             </div>
                             
                         </div>
@@ -135,7 +135,7 @@ export default function StrudelDemo() {
                                 <div className="borderFeatures mx-5 col-6 mt-5 d-flex flex-column align-items-center">
                                     <h3 className="gradientTitleStrud text-center" >DJ Control</h3>
                                     <div className="mt-2">
-                                        <DjControl pause={Paused} globalEditor={globalEditor} setPause={setPause} context={context} />
+                                        <DjControl speed={speed} pause={Paused} globalEditor={globalEditor} setPause={setPause} context={context} />
                                     </div>
                                    
                                 </div>

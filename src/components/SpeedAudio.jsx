@@ -5,15 +5,15 @@ import SpeedLogic from "../utils/SpeedLogic"
 import { Proc, ProcAndPlay } from "../utils/ProcAudioLogic"
 import { useState } from "react"
 import "../css/NewDesign.css"
-function SpeedAudio({pause, globalEditor, setPause, context }) {
+function SpeedAudio({ pause, globalEditor, setPause, context, setSpeed }) {
     const [activeSpeed, setActiveSpeed] = useState(1);
     
     function handleSpeedChange(speed) {
         
-        /*setSpeed(speed);*/
+        setSpeed(speed);
         setActiveSpeed(speed);
         if (context.state === "suspended") {
-            Proc(globalEditor.current, context, speed)
+            Proc(globalEditor.current, setPause, context, speed)
         }
         else {
             ProcAndPlay(globalEditor.current, setPause, context, speed);

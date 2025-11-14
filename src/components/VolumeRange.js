@@ -1,39 +1,31 @@
 ﻿import { FaVolumeUp } from "react-icons/fa";
 import { IoVolumeMuteSharp } from "react-icons/io5";
 import { useState, useEffect } from "react";
-import { Destination } from "tone";
+import updateCodeVolume from "../utils/VolumeLogic";
+import { Proc, ProcAndPlay } from "../utils/ProcAudioLogic"
+function VolumeRange({ globalEditor, setPause, context, speed }) {
 
-function VolumeRange() {
     const [mutedSound, setMutedSound] = useState(false);
-    const [volumeValue, setVolumeValue] = useState(0.5); // 0 -> 1
+    const [volumeValue, setVolume] = useState(0.5);
 
-    // Cập nhật volume khi slider thay đổi (không muted)
-    useEffect(() => {
-        if (!mutedSound) {
-            const dB = volumeValue === 0 ? -Infinity : 20 * Math.log10(volumeValue);
-            Destination.volume.value = dB;
-        }
-    }, [volumeValue, mutedSound]);
-
-    // Mute / Unmute logic
     function toggleMute() {
-        setMutedSound(prev => {
-            const newMuted = !prev;
-            if (newMuted) {
-                Destination.volume.value = -Infinity; // mute
-            } else {
-                const dB = volumeValue === 0 ? -Infinity : 20 * Math.log10(volumeValue);
-                Destination.volume.value = dB; // restore
-            }
-            return newMuted;
-        });
+        setMutedSound(prev => !prev);
     }
 
     function handleSliderChange(e) {
         const value = parseFloat(e.target.value);
-        setVolumeValue(value);
-        if (value === 0) setMutedSound(true);
-        else if (mutedSound) setMutedSound(false);
+        console.log("Slide:" + value)
+        setVolume(value);
+        if (context.state === "running") {
+            ProcAndPlay(globalEditor.current, setPause, context, speed, value)
+        }
+        else {
+            ProcAndPlay(globalEditor.current, setPause, context, speed, value);
+        }
+
+
+        if (value === 0 && !mutedSound) setMutedSound(true);
+        if (value > 0 && mutedSound) setMutedSound(false);
     }
 
     return (
@@ -50,8 +42,8 @@ function VolumeRange() {
                     <FaVolumeUp
                         size={24}
                         style={{ cursor: "pointer" }}
-                            onClick={toggleMute}
-                            color="white"
+                        onClick={toggleMute}
+                        color="white"
                     />
                 )}
             </div>
@@ -59,12 +51,11 @@ function VolumeRange() {
                 <input
                     type="range"
                     className="form-range"
-                    
                     min={0}
                     max={1}
-                    step={0.01}
+                    step={0.1}
                     value={volumeValue}
-                    onChange={handleSliderChange}
+                    onChange={(handleSliderChange)}
                 />
             </div>
         </div>

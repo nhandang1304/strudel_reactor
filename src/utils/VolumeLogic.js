@@ -1,10 +1,20 @@
-// This file allows you to configure ESLint according to your project's needs, so that you
-// can control the strictness of the linter, the plugins to use, and more.
+﻿function updateCodeVolume(codeText, volume) {
+    if (volume < 0) volume = 0;
+    if (volume > 1) volume = 1;
 
-// For more information about configuring ESLint, visit https://eslint.org/docs/user-guide/configuring/
+    const vol = volume.toFixed(3);
 
-module.exports = [
-    {
-        rules: {}
-    }
-];
+    return codeText
+       
+        .replace(
+            /all\(x\s*=>\s*x\.gain\(mouseX\.range\(\s*[0-9.]+\s*,\s*[0-9.]+\s*\)\s*\)\)/g,
+            `all(x => x.gain(${vol}))`
+        )
+    
+        .replace(
+            /all\(x\s*=>\s*x\.gain\(\s*[0-9.]+\s*\)\)/g,
+            `all(x => x.gain(${vol}))`
+        );
+}
+
+export default updateCodeVolume;

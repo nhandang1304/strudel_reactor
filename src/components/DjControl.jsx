@@ -1,39 +1,28 @@
 import { useState, useEffect } from "react";
 import { Proc, ProcAndPlay } from "../utils/ProcAudioLogic";
 import  removeInstrument  from "../utils/RemoveInstrument"; 
-import { stranger_tune } from "../data/stranger_tune"; 
 
-function DjControl({ pause, globalEditor, setPause, context }) {
-    const [muteDrum, setDrum] = useState(false);
-    const [muteBaseline, setBaseline] = useState(false);
-    const [muteSquare, setSquare] = useState(false);
 
-    useEffect(() => {
+function DjControl({speed, pause, globalEditor, setPause, context }) {
+   
+    function handleMute(instr) {
        
-        let modifiedCode = document.getElementById('proc').value;
+     
+            if (context.state === "running") {
+                ProcAndPlay(globalEditor.current, setPause, context, speed, instr);
+            } else {
+                Proc(globalEditor.current, setPause, context, speed, instr);
+            }
+            return instr;
+        };
+    
 
-       
-        if (muteDrum) modifiedCode = removeInstrument(modifiedCode, "drums");
-        if (muteBaseline) modifiedCode = removeInstrument(modifiedCode, "bassline");
-        if (muteSquare) modifiedCode = removeInstrument(modifiedCode, "main_arp");
-
-       
-        if (globalEditor) {
-            globalEditor.setCode(modifiedCode);
-        }
-
-        if (context && context.state === "running") {
-            ProcAndPlay(globalEditor, setPause, context);
-        } else {
-            Proc(globalEditor, setPause, context);
-        }
-    }, [muteDrum, muteBaseline, muteSquare, globalEditor, setPause, context]);
 
     return (
         <>
             <div className="form-check form-switch">
                 <input
-                    onChange={() => setSquare(!muteSquare)}
+                    onChange={() => handleMute("square")}
                     className="form-check-input"
                     type="checkbox"
                     id="squareSwitch"
@@ -45,7 +34,7 @@ function DjControl({ pause, globalEditor, setPause, context }) {
 
             <div className="form-check form-switch">
                 <input
-                    onChange={() => setBaseline(!muteBaseline)}
+                    onChange={() => handleMute("baseline")}
                     className="form-check-input"
                     type="checkbox"
                     id="baselineSwitch"
@@ -57,12 +46,12 @@ function DjControl({ pause, globalEditor, setPause, context }) {
 
             <div className="form-check form-switch">
                 <input
-                    onChange={() => setDrum(!muteDrum)}
+                    onChange={() => handleMute("drum")}
                     className="form-check-input"
                     type="checkbox"
-                    id="drumSwitch"
+                    id="flexRadioDefault2"
                 />
-                <label className="fw-bold text-light" htmlFor="drumSwitch">
+                <label className="fw-bold text-light" htmlFor="flexRadioDefault2">
                     Drum
                 </label>
             </div>
