@@ -9,7 +9,20 @@ function VolumeRange({ globalEditor, setPause, context, speed }) {
     const [volumeValue, setVolume] = useState(0.5);
 
     function toggleMute() {
-        setMutedSound(prev => !prev);
+        if (mutedSound) {
+            setMutedSound(false);
+            setVolume(0.5);
+            if (context.state === "running") {
+                ProcAndPlay(globalEditor.current, setPause, context, speed, 0.5);
+            }
+        } else {
+            // Nếu đang bật, tắt volume (bằng 0)
+            setMutedSound(true);
+            setVolume(0);
+            if (context.state === "running") {
+                ProcAndPlay(globalEditor.current, setPause, context, speed, 0);
+            }
+        }
     }
 
     function handleSliderChange(e) {
@@ -42,7 +55,7 @@ function VolumeRange({ globalEditor, setPause, context, speed }) {
                     <FaVolumeUp
                         size={24}
                         style={{ cursor: "pointer" }}
-                        onClick={toggleMute}
+                            onClick={toggleMute }
                         color="white"
                     />
                 )}
