@@ -1,14 +1,16 @@
-export function Restart(globalEditor, setPause, context) {
+export function Restart(setPlayingAudio, globalEditor, setPause, context) {
 
-        globalEditor.stop();
+    globalEditor.stop();
+    setPlayingAudio(true)
         /*checkContextStatus(setPause);*/
         context.resume();
         globalEditor.evaluate();
         setPause(false);
     }
 
-export function Stop(globalEditor, setPause, context) {
+export function Stop(setPlayingAudio, globalEditor, setPause, context) {
     setPause(false);
+    setPlayingAudio(false)
     globalEditor.stop();
     context.resume();
 }

@@ -2,7 +2,7 @@ import { VscServerProcess, VscVmRunning } from "react-icons/vsc";
 import { TbAmpersand } from "react-icons/tb";
 import Tooltips from "./TooltipDes";
 import { Proc, ProcAndPlay } from "../utils/ProcAudioLogic";
-function ProcButtons({ globalEditor, setPause, pause, context }) {
+function ProcButtons({ setPlayingAudio, globalEditor, setPause, pause, context }) {
     
     return (
         <>
@@ -10,7 +10,7 @@ function ProcButtons({ globalEditor, setPause, pause, context }) {
             <div className="d-flex gap-2" role="group" ara-label="Basic mixed styles example!">
                 <Tooltips title="Save your current code" >
 
-                    <button id="process" onClick={() => Proc(globalEditor.current, setPause, context)} className="btn btn-outline-light" data-bs-toggle="tooltip" data-bs-placement="bottom" >
+                    <button id="process" onClick={() => Proc(setPlayingAudio, globalEditor.current, setPause, context)} className="btn btn-outline-light" data-bs-toggle="tooltip" data-bs-placement="bottom" >
                         <VscServerProcess size={20}/>
                         <br />
                         <b>Preprocess</b>
@@ -19,7 +19,7 @@ function ProcButtons({ globalEditor, setPause, pause, context }) {
                 </Tooltips>
                 <Tooltips title="Save your current code and Play Audio" >
 
-                    <button id="process_play" onClick={async () => await ProcAndPlay(globalEditor.current, setPause, context)} className="btn btn-outline-light" title="Save your current code and ">
+                    <button id="process_play" onClick={async () => await ProcAndPlay(setPlayingAudio, globalEditor.current, setPause, context)} className="btn btn-outline-light" title="Save your current code and ">
                     <VscServerProcess size={20}/>
                     <TbAmpersand size={10}/>
                     <VscVmRunning size={20}/>

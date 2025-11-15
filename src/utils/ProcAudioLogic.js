@@ -4,8 +4,8 @@ import { Restart, Stop } from "../utils/RestartAndStopLogic";
 import Speed from "../utils/SpeedLogic";
 import updateCodeVolume from "../utils/VolumeLogic"
 
-export /*async*/ function ProcAndPlay(globalEditor, setPause, context, speed = null, volume = null ) {
-    if (globalEditor != null /*&& globalEditor.repl.state.started === true*/) {
+export /*async*/ function ProcAndPlay(setPlayingAudio, globalEditor, setPause, context, speed = null, volume = null ) {
+    if (globalEditor != null) {
         console.log(globalEditor)
         console.log("ProcAndPlay context:", context.resume);
         /*await checkContextStatus(setPause)*/
@@ -13,22 +13,23 @@ export /*async*/ function ProcAndPlay(globalEditor, setPause, context, speed = n
         //    Stop(globalEditor, setPause, context);
         //}
 
-        
+        setPlayingAudio(true);
         context.resume();
         setPause(false)
-        Proc(globalEditor, setPause, context, speed, volume)         
+        Proc(setPlayingAudio, globalEditor, setPause, context, speed, volume)         
         /*globalEditor.evaluate();*/
-        Restart(globalEditor, setPause, context)
+        Restart(setPlayingAudio, globalEditor, setPause, context)
             
 
        
     }
 }
 
-export function Proc(globalEditor, setPause, context, speed = null, volume = null) {
+export function Proc(setPlayingAudio, globalEditor, setPause, context, speed = null, volume = null) {
     if (context.state === "running" ) {
-        Stop(globalEditor, setPause, context)
+        Stop(setPlayingAudio, globalEditor, setPause, context)
     }
+    setPlayingAudio(false);
     let proc_text = document.getElementById('proc').value
     
     let proc_text_replaced = proc_text.replaceAll('<p1_Radio>', ProcessText);

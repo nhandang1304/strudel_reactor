@@ -38,7 +38,8 @@ export default function StrudelDemo() {
     const hasRun = useRef(false);
     const [Paused, setPause] = useState(false);
    const [speed, setSpeed] = useState(1)
-    const [showCanva, SetOpenCanvas]= useState(false)
+    const [showCanva, SetOpenCanvas] = useState(false)
+    const [playingAudio, setPlayingAudio] = useState(false);
     const context = getAudioContext();
     useEffect(() => {
 
@@ -76,7 +77,7 @@ export default function StrudelDemo() {
             document.getElementById('proc').value = stranger_tune
             /*SetupButtons(globalEditor, SetPaused, pauseAudio)*/
             
-          Proc(globalEditor.current, setPause, context, speed)
+            Proc(setPlayingAudio, globalEditor.current, setPause, context, speed)
            
         }
 
@@ -95,16 +96,16 @@ export default function StrudelDemo() {
                            
                             <div className="btn-group ">
                                 <div className="borderFeatures  gap-2 d-flex ">
-                                    <PlayButtons globalEditor={globalEditor} setPause={setPause} context={context } />
-                                    <PauseAndResumeButton pause={Paused} setPause={setPause} pauseAudio={pauseAudio} context={context} />
+                                    <PlayButtons setPlayingAudio={setPlayingAudio} globalEditor={globalEditor} setPause={setPause} context={context} />
+                                    <PauseAndResumeButton setPlayingAudio={setPlayingAudio} pause={Paused} setPause={setPause} pauseAudio={pauseAudio} context={context} />
                                 </div>
                                
                             </div>
                             <div className=" borderFeatures  col-2" style={{ backgroundColor: "black" }}>
-                                <VolumeRange globalEditor={globalEditor} speed={speed} context={context} setPause={setPause} />
+                                <VolumeRange setPlayingAudio={setPlayingAudio} playingAudio={playingAudio} globalEditor={globalEditor} speed={speed} context={context} setPause={setPause} />
                             </div>
                             <div className="borderFeatures  col-3">
-                                <SpeedAudio setSpeed={setSpeed }  pause={Paused} globalEditor={globalEditor} setPause={setPause} context={context} />
+                                <SpeedAudio setPlayingAudio={setPlayingAudio} playingAudio={playingAudio} setSpeed={setSpeed} pause={Paused} globalEditor={globalEditor} setPause={setPause} context={context} />
                             </div>
                             
                         </div>
@@ -116,7 +117,7 @@ export default function StrudelDemo() {
                                 <div className="d-flex justify-content-between align-items-center mt-2 mb-2 gap-1">
                                    
                                     < FavouriteSong />
-                                    <ProcButtons globalEditor={globalEditor} setPause={setPause} pause={Paused} context={context} />
+                                    <ProcButtons setPlayingAudio={setPlayingAudio} globalEditor={globalEditor} setPause={setPause} pause={Paused} context={context} />
                                 </div>
                             </div>
                             <div className="row ">
