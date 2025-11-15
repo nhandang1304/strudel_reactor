@@ -151,8 +151,8 @@ export default function StrudelDemo() {
                                     See your favorite song
                                 </NavLink> 
                                             
-                                
-                                } obj2={< HandlingFilesCard globalEditor={globalEditor} setPause={setPause} context={context} />} />
+
+                                } obj2={< HandlingFilesCard setPlayingAudio={setPlayingAudio} globalEditor={globalEditor} setPause={setPause} context={context} />} />
                         </div>
                         
                         

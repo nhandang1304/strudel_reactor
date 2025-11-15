@@ -1,9 +1,9 @@
 import { Proc } from "./ProcAudioLogic";
 
-export default function Export(globalEditor, setPause, context) {
+export function Export(setPlayingAudio, globalEditor, setPause, context) {
     if (!globalEditor) return;
 
-    const data = Proc(globalEditor, setPause, context);
+    const data = Proc(setPlayingAudio, globalEditor, setPause, context);
     const json = JSON.stringify(data, null, 2);
     const blob = new Blob([json], { type: "application/json" });
     const url = URL.createObjectURL(blob);
@@ -17,3 +17,4 @@ export default function Export(globalEditor, setPause, context) {
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
 }
+
