@@ -4,7 +4,7 @@ import { TfiImport } from "react-icons/tfi";
 import { Export, Import }  from "../utils/ExportLogic";
 
 function HandlingFilesCard({ setPlayingAudio, globalEditor, setPause, context }) {
-    const handleFile = Import({ setPlayingAudio, globalEditor, setPause, context });
+    
     return (
         <>
            
@@ -31,7 +31,7 @@ function HandlingFilesCard({ setPlayingAudio, globalEditor, setPause, context })
                         type="file"
                         accept="application/json"
                         style={{ display: "none" }}
-                        onChange={handleFile}
+                        onChange={Import({ setPlayingAudio, globalEditor, setPause, context })}
                     />
                             </div>
                         </div>

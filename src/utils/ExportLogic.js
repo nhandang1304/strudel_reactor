@@ -1,9 +1,13 @@
-import { Proc } from "./ProcAudioLogic";
+﻿import { Proc } from "./ProcAudioLogic";
 
 export function Export(setPlayingAudio, globalEditor, setPause, context) {
     if (!globalEditor) return;
 
-    const data = Proc(setPlayingAudio, globalEditor, setPause, context);
+    // Đọc code gốc từ textarea
+    const raw = document.getElementById('proc').value;
+
+    const data = { code: raw };
+
     const json = JSON.stringify(data, null, 2);
     const blob = new Blob([json], { type: "application/json" });
     const url = URL.createObjectURL(blob);
@@ -18,16 +22,18 @@ export function Export(setPlayingAudio, globalEditor, setPause, context) {
     URL.revokeObjectURL(url);
 }
 
+
 export function Import(setPlayingAudio, globalEditor, setPause, context) {
     function handleFile(e) {
         const file = e.target.files[0];
-        if (!file) return;
+        const content = document.getElementById('proc').value;
+        console.log("Nội dung editor:", content);
 
         file.text().then((text) => {
           const json = JSON.parse(text);
             document.getElementById('proc').value = json.code;
             
-           
+            e.target.value = "";
             console.log("Imported JSON:", json);
 
         });

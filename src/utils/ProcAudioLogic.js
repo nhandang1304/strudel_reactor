@@ -50,6 +50,6 @@ export function Proc(setPlayingAudio, globalEditor, setPause, context, speed = n
     }
     
     globalEditor.setCode(proc_text_replaced)
-   
+    console.log("Proc: " + proc_text_replaced)
     return proc_text_replaced;
 }
