@@ -18,3 +18,20 @@ export function Export(setPlayingAudio, globalEditor, setPause, context) {
     URL.revokeObjectURL(url);
 }
 
+export function Import(setPlayingAudio, globalEditor, setPause, context) {
+    function handleFile(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        file.text().then((text) => {
+          const json = JSON.parse(text);
+            document.getElementById('proc').value = json.code;
+            
+           
+            console.log("Imported JSON:", json);
+
+        });
+    };
+
+    return handleFile;
+}

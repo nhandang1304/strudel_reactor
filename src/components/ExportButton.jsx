@@ -3,8 +3,8 @@ import Tooltips from "./TooltipDes";
 import { TfiImport } from "react-icons/tfi";
 import { Export, Import }  from "../utils/ExportLogic";
 
-function HandlingFilesCard({ setPlayingAudio, globalEditor, setPause, context}) {
-    const handleFile = Import(setPlayingAudio, globalEditor, setPause, context);
+function HandlingFilesCard({ setPlayingAudio, globalEditor, setPause, context }) {
+    const handleFile = Import({ setPlayingAudio, globalEditor, setPause, context });
     return (
         <>
            
