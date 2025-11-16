@@ -60,7 +60,7 @@ export default function StrudelDemo() {
                 transpiler,
                 root: document.getElementById('editor'),
                 drawTime,
-                onDraw: (haps, time) => drawPianoroll({ haps, time, ctx: drawContext, drawTime, fold: 0 }),
+                onDraw: (haps, time) => { drawPianoroll({ haps, time, ctx: drawContext, drawTime, fold: 0 }) },
                 prebake: async () => {
                     initAudioOnFirstClick(); // needed to make the browser happy (don't await this here..)
                     const loadModules = evalScope(
