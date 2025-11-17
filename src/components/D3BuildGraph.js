@@ -89,7 +89,7 @@ export default function ScatterPlot({ logArray }) {
         
         const symbolTypes = [
             d3.symbolCircle,
-            d3.symbolTriangle,
+            d3.symbolTimes,
             d3.symbolSquare,
             d3.symbolDiamond,
             d3.symbolStar,
@@ -98,36 +98,33 @@ export default function ScatterPlot({ logArray }) {
         ];
 
         
-        const customColors = {
-            key1: "#f178fa",
-            key2: "#fa1470",
-            key3: "#30ff3b",
-            key4: "#f9fc3d",
-            key5: "#f9fc3d",
-            key6: "#dad7fc",
-            key7: "#0559f5"
-        };
+        const customColorsArr = [
+            "#f178fa",
+            "#fa1470",
+            "#30ff3b",
+            "#f9fc3d",
+            "#ff8800",
+            "#dad7fc",
+            "#0559f5"
+        ];
 
         const colorScale = d3.scaleOrdinal()
             .domain(numericKeys)
-            .range(numericKeys.map(k => customColors[k] || "gray"));
+            .range(customColorsArr);
 
      
         numericKeys.forEach((key, i) => {
-            const symbolGen = d3.symbol()
-                .type(symbolTypes[i % symbolTypes.length]) 
-                .size(300);
+            const line = d3.line()
+                .x(d => x(d.timeRange) + x.bandwidth() / 2)
+                .y(d => y(d[key]))
+                .curve(d3.curveMonotoneX);
 
-            svg.append("g")
-                .selectAll("path")
-                .data(data)
-                .join("path")
-                .attr(
-                    "transform",
-                    (d) => `translate(${x(d.timeRange) + x.bandwidth() / 2}, ${y(d[key])})`
-                )
-                .attr("d", symbolGen)
-                .attr("fill", colorScale(key))
+            svg.append("path")
+                .datum(data)
+                .attr("fill", "none")
+                .attr("stroke", colorScale(key))
+                .attr("stroke-width", 2.5)
+                .attr("d", line)
                 .attr("opacity", 0.9);
         });
 
@@ -155,6 +152,7 @@ export default function ScatterPlot({ logArray }) {
             .style("font-size", "14px");
 
         
+
         numericKeys.forEach((key, i) => {
             const symbolGen = d3.symbol()
                 .type(symbolTypes[i % symbolTypes.length])

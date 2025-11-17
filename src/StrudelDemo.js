@@ -16,7 +16,7 @@ import ProcButtons from "./components/ProcButtons";
 import PreprocessTextarea from "./components/PreprocessTextarea";
 import VolumeRange from "./components/VolumeRange";
 import PauseAndResumeButton from "./components/PauseAndResumeButtons";
-
+import { VscGraph } from "react-icons/vsc";
 import { Proc } from "./utils/ProcAudioLogic";
 import pauseAudio from "../src/utils/PauseAndResumeLogic";
 import FavouriteSong from "../src/FavouriteSong";
@@ -149,7 +149,8 @@ export default function StrudelDemo() {
                                     </Tooltips>
                                     <Tooltips title="Show D3 Chart" >
                                         <button className="btn btn-outline-light fw-bold mt-2" onClick={() => setShowD3Chart(!showD3Chart)}>
-
+                                            <VscGraph />
+                                            <br/>
                                         {showD3Chart ? "Hide D3 Chart" : "Show D3 Chart"}
                                         </button>
                                     </Tooltips>
