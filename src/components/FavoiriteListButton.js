@@ -1,13 +1,13 @@
 import Tooltips from "./components/TooltipDes"
+import { NavLink } from "react-router-dom";
 function FavoriteList() {
     return (
         <div className="col-6">
             <Tooltips title="See your favorite List" >
-                <button id="export" className="btn btn-outline-light">
+                <NavLink to="/favourites" className="btn btn-outline-light text-center d-block">
                     
-                    <br />
                     <b>See your Favorite List</b>
-                </button>
+                </NavLink>
             </Tooltips>
         </div>
     )

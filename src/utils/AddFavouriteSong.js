@@ -1,4 +1,4 @@
-export function addFavourite(song, favourites, setFavourites) {
+function addFavourite(song, favourites, setFavourites) {
     if (!song.melody) {
         alert("Please enter a melody before adding!");
         return;
@@ -14,3 +14,4 @@ export function addFavourite(song, favourites, setFavourites) {
     localStorage.setItem("favourites", JSON.stringify(newFavs));
     setFavourites(newFavs);
 }
+export default addFavourite

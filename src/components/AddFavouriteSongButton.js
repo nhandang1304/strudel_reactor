@@ -1,13 +1,13 @@
 import { IoHeartCircleOutline } from "react-icons/io5";
 import { BsBox2HeartFill } from "react-icons/bs";
-import Tooltips from "./components/TooltipDes";
+import Tooltips from "./TooltipDes";
 function FavouriteSong({ addFavourite, currentSong }) {
     return (
        /* <div className="row">*/
             <div className="col-6">
                 <Tooltips title="Add to your favourite list" >
                 <button id="export" className="btn btn-outline-light"
-                    onclick={() =>
+                    onClick={() =>
                     {
                         if (currentSong) { addFavourite(currentSong) }
                         else {

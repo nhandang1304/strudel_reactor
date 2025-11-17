@@ -19,7 +19,7 @@ import PauseAndResumeButton from "./components/PauseAndResumeButtons";
 import { VscGraph } from "react-icons/vsc";
 import { Proc } from "./utils/ProcAudioLogic";
 import pauseAudio from "../src/utils/PauseAndResumeLogic";
-import FavouriteSong from "../src/FavouriteSong";
+import FavouriteSong from "./components/AddFavouriteSongButton";
 import HandlingFilesCard from "./components/ExportButton"
 import "./css/NewDesign.css"
 import CardFeatures from "./components/CardFeatures"
@@ -53,6 +53,9 @@ export default function StrudelDemo() {
 
     function handleAddFavourite(song) {
         addFavourite(song, favourites, setFavourites);
+    }
+    function showFavouriteList() {
+
     }
     const globalEditor = useRef(null);
     const hasRun = useRef(false);
@@ -187,7 +190,7 @@ export default function StrudelDemo() {
                                 obj1={
                                     
                                    
-                                    <NavLink to="/create" className="fw-bold btn btn-outline-light mt-2">
+                                    <NavLink to="/favourites" className="fw-bold btn btn-outline-light mt-2">
                                     <GiLoveSong size="25" color="red"/>
                                     <br/>
                                     See your favorite song
