@@ -15,6 +15,7 @@ import ProcButtons from "./components/ProcButtons";
 import PreprocessTextarea from "./components/PreprocessTextarea";
 import VolumeRange from "./components/VolumeRange";
 import PauseAndResumeButton from "./components/PauseAndResumeButtons";
+import { initVisualizer, drawBarChart } from "./components/D3BuildGraph";
 
 import { Proc } from "./utils/ProcAudioLogic";
 import pauseAudio from "../src/utils/PauseAndResumeLogic";
@@ -31,6 +32,8 @@ import { GiLoveSong } from "react-icons/gi";
 
 const handleD3Data = (event) => {
     console.log(event.detail);
+    //const logs = event.detail; 
+    //drawBarChart(logs);
 };
 
 export default function StrudelDemo() {
@@ -50,9 +53,12 @@ export default function StrudelDemo() {
             //Code copied from example: https://codeberg.org/uzu/strudel/src/branch/main/examples/codemirror-repl
             //init canvas
             const canvas = document.getElementById('roll');
-            canvas.width = canvas.width * 2;
-            canvas.height = canvas.height * 2;
-            const drawContext = canvas.getContext('2d');
+            initVisualizer(canvas);
+            //canvas.width = canvas.width * 2;
+            //canvas.height = canvas.height * 2;
+            //const drawContext = canvas.getContext('2d');
+
+
             const drawTime = [-2, 2]; // time window of drawn haps
             globalEditor.current = new StrudelMirror({
                 defaultOutput: webaudioOutput,
@@ -60,7 +66,7 @@ export default function StrudelDemo() {
                 transpiler,
                 root: document.getElementById('editor'),
                 drawTime,
-                onDraw: (haps, time) => { drawPianoroll({ haps, time, ctx: drawContext, drawTime, fold: 0 }) },
+              /*  onDraw: (haps, time) => { drawPianoroll({ haps, time, ctx: drawContext, drawTime, fold: 0 }) },*/
                 prebake: async () => {
                     initAudioOnFirstClick(); // needed to make the browser happy (don't await this here..)
                     const loadModules = evalScope(
@@ -80,7 +86,9 @@ export default function StrudelDemo() {
             Proc(setPlayingAudio, globalEditor.current, setPause, context, speed)
            
         }
-
+        return () => {
+            document.removeEventListener("d3Data", handleD3Data);
+        };
     }, []);
 
     return (
