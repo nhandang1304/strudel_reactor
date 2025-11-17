@@ -7,43 +7,65 @@ export default function ScatterPlot({ logArray }) {
 
     const data = parseLogArray(logArray);
 
+
+    const numericKeys = (() => {
+        if (!data.length) return [];
+
+        const blacklist = ["timeRange", "gain"]; 
+        const first = data[0];
+
+ 
+        return Object.keys(first).filter(
+            (k) => !blacklist.includes(k) && typeof first[k] === "number"
+        );
+    })();
+
     useEffect(() => {
         if (!data.length) return;
 
         const svg = d3.select(svgRef.current);
-        const width = 700;
-        const height = 550;
-        const margin = { top: 30, right: 40, bottom: 60, left: 60 };
+        const width = 1000;
+        const height = 700;
+        const margin = { top: 60, right: 60, bottom: 60, left: 60 };
 
-        svg.attr("width", width).attr("height", height);
+      
+        svg.attr("width", width).attr("height", height).style("background-color", "black");
+
+    
         svg.selectAll("*").remove();
 
-        // X scale: categorical timeRange
         const x = d3
             .scaleBand()
             .domain(data.map((d) => d.timeRange))
             .range([margin.left, width - margin.right])
-            .padding(0.2);
+            .padding(0.25);
 
-        // Y scale: numeric, max từ tất cả key cần vẽ
-        const yMax = d3.max(data, (d) => Math.max(d.gain, d.duration, d.postgain));
-        const y = d3.scaleLinear().domain([0, yMax]).nice().range([height - margin.bottom, margin.top]);
+        const allValues = data.flatMap((d) =>
+            numericKeys.concat("gain").map((k) => d[k])
+        );
 
-        // Vẽ trục X
-        svg
-            .append("g")
-            .attr("transform", `translate(0,${height - margin.bottom})`)
-            .call(d3.axisBottom(x))
+        const y = d3.scaleLinear()
+            .domain([0, d3.max(allValues)])  
+            .nice()
+            .range([height - margin.bottom, margin.top]);
+
+       
+        svg.append("g")
+            .attr("transform", `translate(0, ${height - margin.bottom})`)
+            .call(d3.axisBottom(x).tickSizeOuter(0))
             .selectAll("text")
             .attr("transform", "rotate(-40)")
-            .style("text-anchor", "end");
+            .style("text-anchor", "end")
+            .style("font-size", "16px")
 
-        // Vẽ trục Y
-        svg.append("g").attr("transform", `translate(${margin.left},0)`).call(d3.axisLeft(y));
+       
+        svg.append("g")
+            .attr("transform", `translate(${margin.left},0)`)
+            .call(d3.axisLeft(y))
+            .style("font-size", "16px")
 
-        // Vẽ bar cho gain
-        svg
-            .append("g")
+       
+        svg.append("g")
             .selectAll("rect")
             .data(data)
             .join("rect")
@@ -51,69 +73,97 @@ export default function ScatterPlot({ logArray }) {
             .attr("y", (d) => y(d.gain))
             .attr("width", x.bandwidth())
             .attr("height", (d) => y(0) - y(d.gain))
-            .attr("fill", "steelblue")
+            .attr("fill", "white")
             .attr("opacity", 0.7);
 
-        // Chuẩn bị symbol generator cho các điểm scatter
-        const symbolMap = {
-            duration: { symbol: d3.symbolCircle, color: "orange" },
-            postgain: { symbol: d3.symbolTriangle, color: "green" },
-        };
+        
+        const symbolTypes = [
+            d3.symbolCircle,
+            d3.symbolTriangle,
+            d3.symbolSquare,
+            d3.symbolDiamond,
+            d3.symbolStar,
+            d3.symbolCross,
+            d3.symbolWye
+        ];
 
-        Object.entries(symbolMap).forEach(([key, { symbol, color }]) => {
-            const symbolGenerator = d3.symbol().type(symbol).size(100);
+        
+        const colorScale = d3.scaleOrdinal()
+            .domain(numericKeys)
+            .range(d3.schemeSet2.concat(d3.schemeTableau10));
 
-            svg
-                .append("g")
+     
+        numericKeys.forEach((key, i) => {
+            const symbolGen = d3.symbol()
+                .type(symbolTypes[i % symbolTypes.length])
+                .size(300);
+
+            const symbols = svg.append("g")
                 .selectAll("path")
                 .data(data)
                 .join("path")
-                .attr(
-                    "transform",
-                    (d) => `translate(${x(d.timeRange) + x.bandwidth() / 2},${y(d[key])})`
-                )
-                .attr("d", symbolGenerator)
-                .attr("fill", color)
-                .attr("opacity", 0.8);
+                .attr("d", symbolGen)
+                .attr("fill", colorScale(key))
+                .attr("opacity", 0.9);
+
+            function animate() {
+                symbols
+                    .transition()
+                    .duration(3000)
+                    .attrTween("transform", function (d) {
+                        const xPos = x(d.timeRange) + x.bandwidth() / 2;
+                        const yStart = y(d[key]);
+                       
+                        return function (t) {
+                            const dy = Math.sin(t * 2 * Math.PI) * 20;
+                            return `translate(${xPos}, ${yStart + dy})`;
+                        };
+                    })
+                    .on("end", animate); 
+            }
+
+            animate();
         });
 
-        // Vẽ legend
-        const legend = svg.append("g").attr("transform", `translate(${width - margin.right - 140},${margin.top})`);
+    
+        const legend = svg.append("g")
+            .attr("transform", `translate(${width - 150}, ${margin.top})`);
 
-        // Bar gain trong legend
-        legend
-            .append("rect")
-            .attr("x", 10)
+       
+        legend.append("rect")
+            .attr("x", 0)
             .attr("y", 0)
             .attr("width", 20)
-            .attr("height", 15)
-            .attr("fill", "steelblue")
+            .attr("height", 12)
+            .attr("fill", "white")
             .attr("opacity", 0.7);
-        legend
-            .append("text")
-            .attr("x", 35)
-            .attr("y", 12)
+
+        legend.append("text")
+            .attr("x", 30)
+            .attr("y", 10)
+            .attr("fill", "white")
             .text("gain (bar)")
-            .style("font-size", "14px")
-            .attr("alignment-baseline", "middle");
+            .style("font-size", "14px");
 
-        // Scatter legend cho các key khác
-        Object.entries(symbolMap).forEach(([key, { symbol, color }], i) => {
-            const symGen = d3.symbol().type(symbol).size(100);
-            legend
-                .append("path")
-                .attr("d", symGen())
-                .attr("fill", color)
-                .attr("transform", `translate(20, ${30 + i * 25})`);
+        
+        numericKeys.forEach((key, i) => {
+            const symbolGen = d3.symbol()
+                .type(symbolTypes[i % symbolTypes.length])
+                .size(110);
 
-            legend
-                .append("text")
-                .attr("x", 40)
-                .attr("y", 30 + i * 25 + 5)
+            legend.append("path")
+                .attr("d", symbolGen())
+                .attr("transform", `translate(10, ${30 + i * 22})`)
+                .attr("fill", colorScale(key));
+
+            legend.append("text")
+                .attr("x", 30)
+                .attr("fill", "white")
+                .attr("y", 35 + i * 22)
                 .text(key)
-                .style("font-size", "14px")
-                .attr("alignment-baseline", "middle");
+                .style("font-size", "13px");
         });
+
     }, [data]);
 
     return <svg ref={svgRef}></svg>;
