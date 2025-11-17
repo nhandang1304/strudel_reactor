@@ -26,7 +26,7 @@ export default function ScatterPlot({ logArray }) {
         const svg = d3.select(svgRef.current);
         const width = 1000;
         const height = 700;
-        const margin = { top: 60, right: 60, bottom: 60, left: 60 };
+        const margin = { top: 60, right: 60, bottom: 120, left: 60 };
 
       
         svg.attr("width", width).attr("height", height).style("background-color", "black");
@@ -52,19 +52,29 @@ export default function ScatterPlot({ logArray }) {
        
         svg.append("g")
             .attr("transform", `translate(0, ${height - margin.bottom})`)
+            .attr("fill", "white")
             .call(d3.axisBottom(x).tickSizeOuter(0))
             .selectAll("text")
             .attr("transform", "rotate(-40)")
             .style("text-anchor", "end")
-            .style("font-size", "16px")
+            .attr("font-size", "14px")
+            .attr("fill", "white")
 
+        svg.select(`g[transform="translate(0, ${height - margin.bottom})"] .domain`)
+            .attr("stroke", "white")
+            .attr("stroke-width", 2);
        
         svg.append("g")
             .attr("transform", `translate(${margin.left},0)`)
+            .attr("fill", "white")
             .call(d3.axisLeft(y))
-            .style("font-size", "16px")
+            .selectAll("text")
+            .style("font-size", "14px")
+            .attr("fill", "white")
+        svg.select(`g[transform="translate(${margin.left}, 0)"] .domain`)
+            .attr("stroke", "white")
+            .attr("stroke-width", 2);
 
-       
         svg.append("g")
             .selectAll("rect")
             .data(data)
@@ -88,46 +98,42 @@ export default function ScatterPlot({ logArray }) {
         ];
 
         
+        const customColors = {
+            key1: "#f178fa",
+            key2: "#fa1470",
+            key3: "#30ff3b",
+            key4: "#f9fc3d",
+            key5: "#f9fc3d",
+            key6: "#dad7fc",
+            key7: "#0559f5"
+        };
+
         const colorScale = d3.scaleOrdinal()
             .domain(numericKeys)
-            .range(d3.schemeSet2.concat(d3.schemeTableau10));
+            .range(numericKeys.map(k => customColors[k] || "gray"));
 
      
         numericKeys.forEach((key, i) => {
             const symbolGen = d3.symbol()
-                .type(symbolTypes[i % symbolTypes.length])
+                .type(symbolTypes[i % symbolTypes.length]) 
                 .size(300);
 
-            const symbols = svg.append("g")
+            svg.append("g")
                 .selectAll("path")
                 .data(data)
                 .join("path")
+                .attr(
+                    "transform",
+                    (d) => `translate(${x(d.timeRange) + x.bandwidth() / 2}, ${y(d[key])})`
+                )
                 .attr("d", symbolGen)
                 .attr("fill", colorScale(key))
                 .attr("opacity", 0.9);
-
-            function animate() {
-                symbols
-                    .transition()
-                    .duration(3000)
-                    .attrTween("transform", function (d) {
-                        const xPos = x(d.timeRange) + x.bandwidth() / 2;
-                        const yStart = y(d[key]);
-                       
-                        return function (t) {
-                            const dy = Math.sin(t * 2 * Math.PI) * 20;
-                            return `translate(${xPos}, ${yStart + dy})`;
-                        };
-                    })
-                    .on("end", animate); 
-            }
-
-            animate();
         });
 
     
         const legend = svg.append("g")
-            .attr("transform", `translate(${width - 150}, ${margin.top})`);
+            .attr("transform", `translate(${width - 150}, ${margin.top + 40})`);
 
        
         legend.append("rect")
@@ -136,7 +142,10 @@ export default function ScatterPlot({ logArray }) {
             .attr("width", 20)
             .attr("height", 12)
             .attr("fill", "white")
-            .attr("opacity", 0.7);
+            .attr("opacity", 0.7)
+            .attr("stroke", "white")      
+            .attr("stroke-width", 2) 
+            .style("font-size", "14px");
 
         legend.append("text")
             .attr("x", 30)
@@ -161,7 +170,8 @@ export default function ScatterPlot({ logArray }) {
                 .attr("fill", "white")
                 .attr("y", 35 + i * 22)
                 .text(key)
-                .style("font-size", "13px");
+                .style("font-size", "15px")
+                .attr("font-weight", "bold")
         });
 
     }, [data]);
