@@ -8,14 +8,14 @@ import { transpiler } from '@strudel/transpiler';
 import { getAudioContext, webaudioOutput, registerSynthSounds } from '@strudel/webaudio';
 import { registerSoundfonts } from '@strudel/soundfonts';
 import { stranger_tune } from './tunes';
-import console_monkey_patch, { getD3Data } from './console-monkey-patch';
+import console_monkey_patch, { getD3Data, subscribe, unsubscribe } from './console-monkey-patch';
+import ScatterPlot from "./components/D3BuildGraph";
 import DjControl from "./components/DjControl";
 import PlayButtons from "./components/PlayButtons";
 import ProcButtons from "./components/ProcButtons";
 import PreprocessTextarea from "./components/PreprocessTextarea";
 import VolumeRange from "./components/VolumeRange";
 import PauseAndResumeButton from "./components/PauseAndResumeButtons";
-import { initVisualizer, drawBarChart } from "./components/D3BuildGraph";
 
 import { Proc } from "./utils/ProcAudioLogic";
 import pauseAudio from "../src/utils/PauseAndResumeLogic";
@@ -32,8 +32,7 @@ import { GiLoveSong } from "react-icons/gi";
 
 const handleD3Data = (event) => {
     console.log(event.detail);
-    //const logs = event.detail; 
-    //drawBarChart(logs);
+    console.log()
 };
 
 export default function StrudelDemo() {
@@ -43,7 +42,20 @@ export default function StrudelDemo() {
    const [speed, setSpeed] = useState(1)
     const [showCanva, SetOpenCanvas] = useState(false)
     const [playingAudio, setPlayingAudio] = useState(false);
+    const [showD3Chart, setShowD3Chart] = useState(false);
     const context = getAudioContext();
+    const [logArray, setLogArray] = useState(getD3Data());
+
+    useEffect(() => {
+        function onD3Data(event) {
+            setLogArray(event.detail);
+        }
+        subscribe("d3Data", onD3Data);
+
+        return () => {
+            unsubscribe("d3Data", onD3Data);
+        }
+    }, []);
     useEffect(() => {
 
         if (!hasRun.current) {
@@ -53,12 +65,9 @@ export default function StrudelDemo() {
             //Code copied from example: https://codeberg.org/uzu/strudel/src/branch/main/examples/codemirror-repl
             //init canvas
             const canvas = document.getElementById('roll');
-            initVisualizer(canvas);
-            //canvas.width = canvas.width * 2;
-            //canvas.height = canvas.height * 2;
-            //const drawContext = canvas.getContext('2d');
-
-
+            canvas.width = canvas.width * 2;
+            canvas.height = canvas.height * 2;
+            const drawContext = canvas.getContext('2d');
             const drawTime = [-2, 2]; // time window of drawn haps
             globalEditor.current = new StrudelMirror({
                 defaultOutput: webaudioOutput,
@@ -66,7 +75,7 @@ export default function StrudelDemo() {
                 transpiler,
                 root: document.getElementById('editor'),
                 drawTime,
-              /*  onDraw: (haps, time) => { drawPianoroll({ haps, time, ctx: drawContext, drawTime, fold: 0 }) },*/
+                onDraw: (haps, time) => { drawPianoroll({ haps, time, ctx: drawContext, drawTime, fold: 0 }) },
                 prebake: async () => {
                     initAudioOnFirstClick(); // needed to make the browser happy (don't await this here..)
                     const loadModules = evalScope(
@@ -86,9 +95,7 @@ export default function StrudelDemo() {
             Proc(setPlayingAudio, globalEditor.current, setPause, context, speed)
            
         }
-        return () => {
-            document.removeEventListener("d3Data", handleD3Data);
-        };
+
     }, []);
 
     return (
@@ -138,7 +145,11 @@ export default function StrudelDemo() {
                                         <br />
                                         {showCanva ? "Hide canvas" : "Show canvas"}
                                         </button>
+                                        
                                     </Tooltips>
+                                    <button onClick={() => setShowD3Chart(!showD3Chart)}>
+                                        {showD3Chart ? "Hide D3 Chart" : "Show D3 Chart"}
+                                    </button>
                                 </div>
 
                                 <div className="borderFeatures mx-5 col-6 mt-5 d-flex flex-column align-items-center">
@@ -184,6 +195,11 @@ export default function StrudelDemo() {
                             className={`canvasDes borderFeatures  borderCode ms-3 ${showCanva ? "show" : "hide"}`}
                         ></canvas>
                        
+                        {showD3Chart && (
+                            <div className={`canvasDes borderFeatures  borderCode ms-3 ${showD3Chart ? "show" : "hide"}`}>
+                                <ScatterPlot logArray={logArray} />
+                            </div>
+                        )}
                         
                     </div>
                 </div>
