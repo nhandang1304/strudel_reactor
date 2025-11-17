@@ -1,10 +1,16 @@
-function addFavourite(song) {
-    setFavourites(prevFavourites => {
-        const exists = prevFavourites.some(fav => fav.id === song.id);
-        if (exists) return prevFavourites;
+export function addFavourite(song, favourites, setFavourites) {
+    if (!song.melody) {
+        alert("Please enter a melody before adding!");
+        return;
+    }
 
-        const updatedFavourites = [...prevFavourites, song];
-        localStorage.setItem("favourites", JSON.stringify(updatedFavourites));
-        return updatedFavourites;
-    });
+    const exists = favourites.some(fav => fav.melody === song.melody);
+    if (exists) {
+        alert("This melody is already in your favourites!");
+        return;
+    }
+
+    const newFavs = [...favourites, song];
+    localStorage.setItem("favourites", JSON.stringify(newFavs));
+    setFavourites(newFavs);
 }

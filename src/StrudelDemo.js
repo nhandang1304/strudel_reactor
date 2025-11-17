@@ -9,6 +9,7 @@ import { registerSoundfonts } from '@strudel/soundfonts';
 import { stranger_tune } from './tunes';
 import console_monkey_patch, { getD3Data, subscribe, unsubscribe } from './console-monkey-patch';
 import ScatterPlot from "./components/D3BuildGraph";
+import addFavourite from "./utils/AddFavouriteSong";
 import DjControl from "./components/DjControl";
 import PlayButtons from "./components/PlayButtons";
 import ProcButtons from "./components/ProcButtons";
@@ -37,9 +38,22 @@ const handleD3Data = (event) => {
 
 
 export default function StrudelDemo() {
+  
+    const [currentMelody, setCurrentMelody] = useState('');
     const [favourites, setFavourites] = useState(() => {
         const saved = localStorage.getItem("favourites");
-        return saved ? JSON.parse(saved) : [];});
+        return saved ? JSON.parse(saved) : [];
+    });
+
+    const currentSong = {
+        id: Date.now().toString(),
+        name: "My Melody " + new Date().toLocaleTimeString(),
+        melody: currentMelody
+    };
+
+    function handleAddFavourite(song) {
+        addFavourite(song, favourites, setFavourites);
+    }
     const globalEditor = useRef(null);
     const hasRun = useRef(false);
     const [Paused, setPause] = useState(false);
@@ -136,7 +150,7 @@ export default function StrudelDemo() {
                             
                                 <div className="d-flex justify-content-between align-items-center mt-2 mb-2 gap-1">
                                    
-                                    < FavouriteSong />
+                                    < FavouriteSong addFavourite={handleAddFavourite} currentSong={currentSong} />
                                     <ProcButtons setPlayingAudio={setPlayingAudio} globalEditor={globalEditor} setPause={setPause} pause={Paused} context={context} />
                                 </div>
                             </div>
