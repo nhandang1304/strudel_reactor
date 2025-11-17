@@ -147,9 +147,12 @@ export default function StrudelDemo() {
                                         </button>
                                         
                                     </Tooltips>
-                                    <button onClick={() => setShowD3Chart(!showD3Chart)}>
+                                    <Tooltips title="Show D3 Chart" >
+                                        <button className="btn btn-outline-light fw-bold mt-2" onClick={() => setShowD3Chart(!showD3Chart)}>
+
                                         {showD3Chart ? "Hide D3 Chart" : "Show D3 Chart"}
-                                    </button>
+                                        </button>
+                                    </Tooltips>
                                 </div>
 
                                 <div className="borderFeatures mx-5 col-6 mt-5 d-flex flex-column align-items-center">
@@ -189,14 +192,28 @@ export default function StrudelDemo() {
 
                    
                     <div className="mt-4 d-flex justify-content-end align-items-center">
-                        
-                        <canvas
-                            id="roll"
-                            className={`canvasDes borderFeatures  borderCode ms-3 ${showCanva ? "show" : "hide"}`}
-                        ></canvas>
+                        <div className={`canvasDes borderFeatures borderCode ms-3 ${showCanva ? "show" : "hide"}`}>
+                            <button className="closeButton" onClick={() => SetOpenCanvas(false)}>✕</button>
+
+                            <canvas
+                                id="roll"
+                              
+                            ></canvas>
+                        </div>
                        
                         {showD3Chart && (
-                            <div className={`canvasDes borderFeatures  borderCode ms-3 ${showD3Chart ? "show" : "hide"}`}>
+                            <div
+                                className={`canvasDes borderFeatures borderCode ms-3 ${showD3Chart ? "show" : "hide"}`}
+                                style={{ position: "relative" }}
+                            >
+                               
+                                <button
+                                    onClick={() => setShowD3Chart(false)}
+                                    className="closeButton">
+                                
+                                    X
+                                </button>
+
                                 <ScatterPlot logArray={logArray} />
                             </div>
                         )}
