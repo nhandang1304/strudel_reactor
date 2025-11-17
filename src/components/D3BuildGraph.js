@@ -33,7 +33,14 @@ export default function ScatterPlot({ logArray }) {
 
     
         svg.selectAll("*").remove();
-
+        svg.append("text")
+            .attr("x", width / 2)
+            .attr("y", margin.top / 2)
+            .attr("text-anchor", "middle")
+            .attr("fill", "white")
+            .style("font-size", "24px")
+            .style("font-weight", "bold")
+            .text("Audio Signal Over Time");
         const x = d3
             .scaleBand()
             .domain(data.map((d) => d.timeRange))
@@ -87,17 +94,7 @@ export default function ScatterPlot({ logArray }) {
             .attr("opacity", 0.7);
 
         
-        const symbolTypes = [
-            d3.symbolCircle,
-            d3.symbolTimes,
-            d3.symbolSquare,
-            d3.symbolDiamond,
-            d3.symbolStar,
-            d3.symbolCross,
-            d3.symbolWye
-        ];
-
-        
+       
         const customColorsArr = [
             "#f178fa",
             "#fa1470",
@@ -130,48 +127,56 @@ export default function ScatterPlot({ logArray }) {
 
     
         const legend = svg.append("g")
-            .attr("transform", `translate(${width - 150}, ${margin.top + 40})`);
+            .attr("transform", `translate(${width - 200}, ${margin.top + 10})`)
+            .attr("font-size", 14);
 
        
-        legend.append("rect")
+        const gainLegend = legend.append("g");
+
+        gainLegend.append("rect")
             .attr("x", 0)
             .attr("y", 0)
-            .attr("width", 20)
-            .attr("height", 12)
+            .attr("width", 22)
+            .attr("height", 14)
             .attr("fill", "white")
             .attr("opacity", 0.7)
-            .attr("stroke", "white")      
-            .attr("stroke-width", 2) 
-            .style("font-size", "14px");
+            .attr("stroke", "white")
+            .attr("stroke-width", 2);
 
-        legend.append("text")
-            .attr("x", 30)
-            .attr("y", 10)
+        gainLegend.append("text")
+            .attr("x", 35)
+            .attr("y", 12)
             .attr("fill", "white")
-            .text("gain (bar)")
-            .style("font-size", "14px");
+            .style("font-size", "14px")
+            .style("font-weight", "bold")
+            .text("gain (bar)");
 
-        
 
+      
         numericKeys.forEach((key, i) => {
-            const symbolGen = d3.symbol()
-                .type(symbolTypes[i % symbolTypes.length])
-                .size(110);
+            const rowY = 35 + i * 26;
 
-            legend.append("path")
-                .attr("d", symbolGen())
-                .attr("transform", `translate(10, ${30 + i * 22})`)
-                .attr("fill", colorScale(key));
+            const keyLegend = legend.append("g")
+                .attr("transform", `translate(0, ${rowY})`);
 
-            legend.append("text")
-                .attr("x", 30)
+            
+            keyLegend.append("line")
+                .attr("x1", 0)
+                .attr("x2", 25)
+                .attr("y1", 7)
+                .attr("y2", 7)
+                .attr("stroke", colorScale(key))
+                .attr("stroke-width", 3);
+
+            
+            keyLegend.append("text")
+                .attr("x", 35)
+                .attr("y", 10)
                 .attr("fill", "white")
-                .attr("y", 35 + i * 22)
-                .text(key)
                 .style("font-size", "15px")
-                .attr("font-weight", "bold")
+                .style("font-weight", "bold")
+                .text(key);
         });
-
     }, [data]);
 
     return <svg ref={svgRef}></svg>;
