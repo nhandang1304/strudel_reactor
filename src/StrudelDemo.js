@@ -197,7 +197,9 @@ export default function StrudelDemo() {
                     <div className="mt-4 d-flex justify-content-end align-items-center">
                         <div className={`canvasDes borderFeatures borderCode ms-3 ${showCanva ? "show" : "hide"}`} style={{ position: "relative" }}>
                             <button className="closeButton" onClick={() => SetOpenCanvas(false)}>✕</button>
-
+                            <h3 className="gradientTitleStrud">
+                                Music Wave Visualization
+                            </h3>
                             <canvas
                                 id="roll" width={700} height={700}
                               
