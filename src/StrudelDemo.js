@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from "react";
 import { StrudelMirror } from '@strudel/codemirror';
 import { evalScope } from '@strudel/core';
-import { drawPianoroll } from '@strudel/draw';
 import { initAudioOnFirstClick } from '@strudel/webaudio';
 import { transpiler } from '@strudel/transpiler';
 import { getAudioContext, webaudioOutput, registerSynthSounds } from '@strudel/webaudio';
@@ -28,12 +27,14 @@ import { FaChalkboard } from "react-icons/fa";
 import Tooltips from "./components/TooltipDes";
 import { NavLink } from "react-router-dom"
 import { GiLoveSong } from "react-icons/gi";
-/*let globalEditor = null;*/
+import  MusicWave  from "./components/MusicWave";
+
 
 const handleD3Data = (event) => {
     console.log(event.detail);
     console.log()
 };
+
 
 export default function StrudelDemo() {
     const globalEditor = useRef(null);
@@ -65,8 +66,7 @@ export default function StrudelDemo() {
             //Code copied from example: https://codeberg.org/uzu/strudel/src/branch/main/examples/codemirror-repl
             //init canvas
             const canvas = document.getElementById('roll');
-            canvas.width = canvas.width * 2;
-            canvas.height = canvas.height * 2;
+
             const drawContext = canvas.getContext('2d');
             const drawTime = [-2, 2]; // time window of drawn haps
             globalEditor.current = new StrudelMirror({
@@ -75,7 +75,9 @@ export default function StrudelDemo() {
                 transpiler,
                 root: document.getElementById('editor'),
                 drawTime,
-                onDraw: (haps, time) => { drawPianoroll({ haps, time, ctx: drawContext, drawTime, fold: 0 }) },
+                onDraw: (haps, time) => {
+                    MusicWave({ ctx: drawContext, time })
+                },
                 prebake: async () => {
                     initAudioOnFirstClick(); // needed to make the browser happy (don't await this here..)
                     const loadModules = evalScope(
@@ -193,11 +195,11 @@ export default function StrudelDemo() {
 
                    
                     <div className="mt-4 d-flex justify-content-end align-items-center">
-                        <div className={`canvasDes borderFeatures borderCode ms-3 ${showCanva ? "show" : "hide"}`}>
+                        <div className={`canvasDes borderFeatures borderCode ms-3 ${showCanva ? "show" : "hide"}`} style={{ position: "relative" }}>
                             <button className="closeButton" onClick={() => SetOpenCanvas(false)}>✕</button>
 
                             <canvas
-                                id="roll"
+                                id="roll" width={700} height={700}
                               
                             ></canvas>
                         </div>

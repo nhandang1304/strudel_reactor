@@ -24,7 +24,7 @@ export default function ScatterPlot({ logArray }) {
         if (!data.length) return;
 
         const svg = d3.select(svgRef.current);
-        const width = 1000;
+        const width = 700;
         const height = 700;
         const margin = { top: 60, right: 60, bottom: 120, left: 60 };
 
