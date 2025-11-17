@@ -37,6 +37,9 @@ const handleD3Data = (event) => {
 
 
 export default function StrudelDemo() {
+    const [favourites, setFavourites] = useState(() => {
+        const saved = localStorage.getItem("favourites");
+        return saved ? JSON.parse(saved) : [];});
     const globalEditor = useRef(null);
     const hasRun = useRef(false);
     const [Paused, setPause] = useState(false);
