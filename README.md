@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+﻿# Project README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+##  Controls Description
+- **Preprocess**
+   Saves the current song code before playback or further processing.
+- **Process and Play**  
+  Processes the current song code and immediately plays the updated audio output.
+- **Restart**  
+  Stops the current audio playback, resets the audio context, and restarts the song from the beginning using the latest version of the code.
+- **Stop**  
+  Completely stops all audio playback and clears any scheduled sounds, without restarting the song.
+- **D3 Graph**  
+  Shows a dynamic and interactive graph updated in real-time based on data input.
 
-In the project directory, you can run:
+- **Canvas Control**  
+  Displays the waveform color visualization.
 
-### `npm start`
+- **Volume Control**  
+  Adjusts the overall volume of the playback.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Playback Speed Control**  
+  Allows changing the tempo of the playback.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Play/Pause Button**  
+  Starts or pauses the audio playback.
 
-### `npm test`
+- **Import/Export Controls**  
+  Enables importing and exporting project settings or song codes as CSV or JSON files.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Add Favourite Song**  
+  Stores the code of a song into the favourite song list.
 
-### `npm run build`
+- **Favourite Song List**  
+  Displays all favourite songs with options to:  
+  - **Remove Button:** Remove a song from the favourite list.  
+  - **Show Melody:** Display the full code of the song.
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##  Usage Guidelines and Quirks
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Adjusting volume or speed will restart the song playback applying the new settings immediately. This means that changing either will stop the current playback and start the melody again with the updated volume or speed.
+- Favourites are saved in the browser’s localStorage, so clearing cache will remove them.
+- To import a melody file, you must stop the song playback first before importing.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+##  Demonstration Video
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Watch the project demonstration here:  
+➡️ [Demo Video Link](https://your-video-link.com)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+##  Bonus Points Claimed
 
-## Learn More
+- I spent about 8 hours learning how music works on Strudel.cc and remixing an original song. I modified melody patterns, changed the tempo dynamically, added new rhythm layers, and switched the sound to a square wave. I believe that this new remix shows my own creative and technical effort, not just copying.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##  Song Code Source
 
-### Code Splitting
+The song patterns and samples are based on the following sources from the Strudel.cc bakery:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- [Algorave Dave Samples](https://github.com/algorave-dave/samples)  
+- [Dirt Samples by TidalCycles](https://raw.githubusercontent.com/tidalcycles/Dirt-Samples/master/strudel.json)  
+- [Tidal Drum Machines by Mittans](https://raw.githubusercontent.com/Mittans/tidal-drum-machines/main/machines/tidal-drum-machines.json)
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+##  AI Tools Used
 
-### Making a Progressive Web App
+- **ChatGPT (OpenAI)**  
+  - **Inputs:** I have a string of code that contains a line like `setcps(140/60/4)` which sets the current tempo.  
+I want to write a JavaScript function that finds this `setcps(...)` call in the string and updates its value dynamically based on a given `speed` variable. For example, if `speed` is 2, then `setcps(140/60/4)` should become `setcps(140/60/4 * 2)` or its calculated value.   
+  - **Outputs:** 
+       
+        .replace(
+            /all\(x\s*=>\s*x\.gain\(mouseX\.range\(\s*[0-9.]+\s*,\s*[0-9.]+\s*\)\s*\)\)/g,
+            `all(x => x.gain(${vol}))`
+        )
+    
+        .replace(
+            /all\(x\s*=>\s*x\.gain\(\s*[0-9.]+\s*\)\)/g,
+            `all(x => x.gain(${vol}))`
+        );
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

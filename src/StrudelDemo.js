@@ -39,6 +39,7 @@ const handleD3Data = (event) => {
 
 export default function StrudelDemo() {
     const [showAlert, setShowAlert] = useState(false);
+    const [alertMessage, setAlertMessage] = useState("");
     const [currentMelody, setCurrentMelody] = useState('');
     const [favourites, setFavourites] = useState(() => {
         const saved = localStorage.getItem("favourites");
@@ -51,11 +52,18 @@ export default function StrudelDemo() {
             name: "My Melody " + new Date().toLocaleTimeString(),
             melody: currentMelody,
         }, favourites, setFavourites);
+
         if (success) {
+            setAlertMessage("Added successfully to favourite list!");
             setShowAlert(true);
-            setTimeout(() => setShowAlert(false), 1500); 
+
+            setTimeout(() => {
+                setShowAlert(false);
+                setAlertMessage("");
+            }, 1500);
         }
     }
+
    
     const globalEditor = useRef(null);
     const hasRun = useRef(false);
@@ -126,7 +134,11 @@ export default function StrudelDemo() {
             
 
             <main>
-
+                {showAlert && (
+                    <div className="alert alert-info" role="alert">
+                        {alertMessage}
+                    </div>
+                )}
                 <div className="container-fluid">
                     <div className="row">
                         <h1 className="display-3 fw-bold gradientTitleStrud">Strudel Demo</h1>
@@ -159,11 +171,7 @@ export default function StrudelDemo() {
                                 </div>
                                 
                             </div>
-                            {showAlert && (
-                                <div className="alert alert-info" role="alert">
-                                    Add successfully to favourite list
-                                </div>
-                            )}
+                            
                             <div className="row ">
                                 <div className="borderFeatures col-4 mt-5 d-flex flex-column">
                                     <h3 className="gradientTitleStrud text-center" >Canvas</h3>
