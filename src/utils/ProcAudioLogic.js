@@ -6,12 +6,12 @@ import updateCodeVolume from "../utils/VolumeLogic"
 
 export /*async*/ function ProcAndPlay(setPlayingAudio, globalEditor, setPause, setCurrentMelody, context, speed = null, volume = null ) {
     if (globalEditor != null) {
-        console.log(globalEditor)
-        console.log("ProcAndPlay context:", context.resume);
-        /*await checkContextStatus(setPause)*/
-        //if (context.state === "running") {
-        //    Stop(globalEditor, setPause, context);
-        //}
+        const proc_text = document.getElementById('proc').value;
+
+        if (!proc_text || proc_text.trim() === "") {
+            alert("No code to run");
+            return;
+        }
 
         setPlayingAudio(true);
         context.resume();
@@ -31,7 +31,10 @@ export function Proc(setPlayingAudio, globalEditor, setPause, setCurrentMelody, 
     }
     setPlayingAudio(false);
     let proc_text = document.getElementById('proc').value
-    
+    if (proc_text === "") {
+        alert("No code to run");
+        return;
+    }
     let proc_text_replaced = proc_text.replaceAll('<p1_Radio>', ProcessText(proc_text));
 
 

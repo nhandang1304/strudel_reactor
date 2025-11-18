@@ -25,38 +25,42 @@ function FavouriteSongList() {
     }
 
     return (
-        <div className="bodyStrud">
-            <h1 className="display-3 fw-bold">Your favourite list</h1>
+        <div>
+            <h1 className="display-3 fw-bold mb-5">Your favourite list</h1>
             <div className="row justify-content-center">
                 {favourites.map(song => (
                     <div key={song.id} className="col-3 ml-2">
-                        <div className="card" style={{ width: "18rem" }}>
+                        <div className="card text-dark" style={{ border: "2px solid black" }}>
                             <div className="card-body">
-                                <h5 className="card-title">{song.name}</h5>
+                                <div class="card-header">
+                                    <h4 className="card-title fw-bold">{song.name}</h4>
+                                </div>
                                 <p className="card-text">
                                     {song.melody.length > 100
                                         ? song.melody.substring(0, 100) + "..."
                                         : song.melody}
                                 </p>
+                                <div className="d-flex justify-content-center  align-items-center gap-3">
                                 <button
-                                    className="btn btn-outline-light fw-bold mt-2"
+                                    className="btn btn-danger fw-bold mt-2"
                                     onClick={() => handleRemove(song.id)}
                                 >
                                     Remove
                                 </button>
                                 <button
-                                    className="btn btn-outline-light fw-bold mt-2"
+                                    className="btn btn-outline-dark fw-bold mt-2 "
                                     onClick={() => handleShowMelody(song)}
                                 >
                                     Show melody
-                                </button>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 ))}
             </div>
 
-            {/* Popup modal hiển thị melody */}
+          
             {selectedSong && (
                 <div
                     className="modal-overlay popupWindow"
@@ -64,15 +68,9 @@ function FavouriteSongList() {
                     onClick={handleCloseModal}
                 >
                     <div
-                        className="modal-content"
-                        style={{
-                            backgroundColor: "white",
-                            padding: "20px",
-                            borderRadius: "8px",
-                            maxWidth: "90%",
-                            maxHeight: "80%",
-                            overflowY: "auto",
-                        }}
+                        className="modal-content contentWindow"
+                        style={{ backgroundColor: "white", padding: "20px", borderRadius: "8px", maxWidth: "90%", maxHeight: "80%", overflowY: "auto", }}
+                        
                         onClick={e => e.stopPropagation()} 
                     >
                         <h3>{selectedSong.name}</h3>
@@ -87,7 +85,7 @@ function FavouriteSongList() {
                             {selectedSong.melody}
                         </pre>
                         <button
-                            className="btn btn-outline-secondary mt-3"
+                            className="btn btn-outline-danger mt-3"
                             onClick={handleCloseModal}
                         >
                             Close
