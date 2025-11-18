@@ -59,7 +59,7 @@ note(pick(arpeggiator1, "<0 1 2 3>/2"))
 .postgain(pick(gain_patterns, pattern))
 
 
-<p1_Radio>drums:
+drums:
 stack(
   s("tech:5")
   .postgain(6)
@@ -77,7 +77,7 @@ stack(
   .postgain(.25),
 )
 
-<p1_Radio>drums2:
+drums2:
 stack(
   s("[~ hh]*4").bank("RolandTR808").room(0.3).speed(0.75).gain(1.2),
   s("hh").struct("x*16").bank("RolandTR808")

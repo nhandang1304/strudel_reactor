@@ -1,5 +1,9 @@
 export function Restart(setPlayingAudio, globalEditor, setPause, context) {
-
+    let proc_text = document.getElementById('proc').value;
+    if (proc_text === "") {
+        alert("No code to run");
+        return;
+    }
     globalEditor.stop();
     setPlayingAudio(true)
         /*checkContextStatus(setPause);*/
@@ -9,6 +13,7 @@ export function Restart(setPlayingAudio, globalEditor, setPause, context) {
     }
 
 export function Stop(setPlayingAudio, globalEditor, setPause, context) {
+
     setPause(false);
     setPlayingAudio(false)
     globalEditor.stop();

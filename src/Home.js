@@ -27,7 +27,7 @@ function Home() {
                             <p className="lead fw-bold gradient-text ">Who needs a guitar when your code can jam? Turn your keyboard into a DJ deck.</p>
                             <div className="text-center mt-5">
                                 <NavLink id="createButton" to="/create" className="fw-bold btn btn-warning btn-rounded display-2 fs-4" data-mdb-ripple-init>
-                                    Create your own song
+                                    Try a sample song
                                 </NavLink>
 
                             </div>
@@ -56,14 +56,7 @@ function Home() {
                     />
 
 
-                    <CardNav
-                        titleCard="Upload your song"
-                        desCard="Got a beat? Drop your song here and make the world vibe to your tune!"
-                        buttonCard="Import your song here"
-                        icons={[
-                            <GrCloudUpload color="#4DEFF7" size="120" />
-                        ]}
-                    />
+                    
                     
                 </div>
             </body>

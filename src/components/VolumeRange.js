@@ -3,7 +3,7 @@ import { IoVolumeMuteSharp } from "react-icons/io5";
 import { useState, useEffect } from "react";
 import updateCodeVolume from "../utils/VolumeLogic";
 import { Proc, ProcAndPlay } from "../utils/ProcAudioLogic"
-function VolumeRange({ setCurrentMelody, setPlayingAudio, playingAudio, globalEditor, setPause, context, speed }) {
+function VolumeRange({ setVolumeAu, setCurrentMelody, setPlayingAudio, playingAudio, globalEditor, setPause, context, speed }) {
 
     const [mutedSound, setMutedSound] = useState(false);
     const [volumeValue, setVolume] = useState(0.5);
@@ -12,6 +12,7 @@ function VolumeRange({ setCurrentMelody, setPlayingAudio, playingAudio, globalEd
         if (mutedSound) {
             setMutedSound(false);
             setVolume(0.5);
+            setVolumeAu(0.5);
             if (playingAudio) {
                 ProcAndPlay(setPlayingAudio, globalEditor.current, setPause, setCurrentMelody, context, speed, 0.5);
             }
@@ -22,6 +23,7 @@ function VolumeRange({ setCurrentMelody, setPlayingAudio, playingAudio, globalEd
             
             setMutedSound(true);
             setVolume(0);
+            setVolumeAu(0);
             if (!playingAudio) {
                 Proc(setPlayingAudio, globalEditor.current, setPause, setCurrentMelody, context, speed, 0);
             }
@@ -35,6 +37,7 @@ function VolumeRange({ setCurrentMelody, setPlayingAudio, playingAudio, globalEd
         const value = parseFloat(e.target.value);
         console.log("Slide:" + value)
         setVolume(value);
+        setVolumeAu(value);
         console.log("playingAu: " + playingAudio)
         if (playingAudio) {
             ProcAndPlay(setPlayingAudio, globalEditor.current, setPause, setCurrentMelody, context, speed, value)

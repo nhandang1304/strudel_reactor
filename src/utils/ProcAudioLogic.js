@@ -1,10 +1,9 @@
-import ProcessText from "./ProcessTextLogic";
-import checkContextStatus from "../utils/checkContextStatusjs";
+import removeInstrument from "./ProcessTextLogic";
 import { Restart, Stop } from "../utils/RestartAndStopLogic";
 import Speed from "../utils/SpeedLogic";
 import updateCodeVolume from "../utils/VolumeLogic"
 
-export /*async*/ function ProcAndPlay(setPlayingAudio, globalEditor, setPause, setCurrentMelody, context, speed = null, volume = null ) {
+export /*async*/ function ProcAndPlay(setPlayingAudio, globalEditor, setPause, setCurrentMelody, context, speed = null, volume = null) {
     if (globalEditor != null) {
         const proc_text = document.getElementById('proc').value;
 
@@ -17,7 +16,7 @@ export /*async*/ function ProcAndPlay(setPlayingAudio, globalEditor, setPause, s
         context.resume();
         setPause(false)
         Proc(setPlayingAudio, globalEditor, setPause, setCurrentMelody, context, speed, volume)         
-        /*globalEditor.evaluate();*/
+       
         Restart(setPlayingAudio, globalEditor, setPause, context)
         console.log("Present code: " + document.getElementById('proc').value)    
 
@@ -35,24 +34,22 @@ export function Proc(setPlayingAudio, globalEditor, setPause, setCurrentMelody, 
         alert("No code to run");
         return;
     }
-    let proc_text_replaced = proc_text.replaceAll('<p1_Radio>', ProcessText(proc_text));
 
 
-    ProcessText(proc_text);
 
     if (volume !== null) {
-        proc_text_replaced = updateCodeVolume(proc_text_replaced, volume);
+        proc_text = updateCodeVolume(proc_text, volume);
 
         console.log("Volumn in Proc:" + volume);
     }
     if (speed !== null) {
          
-        proc_text_replaced = Speed(speed, globalEditor, proc_text_replaced);
+        proc_text = Speed(speed, globalEditor, proc_text);
        
         console.log("Speed" + speed);
     }
-    setCurrentMelody(proc_text_replaced)
-    globalEditor.setCode(proc_text_replaced)
-    console.log("Proc: " + proc_text_replaced)
-    return proc_text_replaced;
+    setCurrentMelody(proc_text)
+    globalEditor.setCode(proc_text)
+    console.log("Proc: " + proc_text)
+    return proc_text;
 }

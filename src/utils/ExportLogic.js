@@ -1,9 +1,9 @@
-﻿import { Proc } from "./ProcAudioLogic";
+﻿
 
 export function Export(setPlayingAudio, globalEditor, setPause, context) {
     if (!globalEditor) return;
 
-    // Đọc code gốc từ textarea
+    
     const raw = document.getElementById('proc').value;
 
     const data = { code: raw };
@@ -27,7 +27,7 @@ export function Import(setPlayingAudio, globalEditor, setPause, context) {
     function handleFile(e) {
         const file = e.target.files[0];
         const content = document.getElementById('proc').value;
-        console.log("Nội dung editor:", content);
+        
 
         file.text().then((text) => {
           const json = JSON.parse(text);

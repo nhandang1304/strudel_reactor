@@ -60,7 +60,8 @@ export default function StrudelDemo() {
     const globalEditor = useRef(null);
     const hasRun = useRef(false);
     const [Paused, setPause] = useState(false);
-   const [speed, setSpeed] = useState(1)
+    const [speed, setSpeed] = useState(1)
+   const[volume, setVolumeAu] = useState(0.5)
     const [showCanva, SetOpenCanvas] = useState(false)
     const [playingAudio, setPlayingAudio] = useState(false);
     const [showD3Chart, setShowD3Chart] = useState(false);
@@ -139,7 +140,7 @@ export default function StrudelDemo() {
                                
                             </div>
                             <div className=" borderFeatures  col-2" style={{ backgroundColor: "black" }}>
-                                <VolumeRange setCurrentMelody={setCurrentMelody} setPlayingAudio={setPlayingAudio} playingAudio={playingAudio} globalEditor={globalEditor} speed={speed} context={context} setPause={setPause} />
+                                <VolumeRange setVolumeAu={setVolumeAu} setCurrentMelody={setCurrentMelody} setPlayingAudio={setPlayingAudio} playingAudio={playingAudio} globalEditor={globalEditor} speed={speed} context={context} setPause={setPause} />
                             </div>
                             <div className="borderFeatures  col-3">
                                 <SpeedAudio setCurrentMelody={setCurrentMelody} setPlayingAudio={setPlayingAudio} playingAudio={playingAudio} setSpeed={setSpeed} pause={Paused} globalEditor={globalEditor} setPause={setPause} context={context} />
@@ -184,13 +185,7 @@ export default function StrudelDemo() {
                                     </Tooltips>
                                 </div>
 
-                                <div className="borderFeatures mx-5 col-6 mt-5 d-flex flex-column align-items-center">
-                                    <h3 className="gradientTitleStrud text-center" >DJ Control</h3>
-                                    <div className="mt-2">
-                                        <DjControl speed={speed} pause={Paused} globalEditor={globalEditor} setPause={setPause} context={context} />
-                                    </div>
-                                   
-                                </div>
+                               
                             </div>
                             <CardFeatures text1="Your favorite List" text2="File Handling"
                                 obj1={

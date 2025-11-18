@@ -30,7 +30,7 @@ function FavouriteSongList() {
             <div className="row justify-content-center">
                 {favourites.map(song => (
                     <div key={song.id} className="col-3 ml-2">
-                        <div className="card text-dark" style={{ border: "2px solid black" }}>
+                        <div className="card text-dark mb-5" style={{ border: "2px solid black" }}>
                             <div className="card-body">
                                 <div class="card-header">
                                     <h4 className="card-title fw-bold">{song.name}</h4>
