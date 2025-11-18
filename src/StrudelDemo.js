@@ -176,16 +176,21 @@ export default function StrudelDemo() {
                                         </button>
                                         
                                     </Tooltips>
+                                    
+                                </div>
+
+                                <div className="borderFeatures mx-5 col-6 mt-5 d-flex flex-column align-items-center">
+                                    <h3 className="gradientTitleStrud text-center" >D3 Graph</h3>
                                     <Tooltips title="Show D3 Chart" >
                                         <button className="btn btn-outline-light fw-bold mt-2" onClick={() => setShowD3Chart(!showD3Chart)}>
                                             <VscGraph />
-                                            <br/>
-                                        {showD3Chart ? "Hide D3 Chart" : "Show D3 Chart"}
+                                            <br />
+                                            {showD3Chart ? "Hide D3 Chart" : "Show D3 Chart"}
                                         </button>
                                     </Tooltips>
-                                </div>
 
-                               
+                                   
+                                </div>
                             </div>
                             <CardFeatures text1="Your favorite List" text2="File Handling"
                                 obj1={
