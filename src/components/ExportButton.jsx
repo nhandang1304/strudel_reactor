@@ -9,7 +9,8 @@ function HandlingFilesCard({ setPlayingAudio, globalEditor, setPause, context })
         <>
            
                         <div className="row">
-                            <div className="col-6">
+                <div className="col-6">
+                    {/* Export Button */}
                                 <Tooltips title="Export into json file" >
                         <button id="export" className="btn btn-outline-light" onClick={() => Export(setPlayingAudio, globalEditor.current, setPause, context)}>
                                         <FaFileExport size={20} />
@@ -18,7 +19,8 @@ function HandlingFilesCard({ setPlayingAudio, globalEditor, setPause, context })
                                     </button>
                                 </Tooltips>
                             </div>
-                            <div className="col-6">
+                <div className="col-6">
+                    {/* Import Button */}
                                 <Tooltips title="Import your file to edit or play audio">
                         <button id="import" className="btn btn-outline-light" onClick={() => document.getElementById("jsonInput").click()}>
                                         <TfiImport size={20} />

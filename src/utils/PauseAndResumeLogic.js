@@ -1,12 +1,12 @@
-import { getAudioContext } from '@strudel/webaudio';
+
 
 async function pauseAudio(context, setPause ) {
-
-    /*const context = getAudioContext();*/
+    // If the audio is currently playing, suspend (pause) it
     if (context.state === "running") {
         await context.suspend(); 
         console.log(context.state)
         setPause(true);
+        // If the audio is paused, resume playback
     } else if (context.state === "suspended") {
         await context.resume(); 
         console.log(context.state)

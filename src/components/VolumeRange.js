@@ -8,9 +8,11 @@ function VolumeRange({ setVolumeAu, setCurrentMelody, setPlayingAudio, playingAu
     const [mutedSound, setMutedSound] = useState(false);
     const [volumeValue, setVolume] = useState(0.5);
 
+    // Toggle mute/unmute
     function toggleMute() {
         if (mutedSound) {
             setMutedSound(false);
+            // Unmute to default volume 0.5
             setVolume(0.5);
             setVolumeAu(0.5);
             if (playingAudio) {
@@ -32,7 +34,7 @@ function VolumeRange({ setVolumeAu, setCurrentMelody, setPlayingAudio, playingAu
             }
         }
     }
-
+    // Handle slider volume change
     function handleSliderChange(e) {
         const value = parseFloat(e.target.value);
         console.log("Slide:" + value)
@@ -46,7 +48,7 @@ function VolumeRange({ setVolumeAu, setCurrentMelody, setPlayingAudio, playingAu
             Proc(setPlayingAudio, globalEditor.current, setPause, setCurrentMelody, context, speed, value);
         }
 
-
+        // Sync mute state with slider value
         if (value === 0 && !mutedSound) setMutedSound(true);
         if (value > 0 && mutedSound) setMutedSound(false);
     }

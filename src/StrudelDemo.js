@@ -10,7 +10,6 @@ import { stranger_tune } from './tunes';
 import console_monkey_patch, { getD3Data, subscribe, unsubscribe } from './console-monkey-patch';
 import ScatterPlot from "./components/D3BuildGraph";
 import addFavourite from "./utils/AddFavouriteSong";
-import DjControl from "./components/DjControl";
 import PlayButtons from "./components/PlayButtons";
 import ProcButtons from "./components/ProcButtons";
 import PreprocessTextarea from "./components/PreprocessTextarea";
@@ -41,11 +40,12 @@ export default function StrudelDemo() {
     const [showAlert, setShowAlert] = useState(false);
     const [alertMessage, setAlertMessage] = useState("");
     const [currentMelody, setCurrentMelody] = useState('');
+    // State to store favorite songs, initialized from localStorage
     const [favourites, setFavourites] = useState(() => {
         const saved = localStorage.getItem("favourites");
         return saved ? JSON.parse(saved) : [];
     });
-
+    // Function to add the current melody to the favorites list
     function handleAddFavourite() {
         const success = addFavourite({
             id: Date.now().toString(),
@@ -67,15 +67,19 @@ export default function StrudelDemo() {
    
     const globalEditor = useRef(null);
     const hasRun = useRef(false);
+    // State to manage playback pause status, speed, and volume
     const [Paused, setPause] = useState(false);
     const [speed, setSpeed] = useState(1)
    const[volume, setVolumeAu] = useState(0.5)
-    const [showCanva, SetOpenCanvas] = useState(false)
     const [playingAudio, setPlayingAudio] = useState(false);
+
+    // State to toggle visibility of canvas wave and D3 graph
+    const [showCanva, SetOpenCanvas] = useState(false)
     const [showD3Chart, setShowD3Chart] = useState(false);
     const context = getAudioContext();
     const [logArray, setLogArray] = useState(getD3Data());
 
+    // Subscribe to 'd3Data' event to update graph data dynamically
     useEffect(() => {
         function onD3Data(event) {
             setLogArray(event.detail);
@@ -159,6 +163,7 @@ export default function StrudelDemo() {
                             </div>
                             
                         </div>
+                        {/* Melody input and controls */}
                         <div className="col-md-6" style={{ maxHeight: '50vh', /*overflowY: 'auto' */}}>
                             <div className="borderFeatures">
                                 <h5 className="gradientTitleStrud">Enter your melody or pattern below:</h5>
@@ -171,7 +176,8 @@ export default function StrudelDemo() {
                                 </div>
                                 
                             </div>
-                            
+
+                            {/* Canvas and D3 Chart toggles */}
                             <div className="row ">
                                 <div className="borderFeatures col-4 mt-5 d-flex flex-column">
                                     <h3 className="gradientTitleStrud text-center" >Canvas</h3>
@@ -200,6 +206,7 @@ export default function StrudelDemo() {
                                    
                                 </div>
                             </div>
+                            {/* Favorites and file handling */}
                             <CardFeatures text1="Your favorite List" text2="File Handling"
                                 obj1={
                                     
@@ -214,7 +221,7 @@ export default function StrudelDemo() {
                                 } obj2={< HandlingFilesCard setPlayingAudio={setPlayingAudio} globalEditor={globalEditor} setPause={setPause} context={context} />} />
                         </div>
                         
-                        
+                        {/* Editor and output panel */}
                         <div className="col-md-6 " style={{ maxHeight: '78vh', overflowY: 'auto' }}>
 
                             <div className="borderCode">
@@ -227,7 +234,7 @@ export default function StrudelDemo() {
                        
                     </div>
 
-                   
+                    {/* Canvas and D3 Chart displays */}
                     <div className="mt-4 d-flex justify-content-end align-items-center">
                         <div className={`canvasDes borderFeatures borderCode ms-3 ${showCanva ? "show" : "hide"}`} style={{ position: "relative" }}>
                             <button className="closeButton" onClick={() => SetOpenCanvas(false)}>✕</button>
@@ -239,7 +246,7 @@ export default function StrudelDemo() {
                               
                             ></canvas>
                         </div>
-                       
+                        
                         {showD3Chart && (
                             <div
                                 className={`canvasDes borderFeatures borderCode ms-3 ${showD3Chart ? "show" : "hide"}`}

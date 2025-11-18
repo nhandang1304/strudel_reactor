@@ -3,23 +3,25 @@ import "../css/NewDesign.css";
 
 function FavouriteSongList() {
     const [favourites, setFavourites] = useState([]);
-    const [selectedSong, setSelectedSong] = useState(null); // Bài hát được chọn để hiển thị melody
+    const [selectedSong, setSelectedSong] = useState(null); 
 
+    // Load favourite songs from localStorage on component mount
     useEffect(() => {
         const saved = localStorage.getItem("favourites");
         setFavourites(saved ? JSON.parse(saved) : []);
     }, []);
 
+    // Remove a song by its id and update both state and localStorage
     function handleRemove(id) {
         const updated = favourites.filter(song => song.id !== id);
         setFavourites(updated);
         localStorage.setItem("favourites", JSON.stringify(updated));
     }
-
+    // Show the full melody in a modal popup
     function handleShowMelody(song) {
         setSelectedSong(song);
     }
-
+    // Close the modal popup
     function handleCloseModal() {
         setSelectedSong(null);
     }
@@ -60,7 +62,7 @@ function FavouriteSongList() {
                 ))}
             </div>
 
-          
+            {/* Modal for displaying full melody */}
             {selectedSong && (
                 <div
                     className="modal-overlay popupWindow"

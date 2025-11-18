@@ -4,17 +4,16 @@ import { parseLogArray } from "../utils/D3DataLogic";
 
 export default function ScatterPlot({ logArray }) {
     const svgRef = useRef();
-
+    // Parse the raw logArray data into structured data
     const data = parseLogArray(logArray);
 
-
+    // Identify numeric keys to plot lines for,
     const numericKeys = (() => {
         if (!data.length) return [];
-
         const blacklist = ["timeRange", "gain"]; 
         const first = data[0];
 
- 
+        // Return keys that are numeric and not blacklisted
         return Object.keys(first).filter(
             (k) => !blacklist.includes(k) && typeof first[k] === "number"
         );
@@ -22,7 +21,7 @@ export default function ScatterPlot({ logArray }) {
 
     useEffect(() => {
         if (!data.length) return;
-
+        // Select SVG and set up width, height, and margins
         const svg = d3.select(svgRef.current);
         const width = 700;
         const height = 700;
@@ -31,8 +30,10 @@ export default function ScatterPlot({ logArray }) {
       
         svg.attr("width", width).attr("height", height).style("background-color", "black");
 
-    
+        // Clear any previous content
         svg.selectAll("*").remove();
+
+        // Add title text to the top center
         svg.append("text")
             .attr("x", width / 2)
             .attr("y", margin.top / 2)
@@ -41,6 +42,8 @@ export default function ScatterPlot({ logArray }) {
             .style("font-size", "24px")
             .style("font-weight", "bold")
             .text("Audio Signal Over Time");
+
+        // Create x-axis scale
         const x = d3
             .scaleBand()
             .domain(data.map((d) => d.timeRange))
@@ -50,7 +53,7 @@ export default function ScatterPlot({ logArray }) {
         const allValues = data.flatMap((d) =>
             numericKeys.concat("gain").map((k) => d[k])
         );
-
+        // Create linear y-axis scale from 0 to max value found in data
         const y = d3.scaleLinear()
             .domain([0, d3.max(allValues)])  
             .nice()
@@ -81,7 +84,7 @@ export default function ScatterPlot({ logArray }) {
         svg.select(`g[transform="translate(${margin.left}, 0)"] .domain`)
             .attr("stroke", "white")
             .attr("stroke-width", 2);
-
+        // Draw bars for the 'gain' value at each timeRange
         svg.append("g")
             .selectAll("rect")
             .data(data)
@@ -104,7 +107,7 @@ export default function ScatterPlot({ logArray }) {
             "#dad7fc",
             "#0559f5"
         ];
-
+        // Color scale mapping each numeric key
         const colorScale = d3.scaleOrdinal()
             .domain(numericKeys)
             .range(customColorsArr);
@@ -125,7 +128,7 @@ export default function ScatterPlot({ logArray }) {
                 .attr("opacity", 0.9);
         });
 
-    
+        // Create legend group positioned near the top right
         const legend = svg.append("g")
             .attr("transform", `translate(${width - 200}, ${margin.top + 10})`)
             .attr("font-size", 14);
@@ -159,7 +162,7 @@ export default function ScatterPlot({ logArray }) {
             const keyLegend = legend.append("g")
                 .attr("transform", `translate(0, ${rowY})`);
 
-            
+            // Colored line sample
             keyLegend.append("line")
                 .attr("x1", 0)
                 .attr("x2", 25)

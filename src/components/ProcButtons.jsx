@@ -8,6 +8,7 @@ function ProcButtons({ setCurrentMelody, setPlayingAudio, globalEditor, setPause
         <>
           
             <div className="d-flex gap-2" role="group" ara-label="Basic mixed styles example!">
+                {/* Button to preprocess the current code without playing audio */}
                 <Tooltips title="Save your current code" >
 
                     <button id="process" onClick={() => Proc(setPlayingAudio, globalEditor.current, setPause, setCurrentMelody, context)} className="btn btn-outline-light" data-bs-toggle="tooltip" data-bs-placement="bottom" >
@@ -17,6 +18,7 @@ function ProcButtons({ setCurrentMelody, setPlayingAudio, globalEditor, setPause
                         </button>
                     
                 </Tooltips>
+                {/* Button to preprocess and immediately play the audio */}
                 <Tooltips title="Save your current code and Play Audio" >
 
                     <button id="process_play" onClick={async () => await ProcAndPlay(setPlayingAudio, globalEditor.current, setPause, setCurrentMelody, context)} className="btn btn-outline-light" title="Save your current code and ">

@@ -21,12 +21,7 @@ function NavigationBar() {
                                         Home
                                 </NavLink>
                             </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link me-3" aria-current="page" to="/about">
-                                    <IoIosInformationCircleOutline size={25} className="me-2" />
-                                    About
-                                </NavLink>
-                            </li>
+                         
                             <li className="nav-item">
                                 <NavLink className="nav-link me-3" aria-current="page" to="/create">
                                     New Project

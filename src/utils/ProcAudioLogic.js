@@ -1,4 +1,4 @@
-import removeInstrument from "./ProcessTextLogic";
+
 import { Restart, Stop } from "../utils/RestartAndStopLogic";
 import Speed from "../utils/SpeedLogic";
 import updateCodeVolume from "../utils/VolumeLogic"
@@ -15,8 +15,9 @@ export /*async*/ function ProcAndPlay(setPlayingAudio, globalEditor, setPause, s
         setPlayingAudio(true);
         context.resume();
         setPause(false)
+        // Process the code with possible volume and speed changes
         Proc(setPlayingAudio, globalEditor, setPause, setCurrentMelody, context, speed, volume)         
-       
+        // Restart playback with the updated code
         Restart(setPlayingAudio, globalEditor, setPause, context)
         console.log("Present code: " + document.getElementById('proc').value)    
 
@@ -25,7 +26,8 @@ export /*async*/ function ProcAndPlay(setPlayingAudio, globalEditor, setPause, s
 }
 
 export function Proc(setPlayingAudio, globalEditor, setPause, setCurrentMelody, context, speed = null, volume = null) {
-    if (context.state === "running" ) {
+    if (context.state === "running") {
+        //stop it first to avoid overlap
         Stop(setPlayingAudio, globalEditor, setPause, context)
     }
     setPlayingAudio(false);
@@ -35,19 +37,20 @@ export function Proc(setPlayingAudio, globalEditor, setPause, setCurrentMelody, 
         return;
     }
 
-
-
+    // If volume adjustment is provided, update code accordingly
     if (volume !== null) {
         proc_text = updateCodeVolume(proc_text, volume);
 
         console.log("Volumn in Proc:" + volume);
     }
+    // If speed adjustment is provided, update code accordingly
     if (speed !== null) {
          
         proc_text = Speed(speed, globalEditor, proc_text);
        
         console.log("Speed" + speed);
     }
+    // Update the current melody state and editor code with the processed code
     setCurrentMelody(proc_text)
     globalEditor.setCode(proc_text)
     console.log("Proc: " + proc_text)

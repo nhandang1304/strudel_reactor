@@ -1,21 +1,22 @@
 import { RiSpeedFill } from "react-icons/ri";
 import { MdSlowMotionVideo } from "react-icons/md";
 import Tooltips from "./TooltipDes"
-import SpeedLogic from "../utils/SpeedLogic"
 import { Proc, ProcAndPlay } from "../utils/ProcAudioLogic"
 import { useState } from "react"
 import "../css/NewDesign.css"
 function SpeedAudio({ setCurrentMelody, setPlayingAudio, playingAudio, pause, globalEditor, setPause, context, setSpeed }) {
     const [activeSpeed, setActiveSpeed] = useState(1);
-    
+    // Handles changing the playback speed
     function handleSpeedChange(speed) {
         
         setSpeed(speed);
         setActiveSpeed(speed);
         if (!playingAudio) {
+            // If audio is not playing, just process the code with new speed
             Proc(setPlayingAudio, globalEditor.current, setPause, setCurrentMelody, context, speed)
         }
         else {
+            // If audio is playing, process and play immediately with new speed
             ProcAndPlay(setPlayingAudio, globalEditor.current, setPause, setCurrentMelody, context, speed);
         }
         
