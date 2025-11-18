@@ -24,7 +24,7 @@ export default function CardNav({ titleCard, desCard, buttonCard, icons = [] }) 
                             <h5 className="text-center cardDescription mt-3">{desCard}</h5>
 
                             <NavLink
-                                to="/Favourite"
+                                to="/favourites"
                                 className="fw-bold btn btn-warning btn-rounded display-2 fs-4 gradient-btn"
                             >
                                 {buttonCard}

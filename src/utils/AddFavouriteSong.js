@@ -13,5 +13,6 @@ function addFavourite(song, favourites, setFavourites) {
     const newFavs = [...favourites, song];
     localStorage.setItem("favourites", JSON.stringify(newFavs));
     setFavourites(newFavs);
+   
 }
 export default addFavourite

@@ -5,7 +5,7 @@ import SpeedLogic from "../utils/SpeedLogic"
 import { Proc, ProcAndPlay } from "../utils/ProcAudioLogic"
 import { useState } from "react"
 import "../css/NewDesign.css"
-function SpeedAudio({ setPlayingAudio, playingAudio, pause, globalEditor, setPause, context, setSpeed }) {
+function SpeedAudio({ setCurrentMelody, setPlayingAudio, playingAudio, pause, globalEditor, setPause, context, setSpeed }) {
     const [activeSpeed, setActiveSpeed] = useState(1);
     
     function handleSpeedChange(speed) {
@@ -13,10 +13,10 @@ function SpeedAudio({ setPlayingAudio, playingAudio, pause, globalEditor, setPau
         setSpeed(speed);
         setActiveSpeed(speed);
         if (!playingAudio) {
-            Proc(setPlayingAudio, globalEditor.current, setPause, context, speed)
+            Proc(setPlayingAudio, globalEditor.current, setPause, setCurrentMelody, context, speed)
         }
         else {
-            ProcAndPlay(setPlayingAudio, globalEditor.current, setPause, context, speed);
+            ProcAndPlay(setPlayingAudio, globalEditor.current, setPause, setCurrentMelody, context, speed);
         }
         
     };

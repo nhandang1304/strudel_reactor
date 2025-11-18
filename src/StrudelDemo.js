@@ -38,25 +38,25 @@ const handleD3Data = (event) => {
 
 
 export default function StrudelDemo() {
-  
+    const [showAlert, setShowAlert] = useState(false);
     const [currentMelody, setCurrentMelody] = useState('');
     const [favourites, setFavourites] = useState(() => {
         const saved = localStorage.getItem("favourites");
         return saved ? JSON.parse(saved) : [];
     });
 
-    const currentSong = {
-        id: Date.now().toString(),
-        name: "My Melody " + new Date().toLocaleTimeString(),
-        melody: currentMelody
-    };
-
-    function handleAddFavourite(song) {
-        addFavourite(song, favourites, setFavourites);
+    function handleAddFavourite() {
+        const success = addFavourite({
+            id: Date.now().toString(),
+            name: "My Melody " + new Date().toLocaleTimeString(),
+            melody: currentMelody,
+        }, favourites, setFavourites);
+        if (success) {
+            setShowAlert(true);
+            setTimeout(() => setShowAlert(false), 1500); 
+        }
     }
-    function showFavouriteList() {
-
-    }
+   
     const globalEditor = useRef(null);
     const hasRun = useRef(false);
     const [Paused, setPause] = useState(false);
@@ -113,13 +113,13 @@ export default function StrudelDemo() {
             hasRun.current = true;
             document.getElementById('proc').value = stranger_tune
             /*SetupButtons(globalEditor, SetPaused, pauseAudio)*/
-            
-            Proc(setPlayingAudio, globalEditor.current, setPause, context, speed)
+            setCurrentMelody(stranger_tune);
+            Proc(setPlayingAudio, globalEditor.current, setPause, setCurrentMelody, context, speed)
            
         }
 
     }, []);
-
+ 
     return (
         <div className="bodyStrud">
             
@@ -139,24 +139,30 @@ export default function StrudelDemo() {
                                
                             </div>
                             <div className=" borderFeatures  col-2" style={{ backgroundColor: "black" }}>
-                                <VolumeRange setPlayingAudio={setPlayingAudio} playingAudio={playingAudio} globalEditor={globalEditor} speed={speed} context={context} setPause={setPause} />
+                                <VolumeRange setCurrentMelody={setCurrentMelody} setPlayingAudio={setPlayingAudio} playingAudio={playingAudio} globalEditor={globalEditor} speed={speed} context={context} setPause={setPause} />
                             </div>
                             <div className="borderFeatures  col-3">
-                                <SpeedAudio setPlayingAudio={setPlayingAudio} playingAudio={playingAudio} setSpeed={setSpeed} pause={Paused} globalEditor={globalEditor} setPause={setPause} context={context} />
+                                <SpeedAudio setCurrentMelody={setCurrentMelody} setPlayingAudio={setPlayingAudio} playingAudio={playingAudio} setSpeed={setSpeed} pause={Paused} globalEditor={globalEditor} setPause={setPause} context={context} />
                             </div>
                             
                         </div>
                         <div className="col-md-6" style={{ maxHeight: '50vh', /*overflowY: 'auto' */}}>
                             <div className="borderFeatures">
                                 <h5 className="gradientTitleStrud">Enter your melody or pattern below:</h5>
-                                <PreprocessTextarea />
+                                <PreprocessTextarea value={currentMelody} onChange={setCurrentMelody} />
                             
                                 <div className="d-flex justify-content-between align-items-center mt-2 mb-2 gap-1">
                                    
-                                    < FavouriteSong addFavourite={handleAddFavourite} currentSong={currentSong} />
-                                    <ProcButtons setPlayingAudio={setPlayingAudio} globalEditor={globalEditor} setPause={setPause} pause={Paused} context={context} />
+                                    < FavouriteSong addFavourite={handleAddFavourite} />
+                                    <ProcButtons setCurrentMelody={setCurrentMelody} setPlayingAudio={setPlayingAudio} globalEditor={globalEditor} setPause={setPause} pause={Paused} context={context} />
                                 </div>
+                                
                             </div>
+                            {showAlert && (
+                                <div className="alert alert-info" role="alert">
+                                    Add successfully to favourite list
+                                </div>
+                            )}
                             <div className="row ">
                                 <div className="borderFeatures col-4 mt-5 d-flex flex-column">
                                     <h3 className="gradientTitleStrud text-center" >Canvas</h3>

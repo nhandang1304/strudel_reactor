@@ -3,7 +3,7 @@ import { IoVolumeMuteSharp } from "react-icons/io5";
 import { useState, useEffect } from "react";
 import updateCodeVolume from "../utils/VolumeLogic";
 import { Proc, ProcAndPlay } from "../utils/ProcAudioLogic"
-function VolumeRange({ setPlayingAudio, playingAudio, globalEditor, setPause, context, speed }) {
+function VolumeRange({ setCurrentMelody, setPlayingAudio, playingAudio, globalEditor, setPause, context, speed }) {
 
     const [mutedSound, setMutedSound] = useState(false);
     const [volumeValue, setVolume] = useState(0.5);
@@ -13,20 +13,20 @@ function VolumeRange({ setPlayingAudio, playingAudio, globalEditor, setPause, co
             setMutedSound(false);
             setVolume(0.5);
             if (playingAudio) {
-                ProcAndPlay(setPlayingAudio, globalEditor.current, setPause, context, speed, 0.5);
+                ProcAndPlay(setPlayingAudio, globalEditor.current, setPause, setCurrentMelody, context, speed, 0.5);
             }
             else {
-                Proc(setPlayingAudio, globalEditor.current, setPause, context, speed, 0.5);
+                Proc(setPlayingAudio, globalEditor.current, setPause, setCurrentMelody, context, speed, 0.5);
             }
         } else {
-            // Nếu đang bật, tắt volume (bằng 0)
+            
             setMutedSound(true);
             setVolume(0);
             if (!playingAudio) {
-                Proc(setPlayingAudio, globalEditor.current, setPause, context, speed, 0);
+                Proc(setPlayingAudio, globalEditor.current, setPause, setCurrentMelody, context, speed, 0);
             }
             else {
-                ProcAndPlay(setPlayingAudio, globalEditor.current, setPause, context, speed, 0);
+                ProcAndPlay(setPlayingAudio, globalEditor.current, setPause, setCurrentMelody, context, speed, 0);
             }
         }
     }
@@ -37,10 +37,10 @@ function VolumeRange({ setPlayingAudio, playingAudio, globalEditor, setPause, co
         setVolume(value);
         console.log("playingAu: " + playingAudio)
         if (playingAudio) {
-            ProcAndPlay(setPlayingAudio, globalEditor.current, setPause, context, speed, value)
+            ProcAndPlay(setPlayingAudio, globalEditor.current, setPause, setCurrentMelody, context, speed, value)
         }
         else {
-            Proc(setPlayingAudio, globalEditor.current, setPause, context, speed, value);
+            Proc(setPlayingAudio, globalEditor.current, setPause, setCurrentMelody, context, speed, value);
         }
 
 

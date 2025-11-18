@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect } from "react";
+import "../css/NewDesign.css";
 
 function FavouriteSongList() {
     const [favourites, setFavourites] = useState([]);
+    const [selectedSong, setSelectedSong] = useState(null); // Bài hát được chọn để hiển thị melody
 
     useEffect(() => {
         const saved = localStorage.getItem("favourites");
@@ -14,27 +16,85 @@ function FavouriteSongList() {
         localStorage.setItem("favourites", JSON.stringify(updated));
     }
 
-    if (favourites.length === 0) {
-        return <p>No favourite songs yet.</p>;
+    function handleShowMelody(song) {
+        setSelectedSong(song);
+    }
+
+    function handleCloseModal() {
+        setSelectedSong(null);
     }
 
     return (
-        <div>
-            <h3>Your Favourite Songs</h3>
-            <ul style={{ listStyleType: 'none', padding: 0 }}>
+        <div className="bodyStrud">
+            <h1 className="display-3 fw-bold">Your favourite list</h1>
+            <div className="row justify-content-center">
                 {favourites.map(song => (
-                    <li key={song.id} style={{ marginBottom: '10px', borderBottom: '1px solid #ccc', paddingBottom: '8px' }}>
-                        <strong>{song.name}</strong>
-                        <button
-                            style={{ marginLeft: '10px', color: 'red', cursor: 'pointer' }}
-                            onClick={() => handleRemove(song.id)}
-                        >
-                            Remove
-                        </button>
-                        <pre style={{ whiteSpace: 'pre-wrap', marginTop: '5px' }}>{song.melody}</pre>
-                    </li>
+                    <div key={song.id} className="col-3 ml-2">
+                        <div className="card" style={{ width: "18rem" }}>
+                            <div className="card-body">
+                                <h5 className="card-title">{song.name}</h5>
+                                <p className="card-text">
+                                    {song.melody.length > 100
+                                        ? song.melody.substring(0, 100) + "..."
+                                        : song.melody}
+                                </p>
+                                <button
+                                    className="btn btn-outline-light fw-bold mt-2"
+                                    onClick={() => handleRemove(song.id)}
+                                >
+                                    Remove
+                                </button>
+                                <button
+                                    className="btn btn-outline-light fw-bold mt-2"
+                                    onClick={() => handleShowMelody(song)}
+                                >
+                                    Show melody
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 ))}
-            </ul>
+            </div>
+
+            {/* Popup modal hiển thị melody */}
+            {selectedSong && (
+                <div
+                    className="modal-overlay popupWindow"
+                   
+                    onClick={handleCloseModal}
+                >
+                    <div
+                        className="modal-content"
+                        style={{
+                            backgroundColor: "white",
+                            padding: "20px",
+                            borderRadius: "8px",
+                            maxWidth: "90%",
+                            maxHeight: "80%",
+                            overflowY: "auto",
+                        }}
+                        onClick={e => e.stopPropagation()} 
+                    >
+                        <h3>{selectedSong.name}</h3>
+                        <pre
+                            style={{
+                                whiteSpace: "pre-wrap",
+                                wordWrap: "break-word",
+                                maxHeight: "60vh",
+                                overflowY: "auto",
+                            }}
+                        >
+                            {selectedSong.melody}
+                        </pre>
+                        <button
+                            className="btn btn-outline-secondary mt-3"
+                            onClick={handleCloseModal}
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
