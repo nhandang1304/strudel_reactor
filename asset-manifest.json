@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/strudel_reactor/static/css/main.31ac1ef9.css",
+    "main.js": "/strudel_reactor/static/js/main.11fe1474.js",
+    "static/js/453.4084ef31.chunk.js": "/strudel_reactor/static/js/453.4084ef31.chunk.js",
+    "static/js/985.b43ee726.chunk.js": "/strudel_reactor/static/js/985.b43ee726.chunk.js",
+    "static/media/fa-solid-900.woff2": "/strudel_reactor/static/media/fa-solid-900.8ae0d37556ff1e685de2.woff2",
+    "static/media/fa-brands-400.woff2": "/strudel_reactor/static/media/fa-brands-400.1c5c7716b05754cb4eab.woff2",
+    "static/media/index.mjs": "/strudel_reactor/static/media/index.505f32d01d0f8012ef0a.mjs",
+    "static/media/fa-regular-400.woff2": "/strudel_reactor/static/media/fa-regular-400.6f05ca9ab7b5345dbc07.woff2",
+    "static/media/fa-v4compatibility.woff2": "/strudel_reactor/static/media/fa-v4compatibility.e4340c52a50e727c6afa.woff2",
+    "static/media/clockworker-ZDiUtESR.js": "/strudel_reactor/static/media/clockworker-ZDiUtESR.e38e2c728b2a862e0123.js",
+    "index.html": "/strudel_reactor/index.html",
+    "main.31ac1ef9.css.map": "/strudel_reactor/static/css/main.31ac1ef9.css.map",
+    "main.11fe1474.js.map": "/strudel_reactor/static/js/main.11fe1474.js.map",
+    "453.4084ef31.chunk.js.map": "/strudel_reactor/static/js/453.4084ef31.chunk.js.map",
+    "985.b43ee726.chunk.js.map": "/strudel_reactor/static/js/985.b43ee726.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31ac1ef9.css",
+    "static/js/main.11fe1474.js"
+  ]
+}
