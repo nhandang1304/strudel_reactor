@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Home from "./Home";
 import StrudelDemo from "./StrudelDemo";
 import FavouriteSong from "./components/FavouriteSongList";
@@ -13,7 +13,7 @@ import FavouriteSong from "./components/FavouriteSongList";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <BrowserRouter>
+        <HashRouter>
             <App />
             <Routes>
                 <Route path="/" element={<Home />}/>
@@ -22,7 +22,7 @@ root.render(
                 <Route path="/favourites" element={<FavouriteSong/>}/>
             </Routes>
             
-        </BrowserRouter>
+        </HashRouter>
    
   </React.StrictMode>
 );
