@@ -11,36 +11,56 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\StrudelDemo.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\components\\AddFavouriteSongButton.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\AddFavouriteSongButton.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\components\\CardFeatures.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\CardFeatures.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\components\\CardManagingFiles.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\CardManagingFiles.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\components\\D3BuildGraph.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\D3BuildGraph.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\components\\ExportButton.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\ExportButton.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\components\\FavoiriteListButton.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\FavoiriteListButton.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\components\\FavouriteSongList.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\FavouriteSongList.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\components\\MusicWave.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\MusicWave.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\components\\PauseAndResumeButtons.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\PauseAndResumeButtons.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\Home.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Home.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\components\\PlayButtons.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\PlayButtons.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\utils\\ExportLogic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\utils\\ExportLogic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\components\\PreprocessTextarea.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\PreprocessTextarea.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\utils\\ProcAudioLogic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\utils\\ProcAudioLogic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\components\\ProcButtons.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\ProcButtons.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\components\\DjControl.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\DjControl.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\utils\\ProcessTextLogic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\utils\\ProcessTextLogic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\components\\SharedNavigationBar.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\SharedNavigationBar.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\components\\SpeedAudio.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -51,12 +71,64 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\VolumeRange.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\tunes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tunes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\HomeComponents\\cardNav.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\HomeComponents\\cardNav.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\HomeComponents\\footer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\HomeComponents\\footer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\utils\\AddFavouriteSong.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\utils\\AddFavouriteSong.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\utils\\checkContextStatusjs.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\utils\\checkContextStatusjs.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\utils\\D3DataLogic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\utils\\D3DataLogic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\utils\\ExportLogic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\utils\\ExportLogic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\utils\\PauseAndResumeLogic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\utils\\PauseAndResumeLogic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\utils\\ProcAudioLogic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\utils\\ProcAudioLogic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\utils\\RestartAndStopLogic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\utils\\RestartAndStopLogic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\utils\\SpeedLogic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\utils\\SpeedLogic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\utils\\VolumeLogic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\utils\\VolumeLogic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\Home.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Home.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\tunes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\tunes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\uni\\Year2\\Web\\ignment\\src\\css\\NewDesign.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -70,7 +142,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 30,
           "Children": [
             {
               "$type": "Bookmark",
@@ -106,7 +178,247 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddFavouriteSongButton.js",
+              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\AddFavouriteSongButton.js",
+              "RelativeDocumentMoniker": "src\\components\\AddFavouriteSongButton.js",
+              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\AddFavouriteSongButton.js",
+              "RelativeToolTip": "src\\components\\AddFavouriteSongButton.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-18T12:49:22.809Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "CardFeatures.jsx",
+              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\CardFeatures.jsx",
+              "RelativeDocumentMoniker": "src\\components\\CardFeatures.jsx",
+              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\CardFeatures.jsx",
+              "RelativeToolTip": "src\\components\\CardFeatures.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-18T12:49:17.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CardManagingFiles.jsx",
+              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\CardManagingFiles.jsx",
+              "RelativeDocumentMoniker": "src\\components\\CardManagingFiles.jsx",
+              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\CardManagingFiles.jsx",
+              "RelativeToolTip": "src\\components\\CardManagingFiles.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-18T12:49:08.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "D3BuildGraph.js",
+              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\D3BuildGraph.js",
+              "RelativeDocumentMoniker": "src\\components\\D3BuildGraph.js",
+              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\D3BuildGraph.js",
+              "RelativeToolTip": "src\\components\\D3BuildGraph.js",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAAwKQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-18T12:45:28.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ExportButton.jsx",
+              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\ExportButton.jsx",
+              "RelativeDocumentMoniker": "src\\components\\ExportButton.jsx",
+              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\ExportButton.jsx",
+              "RelativeToolTip": "src\\components\\ExportButton.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-18T12:44:49.886Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FavoiriteListButton.js",
+              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\FavoiriteListButton.js",
+              "RelativeDocumentMoniker": "src\\components\\FavoiriteListButton.js",
+              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\FavoiriteListButton.js",
+              "RelativeToolTip": "src\\components\\FavoiriteListButton.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-18T12:44:46.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MusicWave.jsx",
+              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\MusicWave.jsx",
+              "RelativeDocumentMoniker": "src\\components\\MusicWave.jsx",
+              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\MusicWave.jsx",
+              "RelativeToolTip": "src\\components\\MusicWave.jsx",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCMAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-18T12:41:37.51Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PauseAndResumeButtons.jsx",
+              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\PauseAndResumeButtons.jsx",
+              "RelativeDocumentMoniker": "src\\components\\PauseAndResumeButtons.jsx",
+              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\PauseAndResumeButtons.jsx",
+              "RelativeToolTip": "src\\components\\PauseAndResumeButtons.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-18T12:40:56.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PlayButtons.jsx",
+              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\PlayButtons.jsx",
+              "RelativeDocumentMoniker": "src\\components\\PlayButtons.jsx",
+              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\PlayButtons.jsx",
+              "RelativeToolTip": "src\\components\\PlayButtons.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-18T12:40:29.021Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PreprocessTextarea.jsx",
+              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\PreprocessTextarea.jsx",
+              "RelativeDocumentMoniker": "src\\components\\PreprocessTextarea.jsx",
+              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\PreprocessTextarea.jsx",
+              "RelativeToolTip": "src\\components\\PreprocessTextarea.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-18T12:40:25.478Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ProcButtons.jsx",
+              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\ProcButtons.jsx",
+              "RelativeDocumentMoniker": "src\\components\\ProcButtons.jsx",
+              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\ProcButtons.jsx",
+              "RelativeToolTip": "src\\components\\ProcButtons.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-18T12:38:40.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SharedNavigationBar.js",
+              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\SharedNavigationBar.js",
+              "RelativeDocumentMoniker": "src\\components\\SharedNavigationBar.js",
+              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\SharedNavigationBar.js",
+              "RelativeToolTip": "src\\components\\SharedNavigationBar.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-18T12:38:38.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "cardNav.js",
+              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\HomeComponents\\cardNav.js",
+              "RelativeDocumentMoniker": "src\\HomeComponents\\cardNav.js",
+              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\HomeComponents\\cardNav.js",
+              "RelativeToolTip": "src\\HomeComponents\\cardNav.js",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAowCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-18T12:35:51.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "footer.js",
+              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\HomeComponents\\footer.js",
+              "RelativeDocumentMoniker": "src\\HomeComponents\\footer.js",
+              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\HomeComponents\\footer.js",
+              "RelativeToolTip": "src\\HomeComponents\\footer.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-18T12:35:48.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AddFavouriteSong.js",
+              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\utils\\AddFavouriteSong.js",
+              "RelativeDocumentMoniker": "src\\utils\\AddFavouriteSong.js",
+              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\utils\\AddFavouriteSong.js",
+              "RelativeToolTip": "src\\utils\\AddFavouriteSong.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-18T12:34:54.252Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "checkContextStatusjs.js",
+              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\utils\\checkContextStatusjs.js",
+              "RelativeDocumentMoniker": "src\\utils\\checkContextStatusjs.js",
+              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\utils\\checkContextStatusjs.js",
+              "RelativeToolTip": "src\\utils\\checkContextStatusjs.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-18T12:34:34.721Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "D3DataLogic.js",
+              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\utils\\D3DataLogic.js",
+              "RelativeDocumentMoniker": "src\\utils\\D3DataLogic.js",
+              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\utils\\D3DataLogic.js",
+              "RelativeToolTip": "src\\utils\\D3DataLogic.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-18T12:33:38.657Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "PauseAndResumeLogic.js",
+              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\utils\\PauseAndResumeLogic.js",
+              "RelativeDocumentMoniker": "src\\utils\\PauseAndResumeLogic.js",
+              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\utils\\PauseAndResumeLogic.js",
+              "RelativeToolTip": "src\\utils\\PauseAndResumeLogic.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-18T12:31:00.108Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "VolumeLogic.js",
+              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\utils\\VolumeLogic.js",
+              "RelativeDocumentMoniker": "src\\utils\\VolumeLogic.js",
+              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\utils\\VolumeLogic.js",
+              "RelativeToolTip": "src\\utils\\VolumeLogic.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-18T12:08:01.56Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "SpeedLogic.js",
+              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\utils\\SpeedLogic.js",
+              "RelativeDocumentMoniker": "src\\utils\\SpeedLogic.js",
+              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\utils\\SpeedLogic.js",
+              "RelativeToolTip": "src\\utils\\SpeedLogic.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-18T12:07:35.717Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
               "Title": "package.json",
               "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\package.json",
               "RelativeDocumentMoniker": "package.json",
@@ -114,12 +426,11 @@
               "RelativeToolTip": "package.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-18T03:43:39.991Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-18T03:43:39.991Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 31,
               "Title": "package-lock.json",
               "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\package-lock.json",
               "RelativeDocumentMoniker": "package-lock.json",
@@ -127,8 +438,7 @@
               "RelativeToolTip": "package-lock.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-18T03:43:38.498Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-18T03:43:38.498Z"
             },
             {
               "$type": "Document",
@@ -138,130 +448,98 @@
               "RelativeDocumentMoniker": "README.md",
               "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\README.md",
               "RelativeToolTip": "README.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAADQAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
               "WhenOpened": "2025-11-18T03:42:46.15Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 22,
               "Title": "ExportLogic.js",
               "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\utils\\ExportLogic.js",
               "RelativeDocumentMoniker": "src\\utils\\ExportLogic.js",
               "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\utils\\ExportLogic.js",
               "RelativeToolTip": "src\\utils\\ExportLogic.js",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwCEAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-18T03:28:02.659Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-18T03:28:02.659Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 28,
               "Title": "Home.js",
               "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\Home.js",
               "RelativeDocumentMoniker": "src\\Home.js",
               "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\Home.js",
               "RelativeToolTip": "src\\Home.js",
-              "ViewState": "AgIAAAMAAAAAAAAAAADgvwsAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-18T03:24:36.507Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-18T03:24:36.507Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 29,
               "Title": "tunes.js",
               "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\tunes.js",
               "RelativeDocumentMoniker": "src\\tunes.js",
               "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\tunes.js",
               "RelativeToolTip": "src\\tunes.js",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAGMAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADUAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-18T01:36:10.113Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-18T01:36:10.113Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ProcessTextLogic.js",
-              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\utils\\ProcessTextLogic.js",
-              "RelativeDocumentMoniker": "src\\utils\\ProcessTextLogic.js",
-              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\utils\\ProcessTextLogic.js",
-              "RelativeToolTip": "src\\utils\\ProcessTextLogic.js",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAswDgAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-18T01:33:24.793Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "SpeedAudio.jsx",
               "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\SpeedAudio.jsx",
               "RelativeDocumentMoniker": "src\\components\\SpeedAudio.jsx",
               "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\SpeedAudio.jsx",
               "RelativeToolTip": "src\\components\\SpeedAudio.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-18T01:29:29.607Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-18T01:29:29.607Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "VolumeRange.js",
               "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\VolumeRange.js",
               "RelativeDocumentMoniker": "src\\components\\VolumeRange.js",
               "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\VolumeRange.js",
               "RelativeToolTip": "src\\components\\VolumeRange.js",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwDYAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAADgv0EAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-18T01:29:07.212Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-18T01:29:07.212Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DjControl.jsx",
-              "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\DjControl.jsx",
-              "RelativeDocumentMoniker": "src\\components\\DjControl.jsx",
-              "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\DjControl.jsx",
-              "RelativeToolTip": "src\\components\\DjControl.jsx",
-              "ViewState": "AgIAACkAAAAAAAAAAAAswDgAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-18T01:26:18.973Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 25,
               "Title": "RestartAndStopLogic.js",
               "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\utils\\RestartAndStopLogic.js",
               "RelativeDocumentMoniker": "src\\utils\\RestartAndStopLogic.js",
               "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\utils\\RestartAndStopLogic.js",
               "RelativeToolTip": "src\\utils\\RestartAndStopLogic.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-11-18T00:39:48.969Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 24,
               "Title": "ProcAudioLogic.js",
               "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\utils\\ProcAudioLogic.js",
               "RelativeDocumentMoniker": "src\\utils\\ProcAudioLogic.js",
               "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\utils\\ProcAudioLogic.js",
               "RelativeToolTip": "src\\utils\\ProcAudioLogic.js",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAC0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-18T00:29:39.215Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-18T00:29:39.215Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 32,
               "Title": "NewDesign.css",
               "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\css\\NewDesign.css",
               "RelativeDocumentMoniker": "src\\css\\NewDesign.css",
@@ -273,16 +551,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "FavouriteSongList.js",
               "DocumentMoniker": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\FavouriteSongList.js",
               "RelativeDocumentMoniker": "src\\components\\FavouriteSongList.js",
               "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\components\\FavouriteSongList.js",
               "RelativeToolTip": "src\\components\\FavouriteSongList.js",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwCQAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAmwEAAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-17T23:32:56.536Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-17T23:32:56.536Z"
             },
             {
               "$type": "Document",
@@ -292,7 +569,7 @@
               "RelativeDocumentMoniker": "src\\StrudelDemo.js",
               "ToolTip": "D:\\uni\\Year2\\Web\\ignment\\src\\StrudelDemo.js",
               "RelativeToolTip": "src\\StrudelDemo.js",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAewLEAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-11-17T15:10:38.587Z",
               "EditorCaption": ""

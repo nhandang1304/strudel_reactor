@@ -1,54 +1,60 @@
 {
-  "name": "webtech-assignment2",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^7.1.0",
-    "@strudel/codemirror": "^1.2.5",
-    "@strudel/core": "^1.2.4",
-    "@strudel/draw": "^1.2.4",
-    "@strudel/mini": "^1.2.4",
-    "@strudel/soundfonts": "^1.2.5",
-    "@strudel/tonal": "^1.2.4",
-    "@strudel/transpiler": "^1.2.4",
-    "@strudel/webaudio": "^1.2.5",
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "^6.8.0",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "bootstrap": "^5.3.8",
-    "d3": "^7.9.0",
-    "react": "^19.1.1",
-    "react-bootstrap": "^2.10.10",
-    "react-dom": "^19.1.1",
-    "react-icons": "^5.5.0",
-    "react-router-dom": "^7.9.4",
-    "react-scripts": "5.0.1",
-    "tone": "^14.7.77",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "homepage": "https://nhandang1304.github.io/strudel_reactor",
+    "name": "webtech-assignment2",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^7.1.0",
+        "@strudel/codemirror": "^1.2.5",
+        "@strudel/core": "^1.2.4",
+        "@strudel/draw": "^1.2.4",
+        "@strudel/mini": "^1.2.4",
+        "@strudel/soundfonts": "^1.2.5",
+        "@strudel/tonal": "^1.2.4",
+        "@strudel/transpiler": "^1.2.4",
+        "@strudel/webaudio": "^1.2.5",
+        "@testing-library/dom": "^10.4.1",
+        "@testing-library/jest-dom": "^6.8.0",
+        "@testing-library/react": "^16.3.0",
+        "@testing-library/user-event": "^13.5.0",
+        "bootstrap": "^5.3.8",
+        "d3": "^7.9.0",
+        "react": "^19.1.1",
+        "react-bootstrap": "^2.10.10",
+        "react-dom": "^19.1.1",
+        "react-icons": "^5.5.0",
+        "react-router-dom": "^7.9.4",
+        "react-scripts": "5.0.1",
+        "tone": "^14.7.77",
+        "web-vitals": "^2.1.4"
+    },
+    "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "gh-pages": "^6.3.0"
+    }
 }
